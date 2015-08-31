@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ServerInit">
+    <Position X="0.5" Y="0.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAABAAAAAAAAAAACBAAAAAAAACAAFQAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Server\ServerInit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ServiceHandle">
+    <Position X="8.5" Y="4.75" Width="3.25" />
+    <NestedTypes>
+      <Delegate Name="Demo.Mmose.Misc.Net.Dll.ServiceHandle.DelegateClientHandlerProcessMessageBlock" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\Misc\Network\NetworkDLL\Server\ServiceHandle.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Demo.Mmose.Misc.Net.Dll.ServiceHandle.DelegateClientHandlerDisconnect" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\Misc\Network\NetworkDLL\Server\ServiceHandle.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BgAIwAgAQAAIgABAABQBIEmAAOSgQQIBAAAgBABiFAI=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Server\ServiceHandle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ServiceHandleManager">
+    <Position X="8.25" Y="0.75" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAACgASBAwAAAAAAQAAAAAAIAgAAAAAAQ=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Server\ServiceHandleManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="this[System.String]" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.SocketServer">
+    <Position X="3" Y="0.75" Width="3.25" />
+    <NestedTypes>
+      <Delegate Name="Demo.Mmose.Misc.Net.Dll.SocketServer.DelegateProcessMessageBlock" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\Misc\Network\NetworkDLL\Server\SocketServer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Demo.Mmose.Misc.Net.Dll.SocketServer.DelegateDisconnect" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\Misc\Network\NetworkDLL\Server\SocketServer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Delegate Name="Demo.Mmose.Misc.Net.Dll.SocketServer.DelegateAcceptor" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\Misc\Network\NetworkDLL\Server\SocketServer.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAJAgAgAQAAAkABgAAQACBgAQMAAgwAAAAAABRAIhAI=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Server\SocketServer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ServiceHandleManager" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ProcessMessageBlockPool&lt;T&gt;">
+    <Position X="15.5" Y="3.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EABAAAAAAQAAAAAAAAAAAAAAAAAIAEAAAAAAQEAAAAI=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\ProcessMessageBlockPool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.MessageBlockEventArgs" Collapsed="true">
+    <Position X="20.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAABAAAAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Delegate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ProcessMessageBlockAtServerEventArgs" Collapsed="true">
+    <Position X="19" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAEAAGAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Delegate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ProcessMessageBlockAtClientEventArgs" Collapsed="true">
+    <Position X="21.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAABAIAAAAAABAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Delegate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.DisconnectAtServerEventArgs" Collapsed="true">
+    <Position X="20.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAEAAGAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Delegate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.DisconnectAtClientEventArgs">
+    <Position X="18" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAAABAIAAAAAABAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Delegate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ClientInit" Collapsed="true">
+    <Position X="20.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAICAAAAAAAAAACBAACAAAAACAAAQAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Client\ClientInit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ConnectHandle" Collapsed="true">
+    <Position X="22.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIQgAASAAAAAAAABSCYECQAAaBAgABBEAgAABgEAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Client\ConnectHandle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.ConnectHandleManager" Collapsed="true">
+    <Position X="22.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAABAAAAAAAIQAAAAAAAAgAAAgAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Client\ConnectHandleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.SocketClient" Collapsed="true">
+    <Position X="22.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAkAgAAAQAgBBAAQQAABgACUAAKQkAAAAABAAABAI=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Client\SocketClient.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Misc.Net.Dll.MessageBlock" Collapsed="true">
+    <Position X="22.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQACAgAAABAoAAAAAAAAABAAAQkEESAABAgIAAECAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Common\MessageBlock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Delegate Name="Demo.Mmose.Misc.Net.Dll.EventDelegateAcceptor">
+    <Position X="18.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Misc\Network\NetworkDLL\Delegate.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

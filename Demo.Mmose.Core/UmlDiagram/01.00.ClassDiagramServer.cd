@@ -1,0 +1,423 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Demo.Mmose.Core.Server.OneServer">
+    <Position X="1" Y="0.5" Width="4.25" />
+    <Members>
+      <Method Name="BeginRegisterThread" Hidden="true" />
+      <Method Name="Console_CancelKeyPress" Hidden="true" />
+      <Method Name="CurrentDomain_ProcessExit" Hidden="true" />
+      <Method Name="CurrentDomain_UnhandledException" Hidden="true" />
+      <Method Name="DisplayAscii0" Hidden="true" />
+      <Method Name="DisplayAscii1" Hidden="true" />
+      <Method Name="DisplayAscii2" Hidden="true" />
+      <Method Name="DisplayAscii3" Hidden="true" />
+      <Method Name="DisplayAscii4" Hidden="true" />
+      <Method Name="DisplayServerMainInfo" Hidden="true" />
+      <Method Name="DrawMenuBar" Hidden="true" />
+      <Method Name="EndRegisterThread" Hidden="true" />
+      <Method Name="ExitProgram" Hidden="true" />
+      <Method Name="GetConsoleWindow" Hidden="true" />
+      <Method Name="GetSystemMenu" Hidden="true" />
+      <Method Name="InitLanguage" Hidden="true" />
+      <Method Name="InitServerArgumentsDisposal" Hidden="true" />
+      <Method Name="InitServerExceptionDisposal" Hidden="true" />
+      <Method Name="InitServerIsRun" Hidden="true" />
+      <Method Name="InitServerMainInfo" Hidden="true" />
+      <Method Name="InitServerScriptCompiler" Hidden="true" />
+      <Method Name="InitServerWorld" Hidden="true" />
+      <Method Name="InsideRunServer" Hidden="true" />
+      <Method Name="RemoveMenu" Hidden="true" />
+      <Method Name="RemoveSystemCloseMenu" Hidden="true" />
+      <Method Name="RestartProgram" Hidden="true" />
+      <Field Name="s_Assembly" Hidden="true" />
+      <Field Name="s_BaseDirectory" Hidden="true" />
+      <Field Name="s_bIsInitWorld" Hidden="true" />
+      <Field Name="s_Cache" Hidden="true" />
+      <Field Name="s_Closing" Hidden="true" />
+      <Field Name="s_Debug" Hidden="true" />
+      <Field Name="s_ExePath" Hidden="true" />
+      <Field Name="s_ExitSignal" Hidden="true" />
+      <Field Name="s_FileLogger" Hidden="true" />
+      <Field Name="s_HaltOnWarning" Hidden="true" />
+      <Field Name="s_IsTerminating" Hidden="true" />
+      <Field Name="s_MultiConOut" Hidden="true" />
+      <Field Name="s_MultiProcessor" Hidden="true" />
+      <Field Name="s_OnlyLockAddRemove" Hidden="true" />
+      <Field Name="s_Process" Hidden="true" />
+      <Field Name="s_ProcessorCount" Hidden="true" />
+      <Field Name="s_ProfileStart" Hidden="true" />
+      <Field Name="s_ProfileTime" Hidden="true" />
+      <Field Name="s_Profiling" Hidden="true" />
+      <Field Name="s_RegisteredThreadCount" Hidden="true" />
+      <Field Name="s_Service" Hidden="true" />
+      <Field Name="s_Thread" Hidden="true" />
+      <Field Name="s_Version" Hidden="true" />
+      <Field Name="s_WorldArray" Hidden="true" />
+      <Method Name="SetAllWorldSignal" Hidden="true" />
+      <Method Name="StartServerCommandlinesDisposal" Hidden="true" />
+      <Method Name="UnhandledException" Hidden="true" />
+      <Method Name="WaitAllRegisterThreadExit" Hidden="true" />
+    </Members>
+    <AssociationLine Name="s_ConfigServer" Type="Demo.Mmose.Core.Server.ConfigServer">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.152" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="World" Type="Demo.Mmose.Core.World.BaseWorld">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.63" Y="0.654" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IQBAEEAsAzAAYpIMz4IkAEAQFGXSRLCAIICQhlD1NKA=</HashCode>
+      <FileName>ServerEngine\Server\OneServer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="s_ConfigServer" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="World" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.World.BaseWorld">
+    <Position X="0.5" Y="8" Width="6.5" />
+    <Members>
+      <Field Name="BREAK_COUNT" Hidden="true" />
+      <Method Name="CheckAllAlive" Hidden="true" />
+      <Method Name="DisposedNetStates" Hidden="true" />
+      <Method Name="FlushAll" Hidden="true" />
+      <Method Name="FlushNetStates" Hidden="true" />
+      <Field Name="m_BaseWorldEventArgs" Hidden="true" />
+      <Field Name="m_CheckAliveTime" Hidden="true" />
+      <Field Name="m_CheckAliveTimeSlice" Hidden="true" />
+      <Field Name="m_ComponentManager" Hidden="true" />
+      <Field Name="m_EventBroadcast" Hidden="true" />
+      <Field Name="m_EventEndSlice" Hidden="true" />
+      <Field Name="m_EventExitWorld" Hidden="true" />
+      <Field Name="m_EventInitOnceWorld" Hidden="true" />
+      <Field Name="m_EventSaveWorld" Hidden="true" />
+      <Field Name="m_EventStartSlice" Hidden="true" />
+      <Field Name="m_LockAddMessagePump" Hidden="true" />
+      <Field Name="m_LockEventBroadcast" Hidden="true" />
+      <Field Name="m_LockEventEndSlice" Hidden="true" />
+      <Field Name="m_LockEventExitWorld" Hidden="true" />
+      <Field Name="m_LockEventInitOnceWorld" Hidden="true" />
+      <Field Name="m_LockEventSaveWorld" Hidden="true" />
+      <Field Name="m_LockEventStartSlice" Hidden="true" />
+      <Field Name="m_LockInCheckAllAlive" Hidden="true" />
+      <Field Name="m_LockInProcessDisposed" Hidden="true" />
+      <Field Name="m_LockNetStateDisposed" Hidden="true" />
+      <Field Name="m_LockNetStateFlush" Hidden="true" />
+      <Field Name="m_LockSave" Hidden="true" />
+      <Field Name="m_LockSignalCount" Hidden="true" />
+      <Field Name="m_MaxSignalCount" Hidden="true" />
+      <Field Name="m_MessagePump" Hidden="true" />
+      <Field Name="m_NetStateDisposed" Hidden="true" />
+      <Field Name="m_NetStateFlush" Hidden="true" />
+      <Field Name="m_NetStateManager" Hidden="true" />
+      <Field Name="m_SaveTimeSlice" Hidden="true" />
+      <Field Name="m_SaveTimeSpan" Hidden="true" />
+      <Field Name="m_Saving" Hidden="true" />
+      <Field Name="m_SignalCount" Hidden="true" />
+      <Field Name="m_SliceUpdate" Hidden="true" />
+      <Field Name="m_strWorldName" Hidden="true" />
+      <Field Name="m_ThreadPool" Hidden="true" />
+      <Field Name="m_WaitExecute" Hidden="true" />
+      <Method Name="OnBroadcast" Hidden="true" />
+      <Method Name="OnExit" Hidden="true" />
+      <Method Name="OnInitOnce" Hidden="true" />
+      <Method Name="OnSave" Hidden="true" />
+      <Method Name="ProcessDisposed" Hidden="true" />
+      <Field Name="QUEUE_CAPACITY_SIZE" Hidden="true" />
+      <Method Name="SliceWorld" Hidden="true" />
+      <Method Name="StartCheckAllAliveTime" Hidden="true" />
+      <Method Name="StartSaveTimeSlice" Hidden="true" />
+      <Method Name="StartThreadPool" Hidden="true" />
+      <Method Name="StopThreadPool" Hidden="true" />
+    </Members>
+    <AssociationLine Name="MessagePump" Type="Demo.Mmose.Core.Network.MessagePump">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.308" Y="0.102" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>GFkQQMCoBGGJyoAXIwA4JAiQUAQwRbxMEEAiA4hDHEU=</HashCode>
+      <FileName>ServerEngine\World\BaseWorld.ComponentManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NetStateManager" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="MessagePump" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Network.MessagePump">
+    <Position X="9.5" Y="8" Width="4.75" />
+    <Members>
+      <Method Name="CheckConnecter" Hidden="true" />
+      <Method Name="CheckListener" Hidden="true" />
+      <Field Name="m_Connecters" Hidden="true" />
+      <Field Name="m_EventNetStateCreate" Hidden="true" />
+      <Field Name="m_EventProcessReceive" Hidden="true" />
+      <Field Name="m_Listeners" Hidden="true" />
+      <Field Name="m_LockEventNetStateCreate" Hidden="true" />
+      <Field Name="m_LockEventProcessReceive" Hidden="true" />
+      <Field Name="m_LockNetStateQueue" Hidden="true" />
+      <Field Name="m_NetStateQueue" Hidden="true" />
+      <Field Name="m_OnlyLockAddConnecter" Hidden="true" />
+      <Field Name="m_OnlyLockAddListener" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Method Name="OnceAgainReceive" Hidden="true" />
+      <Method Name="OnNetStateInit" Hidden="true" />
+      <Method Name="OnProcessReceive" Hidden="true" />
+      <Method Name="OnReceive" Hidden="true" />
+      <Method Name="Slice" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Listeners" Type="Demo.Mmose.Core.Network.Listener">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.329" Y="0.05" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="Connecters" Type="Demo.Mmose.Core.Network.Connecter">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.245" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAoAAAAhBRKBAAAQAAAgAQQIQAAAGABAAAAASEAAA=</HashCode>
+      <FileName>ServerEngine\Network\MessagePump.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Listeners" />
+      <Property Name="Connecters" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Network.NetState">
+    <Position X="11" Y="12.5" Width="6.5" />
+    <Members>
+      <Method Name="CheckAlive" Hidden="true" />
+      <Field Name="DISCONNECT_SECOND" Hidden="true" />
+      <Method Name="ExitWorld" Hidden="true" />
+      <Method Name="Flush" Hidden="true" />
+      <Method Name="InFlushQueue" Hidden="true" />
+      <Method Name="InProcessQueue" Hidden="true" />
+      <Method Name="InsideDispose" Hidden="true" />
+      <Method Name="InternalSend" Hidden="true" />
+      <Method Name="JoinWorld" Hidden="true" />
+      <Field Name="m_bCheckAlive" Hidden="true" />
+      <Field Name="m_BlockSend" Hidden="true" />
+      <Field Name="m_ComponentManager" Hidden="true" />
+      <Field Name="m_ConnectedOn" Hidden="true" />
+      <Field Name="m_Encoder" Hidden="true" />
+      <Field Name="m_EventConnect" Hidden="true" />
+      <Field Name="m_EventDisconnect" Hidden="true" />
+      <Field Name="m_EventSendPacket" Hidden="true" />
+      <Field Name="m_IsInFlushQueue" Hidden="true" />
+      <Field Name="m_IsInProcessQueue" Hidden="true" />
+      <Field Name="m_LockEventConnect" Hidden="true" />
+      <Field Name="m_LockEventDisconnect" Hidden="true" />
+      <Field Name="m_LockEventSendPacket" Hidden="true" />
+      <Field Name="m_MessagePump" Hidden="true" />
+      <Field Name="m_NetAddress" Hidden="true" />
+      <Field Name="m_NextCheckActivity" Hidden="true" />
+      <Field Name="m_PacketSendQueue_AboveNormal" Hidden="true" />
+      <Field Name="m_PacketSendQueue_BelowNormal" Hidden="true" />
+      <Field Name="m_PacketSendQueue_Highest" Hidden="true" />
+      <Field Name="m_PacketSendQueue_Lowest" Hidden="true" />
+      <Field Name="m_PacketSendQueue_Normal" Hidden="true" />
+      <Field Name="m_Player" Hidden="true" />
+      <Field Name="m_Running" Hidden="true" />
+      <Field Name="m_SendPackSize1Sec" Hidden="true" />
+      <Field Name="m_SendQueue" Hidden="true" />
+      <Field Name="m_SendTimeStart" Hidden="true" />
+      <Field Name="m_Socket" Hidden="true" />
+      <Field Name="m_ToString" Hidden="true" />
+      <Field Name="m_Version" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Method Name="NetState" Hidden="true" />
+      <Method Name="OnDisconnect" Hidden="true" />
+      <Method Name="OnReceive" Hidden="true" />
+      <Method Name="OutFlushQueue" Hidden="true" />
+      <Method Name="OutProcessQueue" Hidden="true" />
+      <Field Name="s_SendMaxSize1Sec" Hidden="true" />
+      <Field Name="s_TimeSpan1Sec" Hidden="true" />
+      <Property Name="SendQueue" Hidden="true" />
+      <Method Name="Start" Hidden="true" />
+    </Members>
+    <AssociationLine Name="ReceiveBuffer" Type="Demo.Mmose.Core.Network.ReceiveQueue">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.183" Y="0.06" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>rArBowAhgDGQCIxEIkQEJICwEGAEgxAocIgBCRAIDFA=</HashCode>
+      <FileName>ServerEngine\Network\NetState.ComponentManager.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ReceiveBuffer" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Network.Listener">
+    <Position X="16.5" Y="7" Width="3.25" />
+    <Members>
+      <Method Name="Free" Hidden="true" />
+      <Field Name="m_Accepted" Hidden="true" />
+      <Field Name="m_LockAccepted" Hidden="true" />
+      <Field Name="m_LockDisposed" Hidden="true" />
+      <Field Name="m_ReceiveQueuePool" Hidden="true" />
+      <Field Name="m_SocketServer" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Method Name="OnAcceptor" Hidden="true" />
+      <Field Name="QUEUE_CAPACITY_SIZE" Hidden="true" />
+      <Field Name="s_EmptySockets" Hidden="true" />
+      <Method Name="Slice" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAIAkAADAACAAwAAAAAAAAAAAAEAAAAkAABACAAAI=</HashCode>
+      <FileName>ServerEngine\Network\Listener.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Network.ReceiveQueue">
+    <Position X="19" Y="12.75" Width="7.5" />
+    <Members>
+      <Field Name="BUFFER_SIZE" Hidden="true" />
+      <Method Name="InProcessReceive" Hidden="true" />
+      <Field Name="m_bIsLockThis" Hidden="true" />
+      <Field Name="m_Buffer" Hidden="true" />
+      <Field Name="m_Head" Hidden="true" />
+      <Field Name="m_LockBuffer" Hidden="true" />
+      <Field Name="m_Size" Hidden="true" />
+      <Field Name="m_Tail" Hidden="true" />
+      <Method Name="OutProcessReceive" Hidden="true" />
+      <Field Name="s_LockThreadEventPacketID" Hidden="true" />
+      <Field Name="s_LockThreadEventPacketLength" Hidden="true" />
+      <Field Name="s_ThreadEventPacketID" Hidden="true" />
+      <Field Name="s_ThreadEventPacketLength" Hidden="true" />
+      <Method Name="SetCapacity" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAJAAAQAARkAAAAQAAEACABAGQhABAAAAIAIAgJAAQA=</HashCode>
+      <FileName>ServerEngine\Network\ReceiveQueue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Network.Connecter">
+    <Position X="16.5" Y="9.5" Width="3.75" />
+    <Members>
+      <Field Name="m_ClientSocketManager" Hidden="true" />
+      <Field Name="m_LockSliceSocket" Hidden="true" />
+      <Field Name="m_SocketClient" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Method Name="OnConnecterDisconnect" Hidden="true" />
+      <Method Name="OnConnecterProcessMessageBlock" Hidden="true" />
+      <Method Name="Slice" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAAAMAAAADABCAAAAAAAAAABAACAAAkAABAAAACAAAA=</HashCode>
+      <FileName>ServerEngine\Network\Connecter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.World.MmorpgWorld&lt;MapT, ItemT, ItemTemplateT, GameObjectT, GameObjectTemplateT, CreatureT, CreatureTemplateT, CharacterT&gt;">
+    <Position X="0.5" Y="14.75" Width="8.25" />
+    <Members>
+      <Field Name="m_CharacterManager" Hidden="true" />
+      <Field Name="m_CreatureManager" Hidden="true" />
+      <Field Name="m_CreatureTemplateManager" Hidden="true" />
+      <Field Name="m_GameObjectManager" Hidden="true" />
+      <Field Name="m_GameObjectTemplateHandler" Hidden="true" />
+      <Field Name="m_ItemManager" Hidden="true" />
+      <Field Name="m_ItemTemplateManager" Hidden="true" />
+      <Field Name="m_MapManager" Hidden="true" />
+      <Field Name="m_NeedUpdateQueue" Hidden="true" />
+      <Field Name="m_UpdateWorldSpeed" Hidden="true" />
+      <Field Name="m_UpdateWorldTimeSlice" Hidden="true" />
+      <Field Name="MANAGER_CAPACITY_SIZE" Hidden="true" />
+      <Method Name="OnUpdateWorld" Hidden="true" />
+      <Method Name="StartSlice" Hidden="true" />
+      <Field Name="UPDATE_BREAK_COUNT" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>CAAIABAAEAAFAgAgAADAAQASiACAACAACgAAAAAQAAo=</HashCode>
+      <FileName>ServerEngine\World\MmorpgWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.World.MmorpgWorld">
+    <Position X="0.5" Y="18.25" Width="8.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\World\MmorpgWorld.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Server.ConfigServer">
+    <Position X="6.75" Y="0.5" Width="16.5" />
+    <Members>
+      <Property Name="IsChangeAssemblyDirectory" Hidden="true" />
+      <Property Name="IsChangeCache" Hidden="true" />
+      <Property Name="IsChangeClientNetConfig" Hidden="true" />
+      <Property Name="IsChangeDebug" Hidden="true" />
+      <Property Name="IsChangeHaltOnWarning" Hidden="true" />
+      <Property Name="IsChangeLogFile" Hidden="true" />
+      <Property Name="IsChangeProfiling" Hidden="true" />
+      <Property Name="IsChangeScriptDirectory" Hidden="true" />
+      <Property Name="IsChangeServerNetConfig" Hidden="true" />
+      <Property Name="IsChangeService" Hidden="true" />
+      <Property Name="IsChangeWorldThreadCount" Hidden="true" />
+      <Field Name="m_bCache" Hidden="true" />
+      <Field Name="m_bDebug" Hidden="true" />
+      <Field Name="m_bHaltOnWarning" Hidden="true" />
+      <Field Name="m_bIsChangeAssemblyDirectory" Hidden="true" />
+      <Field Name="m_bIsChangeCache" Hidden="true" />
+      <Field Name="m_bIsChangeClientNetConfig" Hidden="true" />
+      <Field Name="m_bIsChangeDebug" Hidden="true" />
+      <Field Name="m_bIsChangeHaltOnWarning" Hidden="true" />
+      <Field Name="m_bIsChangeLogFile" Hidden="true" />
+      <Field Name="m_bIsChangeProfiling" Hidden="true" />
+      <Field Name="m_bIsChangeScriptDirectory" Hidden="true" />
+      <Field Name="m_bIsChangeServerNetConfig" Hidden="true" />
+      <Field Name="m_bIsChangeService" Hidden="true" />
+      <Field Name="m_bIsChangeWorldThreadCount" Hidden="true" />
+      <Field Name="m_bProfiling" Hidden="true" />
+      <Field Name="m_bService" Hidden="true" />
+      <Field Name="m_iClientBufferSize" Hidden="true" />
+      <Field Name="m_iClientCachedSize" Hidden="true" />
+      <Field Name="m_iClientManageThreadPoolSize" Hidden="true" />
+      <Field Name="m_iClientOutTimeInterval" Hidden="true" />
+      <Field Name="m_iClientProcessThreadPoolSize" Hidden="true" />
+      <Field Name="m_iClientReceiveThreadPoolSize" Hidden="true" />
+      <Field Name="m_iClientSendThreadPoolSize" Hidden="true" />
+      <Field Name="m_iServerBufferSize" Hidden="true" />
+      <Field Name="m_iServerCachedSize" Hidden="true" />
+      <Field Name="m_iServerManageThreadPoolSize" Hidden="true" />
+      <Field Name="m_iServerMaxClients" Hidden="true" />
+      <Field Name="m_iServerOutTimeInterval" Hidden="true" />
+      <Field Name="m_iServerProcessThreadPoolSize" Hidden="true" />
+      <Field Name="m_iServerReceiveThreadPoolSize" Hidden="true" />
+      <Field Name="m_iServerSendThreadPoolSize" Hidden="true" />
+      <Field Name="m_iWorldThreadCount" Hidden="true" />
+      <Field Name="m_strAssemblyDirectory" Hidden="true" />
+      <Field Name="m_strLogFile" Hidden="true" />
+      <Field Name="m_strScriptDirectory" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>MADEQhImEQCAAMagBkiFgAAABIGgQNAMEIQAJhECKRk=</HashCode>
+      <FileName>ServerEngine\Server\ConfigServer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Network.NetStateManager">
+    <Position X="8.75" Y="12.5" Width="2" />
+    <Members>
+      <Field Name="HANDLER_CAPACITY_SIZE" Hidden="true" />
+      <Method Name="InternalAddNetState" Hidden="true" />
+      <Method Name="InternalRemoveNetState" Hidden="true" />
+      <Field Name="m_NetStates" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAgAAAAAAAAQAAAAAAAAAAAAQAABBAAA=</HashCode>
+      <FileName>ServerEngine\Network\NetStateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

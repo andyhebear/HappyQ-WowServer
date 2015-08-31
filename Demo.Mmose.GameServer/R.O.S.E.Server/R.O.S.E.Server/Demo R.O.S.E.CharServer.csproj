@@ -1,0 +1,106 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3A041DDD-8474-4822-AF8E-0CCEF7D3BD76}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo_R.O.S.E.CharServer</RootNamespace>
+    <AssemblyName>Demo R.O.S.E.CharServer</AssemblyName>
+    <StartupObject>Demo_R.O.S.E.CharServer.Program</StartupObject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo G.O.S.E.Core, Version=0.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Demo G.O.S.E.Core\Bin\Demo G.O.S.E.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo G.O.S.E.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Demo G.O.S.E.Data\Bin\Demo G.O.S.E.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CharServer\CharCommon\Clan.cs" />
+    <Compile Include="CharServer\CharCommon\ClanMember.cs" />
+    <Compile Include="CharServer\CharCommon\ConfigInfo.cs" />
+    <Compile Include="CharServer\CharCommon\ExtendData.cs" />
+    <Compile Include="CharServer\CharCommon\Friend.cs" />
+    <Compile Include="CharServer\Network\Enum.cs" />
+    <Compile Include="Common\CharServer\InitCharacter.cs" />
+    <Compile Include="Common\CharServer\InitCharacterItem.cs" />
+    <Compile Include="Common\Database\BaseDatabase.cs" />
+    <Compile Include="Common\Database\Interface.cs" />
+    <Compile Include="Common\Database\Model\Model.cs" />
+    <Compile Include="CharServer\Network\CharPacketHandlers.cs" />
+    <Compile Include="CharServer\Network\CharPackets.cs" />
+    <Compile Include="CharServer\Network\ProcessNet.cs" />
+    <Compile Include="CharServer\Program.cs" />
+    <Compile Include="Common\ROSECrypt.cs" />
+    <Compile Include="Common\WorldServer\Item\MoneyItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEArmsItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEBackItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEBodyItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSECapItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEFaceItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEFootItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEJemItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEJewelItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSENaturalItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEPatItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEQuestItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSESubwpnItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEUseItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEWeaponItem.cs" />
+    <Compile Include="Common\WorldServer\Map\RoseMap.cs" />
+    <Compile Include="Common\WorldServer\Mobile\ROSECharacter.cs" />
+    <Compile Include="Common\WorldServer\Mobile\ROSEMobile.cs" />
+    <Compile Include="Common\WorldServer\Quest\ROSEQuest.cs" />
+    <Compile Include="Common\WorldServer\RespawnZone\ROSERespawnZone.cs" />
+    <Compile Include="Common\WorldServer\Skill\ROSESkill.cs" />
+    <Compile Include="Common\WorldServer\TeleportGate\ROSETeleportGate.cs" />
+    <Compile Include="Properties\CharAssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>: -----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;
+
+: 以下的复制是能够让CharServer程序运行
+copy "$(TargetName).exe" "..\..\..\..\Bin\Bin2\2. $(TargetName).exe"
+
+: -----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;</PostBuildEvent>
+  </PropertyGroup>
+</Project>

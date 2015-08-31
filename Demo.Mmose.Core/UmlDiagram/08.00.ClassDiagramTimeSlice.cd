@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Timer.TimeSlice">
+    <Position X="2.25" Y="4" Width="2.5" />
+    <Members>
+      <Field Name="CALL_SLICE_MAX_COUNT" Hidden="true" />
+      <Method Name="FormatDelegate" Hidden="true" />
+      <Method Name="JoinProcessQueue" Hidden="true" />
+      <Field Name="m_Adding" Hidden="true" />
+      <Field Name="m_BaseWorld" Hidden="true" />
+      <Field Name="m_Count" Hidden="true" />
+      <Field Name="m_DelayTime" Hidden="true" />
+      <Field Name="m_IntervalTime" Hidden="true" />
+      <Field Name="m_NextTime" Hidden="true" />
+      <Field Name="m_Priority" Hidden="true" />
+      <Field Name="m_ProcessPriority" Hidden="true" />
+      <Field Name="m_Queued" Hidden="true" />
+      <Field Name="m_Running" Hidden="true" />
+      <Field Name="m_TimeSliceDictionary" Hidden="true" />
+      <Property Name="Profiles" Hidden="true" />
+      <Field Name="s_AboveNormalTimeSliceQueue" Hidden="true" />
+      <Field Name="s_BelowNormalTimeSliceQueue" Hidden="true" />
+      <Field Name="s_BreakSliceAtNumber" Hidden="true" />
+      <Field Name="s_CallAboveNormalCount" Hidden="true" />
+      <Field Name="s_CallBelowNormalCount" Hidden="true" />
+      <Field Name="s_CallHighestCount" Hidden="true" />
+      <Field Name="s_CallLowestCount" Hidden="true" />
+      <Field Name="s_CallNormalCount" Hidden="true" />
+      <Field Name="s_HighestTimeSliceQueue" Hidden="true" />
+      <Field Name="s_LockAboveNormalTimeSliceQueue" Hidden="true" />
+      <Field Name="s_LockBelowNormalTimeSliceQueue" Hidden="true" />
+      <Field Name="s_LockHighestTimeSliceQueue" Hidden="true" />
+      <Field Name="s_LockLowestTimeSliceQueue" Hidden="true" />
+      <Field Name="s_LockNormalTimeSliceQueue" Hidden="true" />
+      <Field Name="s_LowestTimeSliceQueue" Hidden="true" />
+      <Field Name="s_NormalTimeSliceQueue" Hidden="true" />
+      <Field Name="s_Profiles" Hidden="true" />
+      <Method Name="SetAdding" Hidden="true" />
+      <Method Name="SetBaseWorld" Hidden="true" />
+      <Method Name="SetNextTime" Hidden="true" />
+      <Method Name="Slice" Hidden="true" />
+      <Method Name="Slice_AboveNormal" Hidden="true" />
+      <Method Name="Slice_BelowNormal" Hidden="true" />
+      <Method Name="Slice_Highest" Hidden="true" />
+      <Method Name="Slice_Lowest" Hidden="true" />
+      <Method Name="Slice_Normal" Hidden="true" />
+      <Property Name="TimeSliceDictionary" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>kgWBwARAYClEAgIHBASgSYUAIAkAGwAAIAAhCBXgiBA=</HashCode>
+      <FileName>ServerEngine\Timer\TimeSlice.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Timer.TimerThread">
+    <Position X="7" Y="0.5" Width="2.75" />
+    <Members>
+      <Method Name="Change" Hidden="true" />
+      <Method Name="InternalDumpInfo" Hidden="true" />
+      <Method Name="ProcessChangeQueue" Hidden="true" />
+      <Method Name="RunTimerThread" Hidden="true" />
+      <Field Name="s_IsDumpInfo" Hidden="true" />
+      <Field Name="s_LockTimerChangeEntryChangeQueue" Hidden="true" />
+      <Field Name="s_NextPriorities" Hidden="true" />
+      <Field Name="s_PriorityDelays" Hidden="true" />
+      <Field Name="s_Signal" Hidden="true" />
+      <Field Name="s_TimerChangeEntryChangeQueue" Hidden="true" />
+      <Field Name="s_Timers" Hidden="true" />
+      <Field Name="s_TimerThread" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>hAAAAgAAAABASEAAAQAAAAJAAAkAAIAAAAAABAAAqAA=</HashCode>
+      <FileName>ServerEngine\Timer\TimerThread.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Timer.TimerProfile">
+    <Position X="6" Y="5" Width="1.5" />
+    <Members>
+      <Field Name="m_Created" Hidden="true" />
+      <Field Name="m_PeakProcTime" Hidden="true" />
+      <Field Name="m_Started" Hidden="true" />
+      <Field Name="m_Stopped" Hidden="true" />
+      <Field Name="m_Ticked" Hidden="true" />
+      <Field Name="m_TotalProcTime" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAggAAAAAAIEBAACEAAAAAAAABIAAA4AAAAAQBAABSA=</HashCode>
+      <FileName>ServerEngine\Timer\TimerProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Timer.DelayStateCallTimer">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="m_Callback" Hidden="true" />
+      <Field Name="m_State" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAgEAAAAAAAAAAAACAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ServerEngine\Timer\DelayStateCallTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Timer.DelayStateCallTimer&lt;T&gt;">
+    <Position X="2.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="m_Callback" Hidden="true" />
+      <Field Name="m_State" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAgEAAAAAAAAAAAACAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ServerEngine\Timer\DelayStateCallTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Timer.DelayCallTimer">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <Members>
+      <Field Name="m_Callback" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgEAAAAAAAAAAAACAAAAAAAAAAAQAA=</HashCode>
+      <FileName>ServerEngine\Timer\DelayCallTimer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Demo.Mmose.Core.Timer.TimerChangeEntry">
+    <Position X="10.75" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="m_IsAddTimerSlice" Hidden="true" />
+      <Field Name="m_NewPriority" Hidden="true" />
+      <Field Name="m_TimerSlice" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAIAAgAAAAAQAIAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Timer\TimerChangeEntry.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

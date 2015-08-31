@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Entity.Item.BaseItem">
+    <Position X="3.5" Y="0.75" Width="2.5" />
+    <Members>
+      <Field Name="m_BaseItemState" Hidden="true" />
+      <Field Name="m_ChildItems" Hidden="true" />
+      <Field Name="m_ItemTemplate" Hidden="true" />
+      <Field Name="m_Name" Hidden="true" />
+      <Field Name="m_Owner" Hidden="true" />
+      <Field Name="m_Parent" Hidden="true" />
+      <Field Name="m_SlotId" Hidden="true" />
+      <Field Name="SlotNotSet" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EAAARgCCAAAQABQEIAAQQQQAAAAEKAAAAEQAAADAAAA=</HashCode>
+      <FileName>ServerEngine\Entity\Item\BaseItem.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ItemTemplate" />
+      <Property Name="BaseItemState" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Item.BaseItemState">
+    <Position X="7.5" Y="3" Width="2.25" />
+    <Members>
+      <Field Name="m_EventAddedChildItem" Hidden="true" />
+      <Field Name="m_EventAddingChildItem" Hidden="true" />
+      <Field Name="m_EventRemovedChildItem" Hidden="true" />
+      <Field Name="m_EventRemovingChildItem" Hidden="true" />
+      <Field Name="m_EventUpdatedItemTemplate" Hidden="true" />
+      <Field Name="m_EventUpdatedName" Hidden="true" />
+      <Field Name="m_EventUpdatedOwner" Hidden="true" />
+      <Field Name="m_EventUpdatedParent" Hidden="true" />
+      <Field Name="m_EventUpdatingItemTemplate" Hidden="true" />
+      <Field Name="m_EventUpdatingName" Hidden="true" />
+      <Field Name="m_EventUpdatingOwner" Hidden="true" />
+      <Field Name="m_EventUpdatingParent" Hidden="true" />
+      <Field Name="m_LockEventAddedChildItem" Hidden="true" />
+      <Field Name="m_LockEventAddingChildItem" Hidden="true" />
+      <Field Name="m_LockEventAfterUpdateParent" Hidden="true" />
+      <Field Name="m_LockEventRemovedChildItem" Hidden="true" />
+      <Field Name="m_LockEventRemovingChildItem" Hidden="true" />
+      <Field Name="m_LockEventUpdatedItemTemplate" Hidden="true" />
+      <Field Name="m_LockEventUpdatedName" Hidden="true" />
+      <Field Name="m_LockEventUpdatedOwner" Hidden="true" />
+      <Field Name="m_LockEventUpdatingItemTemplate" Hidden="true" />
+      <Field Name="m_LockEventUpdatingName" Hidden="true" />
+      <Field Name="m_LockEventUpdatingOwner" Hidden="true" />
+      <Field Name="m_LockEventUpdatingParent" Hidden="true" />
+      <Field Name="m_UpdateAddChildItemCall" Hidden="true" />
+      <Field Name="m_UpdateItemTemplate" Hidden="true" />
+      <Field Name="m_UpdateName" Hidden="true" />
+      <Field Name="m_UpdateOwner" Hidden="true" />
+      <Field Name="m_UpdateParent" Hidden="true" />
+      <Field Name="m_UpdateRemoveChildItemCall" Hidden="true" />
+      <Method Name="RestoreAll" Hidden="true" />
+      <Field Name="s_BaseItemState" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>NEgCCRAAMAA9I5JAACBDAEASGEAAZiYgFBTRAAF4MEQ=</HashCode>
+      <FileName>ServerEngine\Entity\Item\BaseItemState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Item.BaseItemContainer&lt;T&gt;">
+    <Position X="0.5" Y="15.75" Width="3.25" />
+    <Members>
+      <Field Name="m_BaseItemContainerState" Hidden="true" />
+      <Field Name="m_MaxSlot" Hidden="true" />
+      <Field Name="m_MinSlot" Hidden="true" />
+      <Field Name="m_ToteSubItems" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAgBCEAAjBCAAQAAAAAAAAABAAAAAgBAAICgE=</HashCode>
+      <FileName>ServerEngine\Entity\Item\BaseItemContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Item.BaseItemContainerState">
+    <Position X="4.75" Y="15.75" Width="2.25" />
+    <Members>
+      <Field Name="m_UpdateAddSubItemCall" Hidden="true" />
+      <Field Name="m_UpdateRemoveSubItemCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAgEQAAAAAAIAAAgAAABAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\GameEntity\Item\BaseItemContainerState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Item.ItemManager&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="DICTIONARY_CAPACITY" Hidden="true" />
+      <Field Name="m_Items" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAAAAAAAQAgAAAAAAEAAAAAABAACA=</HashCode>
+      <FileName>ServerEngine\Entity\Item\ItemManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Item.BaseItemTemplate">
+    <Position X="7.5" Y="1" Width="2.5" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Entity\Item\BaseItemTemplate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Item.ItemTemplateManager&lt;T&gt;">
+    <Position X="10.5" Y="0.75" Width="2.5" />
+    <Members>
+      <Field Name="m_ItemTemplates" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABACAAAAAAAAAAAAAAAQAQAAAAACAAAAAAAAABAAAA=</HashCode>
+      <FileName>ServerEngine\Entity\Item\ItemTemplateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Item.GoldItem">
+    <Position X="3.75" Y="5.25" Width="2" />
+    <Members>
+      <Field Name="m_bIsDrop" Hidden="true" />
+      <Field Name="m_iGold" Hidden="true" />
+      <Field Name="m_MaxGold" Hidden="true" />
+      <Field Name="m_MinGold" Hidden="true" />
+      <Field Name="s_GoldMultiplier" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAgBAAAAAABAAAgAQAAABAAAAAAAAAAQAAAE=</HashCode>
+      <FileName>ServerEngine\Entity\Item\GoldItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

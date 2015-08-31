@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Reputation.BaseReputation">
+    <Position X="4.25" Y="2.25" Width="1.5" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Reputation\BaseReputation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Reputation.BaseReputationHandler&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="3.5" />
+    <Members>
+      <Field Name="m_LockThreadEventAfterAddReputationCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveReputationCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddReputationCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveReputationCall" Hidden="true" />
+      <Field Name="m_Reputations" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddReputationCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveReputationCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddReputationCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveReputationCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AQABAAKAAAAAAAAAAAAAAAYCAAEAQAEAAwgQAAhAYAA=</HashCode>
+      <FileName>ServerEngine\Reputation\BaseReputationHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>

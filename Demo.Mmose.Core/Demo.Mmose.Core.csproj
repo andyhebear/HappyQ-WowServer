@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18C925D1-4184-46C2-ACD7-32AC0763D897}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Mmose.Core</RootNamespace>
+    <AssemblyName>Demo.Mmose.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Demo.Mmose.Core.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\AnyCPU\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\AnyCPU\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Itanium' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\Itanium\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Itanium' ">
+    <OutputPath>Bin\Itanium\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>Bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>Bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\AnyCPU\OnlyMiscBuildDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ONLY_MISC_BUILD</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Debug|Itanium' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\Itanium\OnlyMiscBuildDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ONLY_MISC_BUILD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x64\OnlyMiscBuildDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ONLY_MISC_BUILD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\OnlyMiscBuildDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;ONLY_MISC_BUILD</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Release|AnyCPU' ">
+    <OutputPath>Bin\AnyCPU\OnlyMiscBuildRelease\</OutputPath>
+    <DefineConstants>TRACE;ONLY_MISC_BUILD</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Release|Itanium' ">
+    <OutputPath>Bin\Itanium\OnlyMiscBuildRelease\</OutputPath>
+    <DefineConstants>TRACE;ONLY_MISC_BUILD</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Release|x64' ">
+    <OutputPath>Bin\x64\OnlyMiscBuildRelease\</OutputPath>
+    <DefineConstants>TRACE;ONLY_MISC_BUILD</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Release|x86' ">
+    <OutputPath>Bin\x86\OnlyMiscBuildRelease\</OutputPath>
+    <DefineConstants>TRACE;ONLY_MISC_BUILD</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo.Mmose.Misc, Version=1.0.3504.18190, Culture=neutral, PublicKeyToken=0b105b4d4aae6e75, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\BinROSE\Demo.Mmose.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Threading, Version=1.0.3058.34407, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LuaInterface\CheckType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\GenerateEventAssembly.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\Lua.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\LuaBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\LuaException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\LuaFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\LuaTable.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\LuaUserData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\Metatables.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\MethodWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\ObjectTranslator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LuaInterface\ProxyType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Bin\PostBuildEvent.bat" />
+    <None Include="Stream\UmlDiagram\ClassDiagramStream.cd" />
+    <None Include="UmlDiagram\ClassDiagramNetwork.cd" />
+    <None Include="UmlDiagram\06.00.ClassDiagramFSM.cd" />
+    <None Include="UmlDiagram\06.01.ClassDiagramTriggerSystem.cd" />
+    <None Include="UmlDiagram\ClassDiagramReputation.cd" />
+    <None Include="UmlDiagram\01.01.ClassDiagramLanguage.cd" />
+    <None Include="UmlDiagram\02.00.ClassDiagramWorldManager.cd" />
+    <None Include="UmlDiagram\ClassDiagramAbility.cd" />
+    <None Include="UmlDiagram\03.00.ClassDiagramCreature.cd" />
+    <None Include="UmlDiagram\ClassDiagramGuild.cd" />
+    <None Include="UmlDiagram\04.00.ClassDiagramItem.cd" />
+    <None Include="UmlDiagram\ClassDiagramMail.cd" />
+    <None Include="UmlDiagram\05.00.ClassDiagramMap.cd" />
+    <None Include="UmlDiagram\ClassDiagramQuest.cd" />
+    <None Include="UmlDiagram\09.00.ClassDiagramScript.cd" />
+    <None Include="UmlDiagram\01.00.ClassDiagramServer.cd" />
+    <None Include="UmlDiagram\ClassDiagramTaxi.cd" />
+    <None Include="UmlDiagram\07.00.ClassDiagramThreadPool.cd" />
+    <None Include="UmlDiagram\08.00.ClassDiagramTimeSlice.cd" />
+    <None Include="UmlDiagram\03.01.ClassDiagramCreatureSuit.cd" />
+    <None Include="UmlDiagram\ClassDiagramGameCommand.cd" />
+    <None Include="Demo.Mmose.Core.snk" />
+    <Compile Include="ServerEngine\Common\Atom\AtomicDouble.cs" />
+    <Compile Include="ServerEngine\Common\Atom\AtomicFloat.cs" />
+    <Compile Include="ServerEngine\Common\Atom\AtomicInt.cs" />
+    <Compile Include="ServerEngine\Common\Atom\AtomicLong.cs" />
+    <Compile Include="ServerEngine\Common\Atom\LockCheck.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\MultiDictionary.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeHashSet.cs" />
+    <Compile Include="ServerEngine\Common\Component\Component.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentManager.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentId.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentMessage.cs" />
+    <Compile Include="ServerEngine\Common\Component\Delegate.cs" />
+    <Compile Include="ServerEngine\Common\Component\Interface.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeDictionary.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeHashSet.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeMultiDictionary.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeQueue.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeStack.cs" />
+    <Compile Include="ServerEngine\Common\Atom\LockInOut.cs" />
+    <Compile Include="ServerEngine\Entity\Character\BaseCharacterState.cs" />
+    <Compile Include="ServerEngine\Entity\Character\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\WorldEntity.ComponentManager.cs" />
+    <Compile Include="ServerEngine\Entity\WorldEntity.SupportSlice.cs" />
+    <Compile Include="ServerEngine\Entity\WorldEntityState.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\BaseGameObject.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\GameObjectManager.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\BaseGameObjectState.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\BaseGameObjectTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\GameObjectTemplateManager.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Aura\BaseAura.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Aura\BaseAuraHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Aura\BaseAuraTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Aura\BaseAuraTemplateHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Aura\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\BaseAbility.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Skill\BaseSkill.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Skill\BaseSkillHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Skill\BaseSkillTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Skill\BaseSkillTemplateHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Skill\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Spell\BaseSpell.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Spell\BaseSpellHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Spell\BaseSpellTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Spell\BaseSpellTemplateHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Spell\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Talent\BaseTalent.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Talent\BaseTalentHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Talent\BaseTalentTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Talent\BaseTalentTemplateHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\Talent\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\TreeBuild\BaseTreeBuild.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\TreeBuild\BaseTreeNode.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\TreeBuild\BaseTreeNodeInfo.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Ability\TreeBuild\Delegate.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\FiniteStateMachine\State.NullState.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\FiniteStateMachine\Delegate.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\FiniteStateMachine\Enum.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\FiniteStateMachine\Machine.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\FiniteStateMachine\State.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\Trigger\Delegate.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\Trigger\Enum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServerEngine\ArtificialIntelligence\Trigger\TriggerType.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\Trigger\TriggerAgent.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\Trigger\TriggerAgents.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\Trigger\TriggerEvent.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\Trigger\TriggerSystem.cs" />
+    <Compile Include="ServerEngine\Map\BaseMap.ComponentManager.cs" />
+    <Compile Include="ServerEngine\Map\BaseMap.SupportSlice.cs" />
+    <Compile Include="ServerEngine\Map\BaseMapState.cs" />
+    <Compile Include="ServerEngine\Map\MapSpaceNode.ComponentManager.cs" />
+    <Compile Include="ServerEngine\Map\MapSpaceNodeState.cs" />
+    <Compile Include="ServerEngine\Map\NullEnumerable.cs" />
+    <Compile Include="ServerEngine\Network\NetState.ComponentManager.cs" />
+    <Compile Include="ServerEngine\Network\MemoryPool.cs" />
+    <Compile Include="ServerEngine\Scripts\Attributes.cs" />
+    <Compile Include="ServerEngine\Scripts\CallPriorityComparer.cs" />
+    <Compile Include="ServerEngine\Scripts\Interface.cs" />
+    <Compile Include="ServerEngine\Scripts\ScriptAssemblyInfo.cs" />
+    <Compile Include="ServerEngine\Scripts\ScriptCompiler.cs" />
+    <Compile Include="ServerEngine\Scripts\TypeCache.cs" />
+    <Compile Include="ServerEngine\Scripts\TypeTable.cs" />
+    <Compile Include="ServerEngine\Entity\Character\BaseCharacter.cs" />
+    <Compile Include="ServerEngine\Entity\Character\CharacterManager.cs" />
+    <Compile Include="ServerEngine\Common\Attributes.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\Delegate.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeList.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeMultiDictionary.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeQueue.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeStack.cs" />
+    <Compile Include="ServerEngine\Common\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\VisibleRange.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageExceptionString.cs" />
+    <Compile Include="ServerEngine\Util\Delegate.cs" />
+    <Compile Include="ServerEngine\Util\DynamicCalls.cs" />
+    <Compile Include="ServerEngine\Common\Enum.cs" />
+    <Compile Include="ServerEngine\Entity\WorldEntity.cs" />
+    <Compile Include="ServerEngine\Util\Insensitive.cs" />
+    <Compile Include="ServerEngine\Common\Interface.cs" />
+    <Compile Include="ServerEngine\Common\LOGs.cs" />
+    <Compile Include="ServerEngine\Common\Point2D.cs" />
+    <Compile Include="ServerEngine\Common\Point3D.cs" />
+    <Compile Include="ServerEngine\Common\Point4D.cs" />
+    <Compile Include="ServerEngine\Common\ProgressBar.cs" />
+    <Compile Include="ServerEngine\Common\Rectangle2D.cs" />
+    <Compile Include="ServerEngine\Common\Rectangle3D.cs" />
+    <Compile Include="ServerEngine\Common\Region.cs" />
+    <Compile Include="ServerEngine\Common\RegionRect.cs" />
+    <Compile Include="ServerEngine\Common\Result.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeDictionary.cs" />
+    <Compile Include="ServerEngine\Common\Serial.cs" />
+    <Compile Include="ServerEngine\Common\SupportSlice\Interface.cs" />
+    <Compile Include="ServerEngine\Common\SupportSlice\SupportSlice.cs" />
+    <Compile Include="ServerEngine\Common\SupportSlice\UpdateSlice.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServerEngine\Common\StringCrypto.cs" />
+    <Compile Include="ServerEngine\Common\Tile.cs" />
+    <Compile Include="ServerEngine\Common\VersionInfo.cs" />
+    <Compile Include="ServerEngine\Common\ZComparer.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\AIChangeEntry.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\AIProfile.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\AISystem.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\AISystemManage.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\BaseAIEvent.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\BaseAITrigger.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\Enum.cs" />
+    <Compile Include="ServerEngine\ArtificialIntelligence\AISystem\MobileAIThread.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\Suit\BaseActionBar.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\Suit\BaseActionBarManager.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\Suit\BaseBagManager.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\BaseCreature.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\CreatureManager.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\BaseCreatureState.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\BaseCreatureTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\CreatureTemplateManager.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\CreatureAI.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\Enum.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\Interface.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\Suit\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\GameCommand\GameCommandManager.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\GameCommand\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\GameCommand\GameCommandHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\GameCommand\GameCommandPrefix.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Guild\BaseGuild.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Guild\BaseGuildHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Guild\BaseGuildMember.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Guild\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Item\BaseItem.cs" />
+    <Compile Include="ServerEngine\Entity\Item\BaseItemContainer.cs" />
+    <Compile Include="ServerEngine\Entity\Item\BaseItemContainerState.cs" />
+    <Compile Include="ServerEngine\Entity\Item\ItemManager.cs" />
+    <Compile Include="ServerEngine\Entity\Item\BaseItemState.cs" />
+    <Compile Include="ServerEngine\Entity\Item\BaseItemTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\Item\ItemTemplateManager.cs" />
+    <Compile Include="ServerEngine\Entity\Item\Delegate.cs" />
+    <Compile Include="ServerEngine\Entity\Item\GoldItem.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageStringFromAssembly.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageStringFromFile.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Mail\BaseMailBox.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Mail\BaseMailHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Mail\BaseMailMessage.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Mail\Delegate.cs" />
+    <Compile Include="ServerEngine\Map\BaseMap.cs" />
+    <Compile Include="ServerEngine\Map\MapManager.cs" />
+    <Compile Include="ServerEngine\Map\Delegate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServerEngine\Map\Enum.cs" />
+    <Compile Include="ServerEngine\Map\Interface.cs" />
+    <Compile Include="ServerEngine\Map\MapSpaceNode.cs" />
+    <Compile Include="ServerEngine\Map\Struct.cs" />
+    <Compile Include="ServerEngine\Network\PacketHandler.cs" />
+    <Compile Include="ServerEngine\Network\BasePacketHandlers.cs" />
+    <Compile Include="ServerEngine\Network\BufferPool.cs" />
+    <Compile Include="ServerEngine\Util\ByteOrder.cs" />
+    <Compile Include="ServerEngine\Network\ClientSocketManager.cs" />
+    <Compile Include="ServerEngine\Network\Connecter.cs" />
+    <Compile Include="ServerEngine\Network\Delegate.cs" />
+    <Compile Include="ServerEngine\Network\Enum.cs" />
+    <Compile Include="ServerEngine\Network\Interface.cs" />
+    <Compile Include="ServerEngine\Network\Listener.cs" />
+    <Compile Include="ServerEngine\Network\MessagePump.cs" />
+    <Compile Include="ServerEngine\Network\NetState.cs" />
+    <Compile Include="ServerEngine\Network\NetStateManager.cs" />
+    <Compile Include="ServerEngine\Network\PacketProfile.cs" />
+    <Compile Include="ServerEngine\Network\PacketReader.cs" />
+    <Compile Include="ServerEngine\Network\Packets.cs" />
+    <Compile Include="ServerEngine\Network\PacketWriter.cs" />
+    <Compile Include="ServerEngine\Network\ReceiveQueue.cs" />
+    <Compile Include="ServerEngine\Network\SendQueue.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Quest\BaseQuest.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Quest\BaseQuestHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Quest\BaseQuestObjective.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Quest\BaseQuestObjectiveHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Quest\BaseQuestTemplate.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Quest\Struct.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Reputation\BaseReputation.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Reputation\BaseReputationHandler.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Reputation\Delegate.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\BigInteger.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\HashUtilities.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\SecureRemotePassword.cs" />
+    <Compile Include="ServerEngine\Server\OneServer.cs" />
+    <Compile Include="ServerEngine\Server\ConfigServer.cs" />
+    <Compile Include="ServerEngine\Server\Delegate.cs" />
+    <Compile Include="ServerEngine\Server\FileLogger.cs" />
+    <Compile Include="ServerEngine\Server\MultiTextWriter.cs" />
+    <Compile Include="ServerEngine\Common\Stream\Directory.cs" />
+    <Compile Include="ServerEngine\Common\Stream\DirectoryInfo.cs" />
+    <Compile Include="ServerEngine\Common\Stream\File.cs" />
+    <Compile Include="ServerEngine\Common\Stream\FileInfo.cs" />
+    <Compile Include="ServerEngine\Common\Stream\FileStream.cs" />
+    <Compile Include="ServerEngine\Common\Stream\StreamReader.cs" />
+    <Compile Include="ServerEngine\Common\Stream\StreamWriter.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Taxi\BaseTaxiNode.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Taxi\BaseTaxiPath.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Taxi\BaseTaxiPathManager.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Taxi\TaxiPathNode.cs" />
+    <Compile Include="ServerEngine\Timer\DelayCallTimer.cs" />
+    <Compile Include="ServerEngine\Timer\DelayStateCallTimer.cs" />
+    <Compile Include="ServerEngine\Timer\Delegate.cs" />
+    <Compile Include="ServerEngine\Timer\Enum.cs" />
+    <Compile Include="ServerEngine\Timer\TimerChangeEntry.cs" />
+    <Compile Include="ServerEngine\Timer\TimerProfile.cs" />
+    <Compile Include="ServerEngine\Timer\TimerThread.cs" />
+    <Compile Include="ServerEngine\Timer\TimeSlice.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Treasure\OneTreasure.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Treasure\GoldLoot.cs" />
+    <Compile Include="ServerEngine\Entity\Suit\Treasure\Loot.cs" />
+    <Compile Include="ServerEngine\Util\ConvertByteArray.cs" />
+    <Compile Include="ServerEngine\Util\ByteChange.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\Delegate.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\EventClass\AggressiveActionEventArgs.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\EventClass\CrashedEventArgs.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\EventClass\MoveToEventArgs.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\EventClass\MoveToWorldEventArgs.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\EventClass\ShutdownEventArgs.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\EventClass\SocketConnectEventArgs.cs" />
+    <Compile Include="ServerEngine\Common\EventSink\EventSink.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageString.cs" />
+    <Compile Include="ServerEngine\Util\RandomEx.cs" />
+    <Compile Include="ServerEngine\Util\ReaderWriterLockSlimEx.cs" />
+    <Compile Include="ServerEngine\Util\ConvertString.cs" />
+    <Compile Include="ServerEngine\Util\SpinLockEx.cs" />
+    <Compile Include="ServerEngine\Util\Struct.cs" />
+    <Compile Include="ServerEngine\Util\Utility.cs" />
+    <Compile Include="ServerEngine\World\BaseWorld.ComponentManager.cs" />
+    <Compile Include="ServerEngine\World\BaseWorld.cs" />
+    <Compile Include="ServerEngine\World\Common\Delegate.cs" />
+    <Compile Include="ServerEngine\World\Delegate.cs" />
+    <Compile Include="ServerEngine\World\Domain\ConfigDomain.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainOpCodeName.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainPackets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerAddCurrentZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerAddCurrentZoneCluster\HandlerAddCurrentZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerAddCurrentZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerLoginDomain\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerLoginDomain\HandlerLoginDomain.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerLoginDomain\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerPingDomain\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerPingDomain\HandlerPingDomain.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerPingDomain\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerRemoveCurrentZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerRemoveCurrentZoneCluster\HandlerRemoveCurrentZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\DomainToZoneCluster\HandlerRemoveCurrentZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\Enum.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\PacketHandlers.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerLoginZoneClusterResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerLoginZoneClusterResult\HandlerLoginZoneClusterResult.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerLoginZoneClusterResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerNotifyAddZoneClusterResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerNotifyAddZoneClusterResult\HandlerNotifyAddZoneClusterResult.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerNotifyAddZoneClusterResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerNotifyRemoveZoneClusterResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerNotifyRemoveZoneClusterResult\HandlerNotifyRemoveZoneClusterResult.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerNotifyRemoveZoneClusterResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerPongZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerPongZoneCluster\HandlerPongZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\Domain\PacketHandlers\ZoneClusterToDomain\HandlerPongZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\Domain\ZoneClusterHandler.cs" />
+    <Compile Include="ServerEngine\World\Interface.cs" />
+    <Compile Include="ServerEngine\World\Common\Struct.cs" />
+    <Compile Include="ServerEngine\World\Common\WorldId.cs" />
+    <Compile Include="ServerEngine\World\Common\WorldWaitExecute.cs" />
+    <Compile Include="ServerEngine\World\MmorpgWorld.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ConfigZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerDomainPingZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerDomainPingZoneCluster\HandlerDomainPingZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerDomainPingZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerLoginZoneClusterResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerLoginZoneClusterResult\HandlerLoginZoneResult.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerLoginZoneClusterResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerNotifyAddZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerNotifyAddZoneCluster\HandlerNotifyAddZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerNotifyAddZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerNotifyRemoveZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerNotifyRemoveZoneCluster\HandlerNotifyRemoveZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\DomainToZoneCluster\HandlerNotifyRemoveZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\Enum.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\PacketHandlers.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterOpCodeName.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterPackets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerAddCurrentZoneClusterResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerAddCurrentZoneClusterResult\HandlerAddCurrentZoneClusterResult.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerAddCurrentZoneClusterResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerLoginDomainResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerLoginDomainResult\HandlerLoginDomainResult.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerLoginDomainResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerPongDomain\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerPongDomain\HandlerPongDomain.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerPongDomain\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerRemoveCurrentZoneClusterResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerRemoveCurrentZoneClusterResult\HandlerRemoveCurrentZoneClusterResult.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToDomain\HandlerRemoveCurrentZoneClusterResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerLoginZoneResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerLoginZoneResult\HandlerLoginZoneResult.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerLoginZoneResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerNotifyAddZoneResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerNotifyAddZoneResult\HandlerNotifyAddZoneResult.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerNotifyAddZoneResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerNotifyRemoveZoneResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerNotifyRemoveZoneResult\HandlerNotifyRemoveZoneResult.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerNotifyRemoveZoneResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerPongZone\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerPongZone\HandlerPongZone.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneClusterToZone\HandlerPongZone\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerAddCurrentZone\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerAddCurrentZone\HandlerAddCurrentZone.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerAddCurrentZone\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerLoginZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerLoginZoneCluster\HandlerLoginZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerLoginZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerRemoveCurrentZone\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerRemoveCurrentZone\HandlerRemoveCurrentZone.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerRemoveCurrentZone\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerZonePingZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerZonePingZoneCluster\HandlerZonePingZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\PacketHandlers\ZoneToZoneCluster\HandlerZonePingZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneHandler.cs" />
+    <Compile Include="ServerEngine\World\Zone\ConfigZone.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\Enum.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\PacketHandlers.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerLoginZone\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerLoginZone\HandlerLoginZone.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerLoginZone\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerNotifyAddZone\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerNotifyAddZone\HandlerNotifyAddZone.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerNotifyAddZone\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerNotifyRemoveZone\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerNotifyRemoveZone\HandlerNotifyRemoveZone.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerNotifyRemoveZone\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerPingZone\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerPingZone\HandlerPongZone.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneClusterToZone\HandlerPingZone\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneOpCodeName.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZonePackets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerAddCurrentZoneResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerAddCurrentZoneResult\HandlerAddCurrentZoneResult.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerAddCurrentZoneResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerLoginZoneClusterResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerLoginZoneClusterResult\HandlerLoginZoneClusterResult.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerLoginZoneClusterResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerPongZoneCluster\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerPongZoneCluster\HandlerPongZoneResult.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerPongZoneCluster\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerRemoveCurrentZoneResult\ExtendData.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerRemoveCurrentZoneResult\HandlerRemoveCurrentZoneResult.cs" />
+    <Compile Include="ServerEngine\World\Zone\PacketHandlers\ZoneToZoneCluster\HandlerRemoveCurrentZoneResult\Packets.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone.cs" />
+    <Compile Include="Stream\FileArchive.cs" />
+    <Compile Include="Stream\FileVirtualStream.cs" />
+    <Compile Include="Stream\IStreamArchive.cs" />
+    <Compile Include="Stream\VirtualFileManager.cs" />
+    <Compile Include="Stream\VirtualStream.cs" />
+    <Compile Include="Xyz\Stream\XyzArchive.cs" />
+    <Compile Include="Xyz\Stream\XyzVirtualStreamReader.cs" />
+    <Compile Include="Xyz\Stream\XyzVirtualStreamWriter.cs" />
+    <Compile Include="Xyz\XyzCommentReader.cs" />
+    <Compile Include="Xyz\XyzCommentWriter.cs" />
+    <Compile Include="Xyz\XyzConstants.cs" />
+    <Compile Include="Xyz\XyzEntry.cs" />
+    <Compile Include="Xyz\XyzEntryReader.cs" />
+    <Compile Include="Xyz\XyzEntryWriter.cs" />
+    <Compile Include="Xyz\XyzFile.cs" />
+    <Compile Include="Xyz\XyzHeadReader.cs" />
+    <Compile Include="Xyz\XyzHeadWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ServerEngine\Entity\Suit\Ability\Ability.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Ability\Aura\Aura.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Ability\Skill\Spell.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Ability\Spell\Spell.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Ability\Talent\Talent.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Ability\TreeBuild\TreeBuild.txt" />
+    <Content Include="ServerEngine\ArtificialIntelligence\Agent\Agent.txt" />
+    <Content Include="ServerEngine\ArtificialIntelligence\FiniteStateMachine\FiniteStateMachine.txt" />
+    <Content Include="ServerEngine\ArtificialIntelligence\GeneticAlgorithm\GeneticAlgorithm.txt" />
+    <Content Include="ServerEngine\ArtificialIntelligence\Hybrid\Hybrid.txt" />
+    <Content Include="ServerEngine\ArtificialIntelligence\NeuralNet\NeuralNet.txt" />
+    <Content Include="ServerEngine\Scripts\BuildScripts.txt" />
+    <Content Include="ServerEngine\Entity\Character\Character.txt" />
+    <Content Include="ServerEngine\Common\Common.txt" />
+    <Content Include="ServerEngine\ArtificialIntelligence\AISystem\CreatureAI.txt" />
+    <Content Include="ServerEngine\Entity\Creature\Creature.txt" />
+    <Content Include="ServerEngine\Entity\Suit\GameCommand\GameCommand.txt" />
+    <Content Include="ServerEngine\Entity\GameObject\GameObject.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Guild\Guild.txt" />
+    <Content Include="ServerEngine\Entity\Item\Item.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Mail\Mail.txt" />
+    <Content Include="ServerEngine\Map\Map.txt" />
+    <Content Include="ServerEngine\Network\Network.txt" />
+    <Content Include="ServerEngine\ServerEngine.txt" />
+    <Content Include="ServerEngine\Server\Server.txt" />
+    <Content Include="ServerEngine\Common\Stream\Stream.txt" />
+    <Content Include="ServerEngine\Timer\Timer.txt" />
+    <Content Include="ServerEngine\Entity\Suit\Treasure\Treasure.txt" />
+    <Content Include="ServerEngine\Util\Util.txt" />
+    <Content Include="ServerEngine\World\World.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>: 以下的复制是归并NET的DLL(用于其它程序的调用)
+copy "$(TargetFileName)" "..\..\$(TargetFileName)"
+
+"..\..\PostBuildEvent.bat"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

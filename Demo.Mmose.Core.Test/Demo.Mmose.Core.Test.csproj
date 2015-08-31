@@ -1,0 +1,429 @@
+﻿<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26152E56-005A-4728-8520-8E7C8B5F90E9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Mmose.Core.Test</RootNamespace>
+    <AssemblyName>Demo.Mmose.Core.Test</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Demo.Mmose.Core.Test.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Only Misc Build Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Only Misc Build Release|AnyCPU' ">
+    <OutputPath>bin\Only Misc Build Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Threading, Version=1.0.3058.34407, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ServerEngine\Common\SafeCollections\MultiDictionaryTest.cs" />
+    <Compile Include="ServerEngine\Network\BasePacketHandlersTest.cs" />
+    <Compile Include="ServerEngine\Network\BufferPoolTest.cs" />
+    <Compile Include="ServerEngine\Network\IExtendDataTest.cs" />
+    <Compile Include="ServerEngine\Network\IPacketEncoderTest.cs" />
+    <Compile Include="ServerEngine\Network\MessagePumpTest.cs" />
+    <Compile Include="ServerEngine\Network\NetStateConnectEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\NetStateDisconnectEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\NetStateEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\NetStateInitEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\NetStateManagerTest.cs" />
+    <Compile Include="ServerEngine\Network\NetStateSendPacketEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\NetStateTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketBufferTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketHandlerTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketHeadInfoEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketIdInfoEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketLengthInfoEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketProfileTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketReaderTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketTest.cs" />
+    <Compile Include="ServerEngine\Network\PacketWriterTest.cs" />
+    <Compile Include="ServerEngine\Network\ReceiveQueueTest.cs" />
+    <Compile Include="ServerEngine\Network\SendBufferTest.cs" />
+    <Compile Include="ServerEngine\Network\SendQueueTest.cs" />
+    <Compile Include="ServerEngine\Entity\AddedChildItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\AddedSubItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\AddingChildItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\AddingSubItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\AfterUpdatedEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\BaseItemContainerStateTest.cs" />
+    <Compile Include="ServerEngine\Entity\BaseItemContainerTest.cs" />
+    <Compile Include="ServerEngine\Entity\BaseItemEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\BaseItemStateTest.cs" />
+    <Compile Include="ServerEngine\Entity\BaseItemTemplateTest.cs" />
+    <Compile Include="ServerEngine\Entity\BaseItemTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\GoldItemTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\ItemContainerEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\ItemManagerTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\ItemTemplateManagerTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\RemovedChildItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\RemovedSubItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\RemovingChildItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\RemovingSubItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\BaseGameObjectEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\BaseGameObjectStateTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\BaseGameObjectTemplateTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\BaseGameObjectTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\GameObjectManagerTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\GameObjectTemplateManagerTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\AddedFriendCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\AddedGroupCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\AddedItemCallEventArgsTest.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ServerEngine\Entity\Creature\AddedPartyCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\AddingFriendCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\AddingGroupCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\AddingItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\AddingPartyCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\BaseCreatureEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\BaseCreatureStateTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\BaseCreatureTemplateTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\BaseCreatureTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\CreatureAITest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\CreatureManagerTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\CreatureTemplateManagerTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\DiedCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\DieingCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\LivedCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\LivingCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovedFriendCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovedGroupCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovedItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovedPartyCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovingFriendCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovingGroupCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovingItemCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\RemovingPartyCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\BaseCharacterEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\BaseCharacterStateTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\BaseCharacterTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\CharacterManagerTest.cs" />
+    <Compile Include="ServerEngine\Entity\MovedToCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\MovedToWorldEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\MovingToCallEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\MovingToWorldEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\ProcessSliceEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedAIEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedLocationEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedMapSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedOrientationEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedSerialEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedXEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedYEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatedZEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingAIEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingLocationEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingMapSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingOrientationEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingSerialEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingXEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingYEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\UpdatingZEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\VisibleRangeTest.cs" />
+    <Compile Include="ServerEngine\Entity\WorldEntityEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\WorldEntityStateTest.cs" />
+    <Compile Include="ServerEngine\Entity\WorldEntityTest.cs" />
+    <Compile Include="ServerEngine\Map\ActivateSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\BaseMapStateTest.cs" />
+    <Compile Include="ServerEngine\Map\BaseMapTest.cs" />
+    <Compile Include="ServerEngine\Map\CanSpawnEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterEnteredMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterEnteringMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterEnterSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterLeavedMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterLeaveSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterLeavingMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterMovedInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CharacterMovingInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreaturedMoveInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreatureEnteredMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreatureEnteringMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreatureEnterSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreatureLeavedMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreatureLeaveSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreatureLeavingMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreatureMovingInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\CreaturesInRangeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\DeactivateSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\GetGetSpaceNodesInRangeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\GetSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\IPartitionSpaceNodeTest.cs" />
+    <Compile Include="ServerEngine\Map\IPartitionSpaceTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemEnteredMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemEnteringMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemEnterSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemLeavedMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemLeaveSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemLeavingMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemMovedInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ItemMovingInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\MapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\MapManagerTest.cs" />
+    <Compile Include="ServerEngine\Map\MapSpaceNodeStateTest.cs" />
+    <Compile Include="ServerEngine\Map\MapSpaceNodeTest.cs" />
+    <Compile Include="ServerEngine\Map\NullEnumerableTest.cs" />
+    <Compile Include="ServerEngine\Map\PartitionSpaceEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\PartitionSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\PlayersInRangeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ProcessSliceEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\RankIndexTest.cs" />
+    <Compile Include="ServerEngine\Map\RegionRectTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\ListenerExtendDataTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\LoginZoneClusterResultTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\LoginZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\DomainOpCodeNameTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\DomainPacketHandlersTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\DomainTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_AddCurrentZoneClusterResultTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_ConnecterExtendDataTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_ListenerExtendDataTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_LoginDomainResultTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_LoginZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_NotifyAddZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_NotifyRemoveZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_PingZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_PongDomainTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\Domain_RemoveCurrentZoneClusterResultTest.cs" />
+    <Compile Include="ServerEngine\World\BaseWorldEventArgsTest.cs" />
+    <Compile Include="ServerEngine\World\BaseWorldTest.cs" />
+    <Compile Include="ServerEngine\World\BroadcastEventArgsTest.cs" />
+    <Compile Include="ServerEngine\World\IWaitExecuteInfoTest.cs" />
+    <Compile Include="ServerEngine\World\MmorpgWorldTest.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageExceptionStringTest.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageStringFromAssemblyTest.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageStringFromFileTest.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageStringFromFile_SetStringHandlerTest.cs" />
+    <Compile Include="ServerEngine\Server\Language\LanguageStringTest.cs" />
+    <Compile Include="ServerEngine\Server\CommandLineDisposalEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Server\ConfigServerTest.cs" />
+    <Compile Include="ServerEngine\Server\FileLoggerTest.cs" />
+    <Compile Include="ServerEngine\Server\MultiTextWriterTest.cs" />
+    <Compile Include="ServerEngine\Server\OneServerTest.cs" />
+    <Compile Include="ServerEngine\Common\CommandPropertyAttributeTest.cs" />
+    <Compile Include="ServerEngine\Common\ConsoleProgressBarTest.cs" />
+    <Compile Include="ServerEngine\Common\ExclusiveSerialTest.cs" />
+    <Compile Include="ServerEngine\Common\LOGsTest.cs" />
+    <Compile Include="ServerEngine\Common\MultiThreadedNoSupportAttributeTest.cs" />
+    <Compile Include="ServerEngine\Common\MultiThreadedSupportAttributeTest.cs" />
+    <Compile Include="ServerEngine\Common\MultiThreadedWarningAttributeTest.cs" />
+    <Compile Include="ServerEngine\Common\Point2DTest.cs" />
+    <Compile Include="ServerEngine\Common\Point3DTest.cs" />
+    <Compile Include="ServerEngine\Common\Point4DTest.cs" />
+    <Compile Include="ServerEngine\Common\Rectangle2DTest.cs" />
+    <Compile Include="ServerEngine\Common\Rectangle3DTest.cs" />
+    <Compile Include="ServerEngine\Common\RegionTest.cs" />
+    <Compile Include="ServerEngine\Common\ResultTest.cs" />
+    <Compile Include="ServerEngine\Common\SerialTest.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\BigIntegerTest.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\HashUtilitiesTest.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\HashUtilities_HashDataBrokerTest.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\SecureRemotePasswordTest.cs" />
+    <Compile Include="ServerEngine\Common\SecureRemotePassword\SecureRemotePassword_SRPParametersTest.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeDictionaryTest.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeHashSetTest.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeListTest.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeList_ListPredicateTest.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeMultiDictionaryTest.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeQueueTest.cs" />
+    <Compile Include="ServerEngine\Common\SafeCollections\SafeStackTest.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeDictionaryTest.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeHashSetTest.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeMultiDictionaryTest.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeQueueTest.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeQueue_NodeTest.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeStackTest.cs" />
+    <Compile Include="ServerEngine\Common\LockFree\LockFreeStack_NodeTest.cs" />
+    <Compile Include="ServerEngine\Common\SupportSlice\ISupportSliceTest.cs" />
+    <Compile Include="ServerEngine\Common\SupportSlice\IUpdateSliceTest.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentIdTest.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentManagerTest.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentMessageEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Common\Component\ComponentMessageTest.cs" />
+    <Compile Include="ServerEngine\Common\Component\IComponentManagerTest.cs" />
+    <Compile Include="ServerEngine\Common\Component\IComponentTest.cs" />
+    <Compile Include="ServerEngine\Scripts\CallPriorityAttributeTest.cs" />
+    <Compile Include="ServerEngine\Scripts\CallPriorityComparerTest.cs" />
+    <Compile Include="ServerEngine\Scripts\ScriptAssemblyInfoTest.cs" />
+    <Compile Include="ServerEngine\Scripts\ScriptCompilerTest.cs" />
+    <Compile Include="ServerEngine\Timer\DelayCallTimerTest.cs" />
+    <Compile Include="ServerEngine\Timer\DelayStateCallTimerTest.cs" />
+    <Compile Include="ServerEngine\Util\DynamicCallsTest.cs" />
+    <Compile Include="ServerEngine\Util\InsensitiveTest.cs" />
+    <Compile Include="ServerEngine\Util\RandomExTest.cs" />
+    <Compile Include="ServerEngine\Util\ConvertStringTest.cs" />
+    <Compile Include="ServerEngine\Util\ByteOrderTest.cs" />
+    <Compile Include="ServerEngine\Util\ByteChangeTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerEngine\Timer\TimerChangeEntryTest.cs" />
+    <Compile Include="ServerEngine\Timer\TimerProfileTest.cs" />
+    <Compile Include="ServerEngine\Timer\TimerThreadTest.cs" />
+    <Compile Include="ServerEngine\Timer\TimeSliceTest.cs" />
+    <Compile Include="ServerEngine\Scripts\TypeAliasAttributeTest.cs" />
+    <Compile Include="ServerEngine\Scripts\TypeCacheTest.cs" />
+    <Compile Include="ServerEngine\Scripts\TypeTableTest.cs" />
+    <Compile Include="ServerEngine\Common\SupportSlice\SliceSupportTest.cs" />
+    <Compile Include="ServerEngine\Common\SupportSlice\SliceUpdateTest.cs" />
+    <Compile Include="ServerEngine\Common\StringCryptoTest.cs" />
+    <Compile Include="ServerEngine\Common\VersionInfoTest.cs" />
+    <Compile Include="ServerEngine\World\WaitExecuteInfoTest.cs" />
+    <Compile Include="ServerEngine\World\WorldIdTest.cs" />
+    <Compile Include="ServerEngine\World\WorldWaitExecuteTest.cs" />
+    <Compile Include="ServerEngine\World\Domain\ZoneClusterHandlerTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\ZoneOpCodeNameTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\ZonePacketHandlersTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\ZoneTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_AddCurrentZoneTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_ConnecterExtendDataTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_ListenerExtendDataTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_LoginZoneClusterResultTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_LoginZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_LoginZoneResultTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_NotifyAddZoneResultTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_NotifyRemoveZoneResultTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_PingZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\Zone\Zone_RemoveCurrentZoneTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneClusterOpCodeNameTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneClusterPacketHandlersTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_AddZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_AddZoneResultTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_ChannelTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_ConnecterExtendDataTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_ListenerExtendDataTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_LoginDomainTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_LoginZoneClusterResultTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_LoginZoneTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_NotifyAddZoneClusterResultTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_NotifyAddZoneTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_NotifyRemoveZoneClusterResultTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_NotifyRemoveZoneTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_PingDomainTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_PingZoneTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_RemoveZoneClusterTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_RemoveZoneResultTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneCluster_ZoneIDTest.cs" />
+    <Compile Include="ServerEngine\World\ZoneCluster\ZoneHandlerTest.cs" />
+    <Compile Include="ServerEngine\Map\SpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\TileTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityEnteredMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityEnteringMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityEnterSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityLeavedMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityLeaveSpaceNodeEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityLeavingMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityMovedInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\WorldEntityMovingInMapEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Map\ZComparerTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\UpdatedAccessLevelEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\UpdatedNetStateEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\UpdatingAccessLevelEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Character\UpdatingNetStateEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatedCreatureTemplateEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatedGoldLootsEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatedLootsEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatedNameEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatingCreatureTemplateEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatingGoldLootsEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatingLootsEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Creature\UpdatingNameEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\UpdatedNameEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\GameObject\UpdatingNameEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\UpdatedItemTemplateEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\UpdatedOwnerEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\UpdatedParentEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\UpdatingItemTemplateEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\UpdatingNameEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\UpdatingOwnerEventArgsTest.cs" />
+    <Compile Include="ServerEngine\Entity\Item\UpdatingParentEventArgsTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AuthoringTests.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Demo.Mmose.Core\Demo.Mmose.Core.csproj">
+      <Project>{18C925D1-4184-46C2-ACD7-32AC0763D897}</Project>
+      <Name>Demo.Mmose.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Demo.Mmose.Core.Test.snk" />
+    <Shadow Include="TestReference\Demo.Mmose.Core.accessor" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ServerEngine\Common\Stream\" />
+    <Folder Include="ServerEngine\Entity\Suit\" />
+    <Folder Include="ServerEngine\World\Common\" />
+    <Folder Include="ServerEngine\World\Domain\PacketHandlers\" />
+    <Folder Include="ServerEngine\World\ZoneCluster\PacketHandlers\" />
+    <Folder Include="ServerEngine\World\Zone\PacketHandlers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

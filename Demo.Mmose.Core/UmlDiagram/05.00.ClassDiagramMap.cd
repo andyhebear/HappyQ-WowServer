@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Map.BaseMap">
+    <Position X="0.5" Y="0.75" Width="2.5" />
+    <Members>
+      <Field Name="EventGetSpaceNode" Hidden="true" />
+      <Field Name="EventGetSpaceNodesInRange" Hidden="true" />
+      <Field Name="EventInitMap" Hidden="true" />
+      <Field Name="EventPartitionSpace" Hidden="true" />
+      <Field Name="LIST_CAPACITY_SMALL_SIZE" Hidden="true" />
+      <Field Name="m_EventCanSpawn" Hidden="true" />
+      <Field Name="m_EventSlice" Hidden="true" />
+      <Field Name="m_LockEventCanSpawn" Hidden="true" />
+      <Field Name="m_LockEventSlice" Hidden="true" />
+      <Field Name="m_MapId" Hidden="true" />
+      <Field Name="m_MapName" Hidden="true" />
+      <Field Name="m_MapRectangle" Hidden="true" />
+      <Field Name="m_SliceSupport" Hidden="true" />
+      <Field Name="m_SpaceNodes" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Method Name="OnEnter" Hidden="true" />
+      <Method Name="OnLeave" Hidden="true" />
+      <Method Name="OnMove" Hidden="true" />
+      <Field Name="s_NullSpaceNodeArray" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AASAACqAgJECSARkIIAEJBIEgLABAIECUIsACBDoEkI=</HashCode>
+      <FileName>ServerEngine\Map\BaseMap.ComponentManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Map.MapSpaceNode">
+    <Position X="3.25" Y="0.75" Width="3" />
+    <Members>
+      <Field Name="DICTIONARY_CAPACITY_SIZE" Hidden="true" />
+      <Field Name="EventActivateSpaceNode" Hidden="true" />
+      <Field Name="EventDeactivateSpaceNode" Hidden="true" />
+      <Field Name="EventInitSpaceNode" Hidden="true" />
+      <Field Name="EventPartitionSpaceNode" Hidden="true" />
+      <Field Name="m_Creatures" Hidden="true" />
+      <Field Name="m_Entitys" Hidden="true" />
+      <Field Name="m_IsLeaf" Hidden="true" />
+      <Field Name="m_Items" Hidden="true" />
+      <Field Name="m_LayerIndex" Hidden="true" />
+      <Field Name="m_LockSpaceNodeState" Hidden="true" />
+      <Field Name="m_Owner" Hidden="true" />
+      <Field Name="m_ParentSpaceNode" Hidden="true" />
+      <Field Name="m_Players" Hidden="true" />
+      <Field Name="m_RankIndex" Hidden="true" />
+      <Field Name="m_SpaceNodeRectangle" Hidden="true" />
+      <Field Name="m_SpaceNodes" Hidden="true" />
+      <Field Name="m_SpaceNodeState" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>EASAAACAyAEJAEgQIAMMdBAgAAAAEHUAkIACBBChgFg=</HashCode>
+      <FileName>ServerEngine\Map\MapSpaceNode.ComponentManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Map.Suit.PartitionSpaceStrategy">
+    <Position X="6.5" Y="0.75" Width="2.5" />
+    <Members>
+      <Method Name="ActivateNearSpaceNode" Hidden="true" />
+      <Method Name="ActivateSelfSpaceNode" Hidden="true" />
+      <Method Name="ActivateSpaceNodeNow" Hidden="true" />
+      <Field Name="CENTER_GRID_CELL_ID" Hidden="true" />
+      <Field Name="CENTER_GRID_CELL_OFFSET" Hidden="true" />
+      <Field Name="CENTER_GRID_ID" Hidden="true" />
+      <Field Name="CENTER_GRID_OFFSET" Hidden="true" />
+      <Method Name="CheckDeactivateSpaceNode" Hidden="true" />
+      <Method Name="DeactivateSelfSpaceNode" Hidden="true" />
+      <Method Name="DeactivateSpaceNodeNow" Hidden="true" />
+      <Method Name="DeadSelfSpaceNode" Hidden="true" />
+      <Field Name="DICTIONARY_CAPACITY_SIZE" Hidden="true" />
+      <Method Name="GetSubSpaceNode" Hidden="true" />
+      <Method Name="IsDeadOrDeactivate" Hidden="true" />
+      <Field Name="LIST_CAPACITY_SIZE" Hidden="true" />
+      <Field Name="m_ActivateSpaceNodes" Hidden="true" />
+      <Field Name="m_CheckDeactivateSlice" Hidden="true" />
+      <Field Name="m_CheckDeactivateTimeSpan" Hidden="true" />
+      <Field Name="m_DeactivateSpaceNodes" Hidden="true" />
+      <Field Name="m_DeadSpaceNodes" Hidden="true" />
+      <Field Name="m_LockAllSpaceNodes" Hidden="true" />
+      <Field Name="MAP_HALFSIZE" Hidden="true" />
+      <Field Name="MAP_RESOLUTION" Hidden="true" />
+      <Field Name="MAP_SIZE" Hidden="true" />
+      <Field Name="MAX_NUMBER_OF_CELLS" Hidden="true" />
+      <Field Name="MAX_NUMBER_OF_GRIDS" Hidden="true" />
+      <Field Name="MIN_GRID_DELAY" Hidden="true" />
+      <Field Name="SIZE_OF_GRID_CELL" Hidden="true" />
+      <Field Name="SIZE_OF_GRIDS" Hidden="true" />
+      <Field Name="TOTAL_NUMBER_OF_CELLS_PER_MAP" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BCAgQIIhiAREIAAAEABIIACQAgBHAEACAIKABgBAHAo=</HashCode>
+      <FileName>ServerEngine\Map\Suit\PartitionSpaceStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

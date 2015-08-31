@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.BaseAbility">
+    <Position X="9" Y="7.25" Width="2" />
+    <Members>
+      <Field Name="m_Level" Hidden="true" />
+      <Field Name="m_Owner" Hidden="true" />
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAABABAAABAAAAAAiAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\BaseAbility.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Aura.BaseAura">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="m_BaseAuraTemplate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Aura\BaseAura.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="AuraTemplate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Aura.BaseAuraHandler&lt;T&gt;">
+    <Position X="17.25" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="m_Auras" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterAddAuraCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveAuraCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddAuraCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveAuraCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddAuraCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveAuraCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddAuraCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveAuraCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAEgAYAAAAAAAAgCEEAAEAQAQABACAAAIAAIAABAAAI=</HashCode>
+      <FileName>ServerEngine\Ability\Aura\BaseAuraHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Aura.BaseAuraTemplate">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Aura\BaseAuraTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Aura.BaseAuraTemplateHandler&lt;T&gt;">
+    <Position X="20.25" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="m_AuraTemplates" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gCAAABAAAIAAAAAAAAAAAAQAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Aura\BaseAuraTemplateHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Skill.BaseSkill">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Members>
+      <Field Name="m_BaseSkillTemplate" Hidden="true" />
+      <Field Name="m_MaxLevel" Hidden="true" />
+      <Field Name="m_MinLevel" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAQAAAAAAAAEAAAAAAAAAAAAEAABAAAAEA=</HashCode>
+      <FileName>ServerEngine\Ability\Skill\BaseSkill.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SkillTemplate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Spell.BaseSpell">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <Members>
+      <Field Name="m_BaseSpellTemplate" Hidden="true" />
+      <Field Name="m_CastingTime" Hidden="true" />
+      <Field Name="m_CoolDownTime" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAAQAACAAACAAAAAIAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Spell\BaseSpell.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="SpellTemplate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Talent.BaseTalent">
+    <Position X="12" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="m_BaseTalentTemplate" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAABAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Talent\BaseTalent.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="TalentTemplate" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Skill.BaseSkillTemplate">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Skill\BaseSkillTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Spell.BaseSpellTemplate">
+    <Position X="9.25" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Spell\BaseSpellTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Talent.BaseTalentTemplate">
+    <Position X="15" Y="4.75" Width="1.5" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Talent\BaseTalentTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Skill.BaseSkillHandler&lt;T&gt;">
+    <Position X="0.5" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="m_LockThreadEventAfterAddSkillCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveSkillCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddSkillCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveSkillCall" Hidden="true" />
+      <Field Name="m_Skills" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddSkillCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveSkillCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddSkillCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveSkillCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ggAAAQCCQgAAAAgAEAQAAAUSABAAAAAgAEAAAABAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Skill\BaseSkillHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Skill.BaseSkillTemplateHandler&lt;T&gt;">
+    <Position X="3.25" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="m_SkillTemplates" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAgAAAAQAAAAAAAAAEAEAAABAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Skill\BaseSkillTemplateHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Spell.BaseSpellHandler&lt;T&gt;">
+    <Position X="6" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="m_LockThreadEventAfterAddSpellCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveSpellCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddSpellCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveSpellCall" Hidden="true" />
+      <Field Name="m_Spells" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddSpellCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveSpellCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddSpellCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveSpellCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAEAESAAIQIAAAAAAAACEAQAAAAAUAAIAAAkAABAAAQ=</HashCode>
+      <FileName>ServerEngine\Ability\Spell\BaseSpellHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Spell.BaseSpellTemplateHandler&lt;T&gt;">
+    <Position X="8.75" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="m_SpellTemplates" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAEAAAAgAAAgAAAAQAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Spell\BaseSpellTemplateHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Talent.BaseTalentHandler&lt;T&gt;">
+    <Position X="11.25" Y="1.25" Width="3" />
+    <Members>
+      <Field Name="m_LockThreadEventAfterAddTalentCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveTalentCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddTalentCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveTalentCall" Hidden="true" />
+      <Field Name="m_Talents" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddTalentCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveTalentCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddTalentCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveTalentCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABAAgAAIBBAAgAAQCAAQgAAAAIAAAkABACIA=</HashCode>
+      <FileName>ServerEngine\Ability\Talent\BaseTalentHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Ability.Talent.BaseTalentTemplateHandler&lt;T&gt;">
+    <Position X="14.5" Y="1.25" Width="2.25" />
+    <Members>
+      <Field Name="m_TalentTemplates" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BEAAAAAAABAAAAIAAAAAAAQAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ServerEngine\Ability\Talent\BaseTalentTemplateHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

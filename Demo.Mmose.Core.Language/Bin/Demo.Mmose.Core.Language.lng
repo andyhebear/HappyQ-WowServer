@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<Mmose.Language Author="H.Q.Cai" Version="0.0.1.0" Language="zh-CN">
+
+  <!--BaseWorld Start-->
+  <String Name="BaseWorldString001" Value="游戏世界: 开始保存游戏世界数据中......"/>
+  <String Name="BaseWorldString002" Value="游戏世界: 游戏世界数据保存调用完毕."/>
+  <String Name="BaseWorldString003" Value="游戏世界: 游戏世界数据正在保存中,请稍候再试......"/>
+  <!--BaseWorld End-->
+
+  <!--OneServer Start-->
+  <String Name="OneServerString001" Value="核心 主线程"/>
+  <String Name="OneServerString002" Value="当前有程序已经运行,等待程序结束......"/>
+  <String Name="OneServerString003" Value="Mmose 版本 {0}.{1}, 生成 {2}.{3} (c) DemoSoft Team"/>
+  <String Name="OneServerString004" Value="核心: 运行的.NET框架版本 {0}.{1}.{2}"/>
+  <String Name="OneServerString005" Value="核心: 运行的参数: {0}"/>
+  <String Name="OneServerString006" Value="核心: 处理器{0}个-优化在&lt;{1}>"/>
+  <String Name="OneServerString007" Value="脚本: 一个或多个脚本编译失败 或者 没有找到脚本文件"/>
+  <String Name="OneServerString008" Value="脚本: - 按下任意键退出或按下( R )键再次尝试"/>
+  <String Name="OneServerString009" Value="命令({0}) : Restart - 重启程序"/>
+  <String Name="OneServerString010" Value="命令({0}) : Closelog - 日志服务功能 没有开启"/>
+  <String Name="OneServerString011" Value="命令({0}) : Closelog - 关闭日志"/>
+  <String Name="OneServerString012" Value="命令({0}) : Closelog - 日志已是关闭状态"/>
+  <String Name="OneServerString013" Value="命令({0}) : Closelog - 日志服务功能 没有开启"/>
+  <String Name="OneServerString014" Value="命令({0}) : OpenLog - 开启日志"/>
+  <String Name="OneServerString015" Value="命令({0}) : OpenLog - 日志已是开启状态"/>
+  <String Name="OneServerString016" Value="命令({0}) : TimeInfo - 显示时间片信息"/>
+  <String Name="OneServerString017" Value="命令({0}) : SaveWorld - 保存游戏世界数据"/>
+  <String Name="OneServerString018" Value="命令({0}) : Help - 命令帮助"/>
+  <String Name="OneServerString019" Value="命令帮助 : OpenLog - 开启日志"/>
+  <String Name="OneServerString020" Value="命令帮助 : Closelog - 关闭日志"/>
+  <String Name="OneServerString021" Value="命令帮助 : Restart - 重启程序"/>
+  <String Name="OneServerString022" Value="命令帮助 : TimeInfo - 显示时间片信息"/>
+  <String Name="OneServerString023" Value="命令帮助 : SaveWorld - 保存游戏世界数据"/>
+  <String Name="OneServerString024" Value="命令帮助 : Quit - 退出程序"/>
+  <String Name="OneServerString025" Value="命令帮助 : Exit - 退出程序"/>
+  <String Name="OneServerString026" Value="命令({0}) : Quit - 退出程序"/>
+  <String Name="OneServerString027" Value="命令({0}) : Exit - 退出程序"/>
+  <String Name="OneServerString028" Value="命令({0}) : 未知的无效命令"/>
+  <String Name="OneServerString029" Value="注册线程: 注册入服务的线程全部退出完毕!"/>
+  <String Name="OneServerString030" Value=">>>致命错误&lt;&lt;&lt; :"/>
+  <String Name="OneServerString031" Value=">>>致命警告&lt;&lt;&lt; :"/>
+  <String Name="OneServerString032" Value="致命的异常错误, 按任意键退出!"/>
+  <String Name="OneServerString033" Value="核心: 主服务程序退出中..."/>
+  <String Name="OneServerString034" Value="核心: 主服务程序退出完成."/>
+  <!--OneServer End-->
+
+  <!--Zone Start-->
+  <String Name="ZoneString001" Value="Zone： 没有有效初始化!"/>
+  <String Name="ZoneString002" Value="Zone： 监听端口 {0} 失败!"/>
+  <String Name="ZoneString003" Value="Zone： 监听IP地址与端口 {0} 失败!"/>
+  <String Name="ZoneString004" Value="Zone： 连接ZoneCluster服务端({0}) 错误!"/>
+  <String Name="ZoneString005" Value="Zone： 无法登陆ZoneCluster服务器 错误！"/>
+  <!--Zone End-->
+
+  <!--ZoneCluster Start-->
+  <String Name="ZoneClusterString001" Value="ZoneCluster： 没有有效初始化!"/>
+  <String Name="ZoneClusterString002" Value="ZoneCluster： 监听端口 {0} 失败!"/>
+  <String Name="ZoneClusterString003" Value="ZoneCluster： 监听IP地址与端口 {0} 失败!"/>
+  <String Name="ZoneClusterString004" Value="ZoneCluster： 连接Domain服务端({0}) 错误!"/>
+  <!--ZoneCluster End-->
+
+  <!--Domain Start-->
+  <String Name="DomainString001" Value="Domain： 没有有效初始化!"/>
+  <String Name="DomainString002" Value="Domain： 监听端口 {0} 失败!"/>
+  <String Name="DomainString003" Value="Domain： 监听IP地址与端口 {0} 失败!"/>
+  <!--Domain End-->
+
+  <!--ScriptCompiler Start-->
+  <String Name="ScriptCompilerString001" Value="脚本编译信息文件 {0} 没有找到"/>
+  <String Name="ScriptCompilerString002" Value="脚本编译信息文件 {0} 读取错误"/>
+  <String Name="ScriptCompilerString003" Value="脚本编译信息文件 {0} 无法找到需要的XML信息"/>
+  <String Name="ScriptCompilerString004" Value="脚本编译信息文件 {0} 无法找到需要的XML信息"/>
+  <String Name="ScriptCompilerString005" Value="脚本编译信息文件 {0} 无法找到需要的XML信息"/>
+  <String Name="ScriptCompilerString006" Value="脚本: 开始编译 C# 脚本..."/>
+  <String Name="ScriptCompilerString007" Value="脚本: 完成 C# (读取无任何改变的缓存文件)"/>
+  <String Name="ScriptCompilerString008" Value="脚本: 没有找到 C# 的脚本文件!"/>
+  <String Name="ScriptCompilerString009" Value="脚本: 完成 C# (读取无任何改变的缓存文件)"/>
+  <String Name="ScriptCompilerString010" Value="脚本: 开始编译 VB.NET 脚本..."/>
+  <String Name="ScriptCompilerString011" Value="脚本: 完成 VB.NET (读取无任何改变的缓存文件)"/>
+  <String Name="ScriptCompilerString012" Value="脚本: 没有找到 VB.NET 的脚本文件!"/>
+  <String Name="ScriptCompilerString013" Value="脚本: 完成 VB.NET (读取无任何改变的缓存文件)"/>
+  <String Name="ScriptCompilerString014" Value="脚本: 失败 ({0} 错误, {1} 警告)"/>
+  <String Name="ScriptCompilerString015" Value="脚本: 完成 ({0} 错误, {1} 警告)"/>
+  <String Name="ScriptCompilerString016" Value="警告: "/>
+  <String Name="ScriptCompilerString017" Value="    {0}: 行 {1}: {3}"/>
+  <String Name="ScriptCompilerString018" Value="错误: "/>
+  <String Name="ScriptCompilerString019" Value="    {0}: ( 行 {1} 列 {2} ) {3}"/>
+  <String Name="ScriptCompilerString020" Value="脚本: 完成 (0 错误, 0 警告)"/>
+  <!--ScriptCompiler End-->
+
+  <!--Listener Start-->
+  <String Name="ListenerString001" Value="新监听： 端口 {0} "/>
+  <String Name="ListenerString002" Value="新监听： 地址 {0} "/>
+  <String Name="ListenerString003" Value="新连接: {0}  [在线连接数 {1}] [总连接数 {2}]"/>
+  <String Name="ListenerString004" Value="新连接: {0} 无法通过验证被断开! [在线连接数 {1}] [总连接数 {2}]"/>
+  <!--Listener End-->
+
+  <!--Connecter Start-->
+  <String Name="ConnecterString001" Value="新连出: {0} "/>
+  <!--Connecter End-->
+
+  <!--NetState Start-->
+  <String Name="NetStateString001" Value="连接检查: {0}已不再活动,断开客户..."/>
+  <String Name="NetStateString002" Value="断开连接: {0} 已经断开连接"/>
+  <!--NetState End-->
+
+  <!--PacketReader Start-->
+  <String Name="PacketReaderString001" Value="客户端:  {0}  未经处理过的信息包 长度 = 0x{1:X4}  ID = 0x{2:X4}"/>
+  <String Name="PacketReaderString002" Value="--------------------------------------------------------------------------"/>
+  <!--PacketReader End-->
+
+  <!--FileLogger Start-->
+  <String Name="FileLoggerString001" Value=">>>日志开始于 {0}"/>
+  <!--FileLogger End-->
+
+  <!--MultiTextWriter Start-->
+  <String Name="MultiTextWriterString001" Value="你须至少指定一个控制台调试输出信息的数据输出流"/>
+  <!--MultiTextWriter End-->
+
+  <!--CallbackThreadPool Start-->
+  <String Name="CallbackThreadPoolString001" Value="游戏世界 线程(IOCP)-"/>
+  <!--CallbackThreadPool End-->
+
+  <!--TimerThread Start-->
+  <String Name="TimerThreadString001" Value="主时间片 线程"/>
+  <String Name="TimerThreadString002" Value="时间片优先级: {0}"/>
+  <String Name="TimerThreadString003" Value=">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"/>
+  <String Name="TimerThreadString004" Value="类型: {0}; 数量: {1}; 百分比: {2}%"/>
+  <String Name="TimerThreadString005" Value="-------------------------------"/>
+  <String Name="TimerThreadString006" Value=">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"/>
+  <String Name="TimerThreadString007" Value="时间片: 处理时间片的主线程已启动!"/>
+  <!--TimerThread End-->
+
+  <!--BaseItem Start-->
+  <String Name="BaseItemString001" Value="invalid"/>
+  <String Name="BaseItemString002" Value="invalid"/>
+  <!--BaseItem End-->
+
+  <!--BaseCreatureString001 Start-->
+  <String Name="BaseCreatureString001" Value="invalid"/>
+  <String Name="BaseCreatureString002" Value="invalid"/>
+  <!--BaseCreatureString001 End-->
+
+</Mmose.Language>

@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Guild.BaseGuildHandler&lt;T, V&gt;">
+    <Position X="0.75" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="m_Guilds" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterAddGuildCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveGuildCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddGuildCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveGuildCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddGuildCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveGuildCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddGuildCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveGuildCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAQABAAEAAAAwICAARECAAQAQAAAAAAAAJIAAI=</HashCode>
+      <FileName>ServerEngine\Guild\BaseGuildHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Guild.BaseGuild&lt;T&gt;">
+    <Position X="0.5" Y="3.5" Width="2.75" />
+    <Members>
+      <Field Name="m_GuildMembers" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterAddGuildMemberCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveGuildMemberCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddGuildMemberCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveGuildMemberCall" Hidden="true" />
+      <Field Name="m_Serial" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddGuildMemberCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveGuildMemberCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddGuildMemberCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveGuildMemberCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>ARAgIAAAAAEgAAAgBAEAAAAAADABgACAQAgAAABACAA=</HashCode>
+      <FileName>ServerEngine\Guild\BaseGuild.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Guild.BaseGuildMember">
+    <Position X="3.5" Y="4.25" Width="1.5" />
+    <Members>
+      <Field Name="m_Owner" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>ServerEngine\Guild\BaseGuildMember.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

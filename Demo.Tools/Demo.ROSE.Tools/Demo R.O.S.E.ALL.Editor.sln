@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo G.O.S.E.VFS.Editor", "Demo G.O.S.E.VFS.Editor\Demo G.O.S.E.VFS.Editor.csproj", "{D1D6BF2F-E923-4F4E-B51E-CD66B60937A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo R.O.S.E.LTB.Editor", "Demo R.O.S.E.LTB.Editor\Demo R.O.S.E.LTB.Editor.csproj", "{98522A37-9E5D-47E8-9AB4-5D981F899FFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo R.O.S.E.STB.Editor", "Demo R.O.S.E.STB.Editor\Demo R.O.S.E.STB.Editor.csproj", "{8ED5D1E3-5036-4367-AD18-0BF4D3985FE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo R.O.S.E.STL.Editor", "Demo R.O.S.E.STL.Editor\Demo R.O.S.E.STL.Editor.csproj", "{7FBBA7A2-C1D8-4A78-8DE1-E7676577EDBD}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs03.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Demo\u0020G.O.S.E.VFS.Editor\\Demo\u0020G.O.S.E.VFS.Editor.csproj
+		SccProjectName1 = Demo\u0020G.O.S.E.VFS.Editor
+		SccLocalPath1 = Demo\u0020G.O.S.E.VFS.Editor
+		SccProjectUniqueName2 = Demo\u0020R.O.S.E.LTB.Editor\\Demo\u0020R.O.S.E.LTB.Editor.csproj
+		SccProjectName2 = Demo\u0020R.O.S.E.LTB.Editor
+		SccLocalPath2 = Demo\u0020R.O.S.E.LTB.Editor
+		SccProjectUniqueName3 = Demo\u0020R.O.S.E.STB.Editor\\Demo\u0020R.O.S.E.STB.Editor.csproj
+		SccProjectName3 = Demo\u0020R.O.S.E.STB.Editor
+		SccLocalPath3 = Demo\u0020R.O.S.E.STB.Editor
+		SccProjectUniqueName4 = Demo\u0020R.O.S.E.STL.Editor\\Demo\u0020R.O.S.E.STL.Editor.csproj
+		SccProjectName4 = Demo\u0020R.O.S.E.STL.Editor
+		SccLocalPath4 = Demo\u0020R.O.S.E.STL.Editor
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1D6BF2F-E923-4F4E-B51E-CD66B60937A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D6BF2F-E923-4F4E-B51E-CD66B60937A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D6BF2F-E923-4F4E-B51E-CD66B60937A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D6BF2F-E923-4F4E-B51E-CD66B60937A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98522A37-9E5D-47E8-9AB4-5D981F899FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98522A37-9E5D-47E8-9AB4-5D981F899FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98522A37-9E5D-47E8-9AB4-5D981F899FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98522A37-9E5D-47E8-9AB4-5D981F899FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8ED5D1E3-5036-4367-AD18-0BF4D3985FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8ED5D1E3-5036-4367-AD18-0BF4D3985FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8ED5D1E3-5036-4367-AD18-0BF4D3985FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8ED5D1E3-5036-4367-AD18-0BF4D3985FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBBA7A2-C1D8-4A78-8DE1-E7676577EDBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBBA7A2-C1D8-4A78-8DE1-E7676577EDBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBBA7A2-C1D8-4A78-8DE1-E7676577EDBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBBA7A2-C1D8-4A78-8DE1-E7676577EDBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

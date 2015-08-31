@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.WOW.WorldServer.Creature.WoWCreature">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WorldServer\Creature\WoWCreature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.WOW.WorldServer.Creature.WoWCreatureTemplate">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>xKIJohIIgABliDAJAgKEGNwJkIAGgCLuc8A0ZqjIDFw=</HashCode>
+      <FileName>WorldServer\Creature\WoWCreatureTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AB97E695-7FAC-4017-8EDA-150DA74A36F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.WOW.Script</RootNamespace>
+    <AssemblyName>Demo.WOW.Script</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <Content Include="CreatureTemplate\CreatureTemplate.txt" />
+    <Content Include="GlobalConfig\GlobalConfig.txt" />
+    <Content Include="ItemTemplate\ItemTemplate.txt" />
+    <Content Include="ObjectTemplate\ObjectTemplate.txt" />
+    <Content Include="QuestTemplate\QuestTemplate.txt" />
+    <Content Include="Scripts.txt" />
+    <Content Include="修改日志.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Druid%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Hunter%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Mage%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Paladin%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Priest%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Rogue%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Shaman%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Warlock%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Classe%28Warrior%29.cs" />
+    <Compile Include="Character\InitInfo\InitCreateInfo.cs" />
+    <Compile Include="Character\InitInfo\InitLevelInfo.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Enum.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28BloodElf%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Draenei%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Dwarf%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Gnome%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Human%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Nightelf%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Orc%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Tauren%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Troll%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\Race%28Undead%29.cs" />
+    <Compile Include="Character\EnglishTozhCHS\魔兽世界人物创建信息.cs" />
+    <Compile Include="Character\EnglishTozhCHS\魔兽世界等级上升信息.cs" />
+    <Compile Include="Character\种族%28亡灵%29.cs" />
+    <Compile Include="Character\种族%28人类%29.cs" />
+    <Compile Include="Character\种族%28侏儒%29.cs" />
+    <Compile Include="Character\种族%28兽人%29.cs" />
+    <Compile Include="Character\种族%28地精%29.cs" />
+    <Compile Include="Character\种族%28巨魔%29.cs" />
+    <Compile Include="Character\种族%28德莱尼%29.cs" />
+    <Compile Include="Character\种族%28暗夜精灵%29.cs" />
+    <Compile Include="Character\种族%28牛头%29.cs" />
+    <Compile Include="Character\种族%28矮人%29.cs" />
+    <Compile Include="Character\种族%28血精灵%29.cs" />
+    <Compile Include="Character\职业%28圣骑士%29.cs" />
+    <Compile Include="Character\职业%28德鲁伊%29.cs" />
+    <Compile Include="Character\职业%28战士%29.cs" />
+    <Compile Include="Character\职业%28术士%29.cs" />
+    <Compile Include="Character\职业%28法师%29.cs" />
+    <Compile Include="Character\职业%28牧师%29.cs" />
+    <Compile Include="Character\职业%28猎人%29.cs" />
+    <Compile Include="Character\职业%28盗贼%29.cs" />
+    <Compile Include="Character\职业%28萨满祭司%29.cs" />
+    <Compile Include="CreatureTemplate\EnglishTozhCHS\Enum.cs" />
+    <Compile Include="CreatureTemplate\人物模板.cs" />
+    <Compile Include="CreatureTemplate\EnglishTozhCHS\人物信息.cs" />
+    <Compile Include="CreatureTemplate\地狱猎犬.cs" />
+    <Compile Include="CreatureTemplate\深喉猎豹.cs" />
+    <Compile Include="CreatureTemplate\荆棘谷猛虎.cs" />
+    <Compile Include="GlobalConfig\CreatureConfig.cs" />
+    <Compile Include="GlobalConfig\GlobalConfig.cs" />
+    <Compile Include="ItemTemplate\EnglishTozhCHS\Enum.cs" />
+    <Compile Include="ItemTemplate\EnglishTozhCHS\物品信息.cs" />
+    <Compile Include="ItemTemplate\初级治疗药水.cs" />
+    <Compile Include="ItemTemplate\奧金蒸氣手槍.cs" />
+    <Compile Include="ItemTemplate\格里雷克的勇气护符.cs" />
+    <Compile Include="ItemTemplate\物品模板.cs" />
+    <Compile Include="ItemTemplate\破损的短剑.cs" />
+    <Compile Include="ObjectTemplate\EnglishTozhCHS\Enum.cs" />
+    <Compile Include="ObjectTemplate\物体模板.cs" />
+    <Compile Include="ObjectTemplate\EnglishTozhCHS\物体信息.cs" />
+    <Compile Include="QuestTemplate\EnglishTozhCHS\Enum.cs" />
+    <Compile Include="QuestTemplate\EnglishTozhCHS\任务信息.cs" />
+    <Compile Include="QuestTemplate\任务模板.cs" />
+    <Compile Include="Util\EnglishTozhCHS\Enum.cs" />
+    <Compile Include="Util\EnglishTozhCHS\ExplorationRewardSetting.cs" />
+    <Compile Include="Util\EnglishTozhCHS\GraveyardInfoSetting.cs" />
+    <Compile Include="Util\EnglishTozhCHS\墓地信息.cs" />
+    <Compile Include="Util\EnglishTozhCHS\探索酬劳.cs" />
+    <Compile Include="Util\探索酬劳设置.cs" />
+    <Compile Include="Util\墓地信息设置.cs" />
+    <Compile Include="Util\InitInfo\InitExplorationRewardInfo.cs" />
+    <Compile Include="Util\InitInfo\InitGraveyardInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Demo.Mmose.Core, Version=0.0.1.0, Culture=neutral, PublicKeyToken=b69da7c49a8ec220, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.WOW.WorldServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Bin\Demo.WOW.WorldServer.exe</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CreatureTemplate\亡灵\" />
+    <Folder Include="CreatureTemplate\人类\" />
+    <Folder Include="CreatureTemplate\元素\" />
+    <Folder Include="CreatureTemplate\坐骑或图腾等\" />
+    <Folder Include="CreatureTemplate\妖魔\" />
+    <Folder Include="CreatureTemplate\家畜\" />
+    <Folder Include="CreatureTemplate\巨人\" />
+    <Folder Include="CreatureTemplate\机械\" />
+    <Folder Include="CreatureTemplate\野兽\" />
+    <Folder Include="CreatureTemplate\龙\" />
+    <Folder Include="ItemTemplate\任务物品\" />
+    <Folder Include="ItemTemplate\其它\" />
+    <Folder Include="ItemTemplate\商业物品%28材料%29\" />
+    <Folder Include="ItemTemplate\容器\" />
+    <Folder Include="ItemTemplate\弹药\" />
+    <Folder Include="ItemTemplate\材料\" />
+    <Folder Include="ItemTemplate\武器\" />
+    <Folder Include="ItemTemplate\消耗品\" />
+    <Folder Include="ItemTemplate\盔甲\" />
+    <Folder Include="ItemTemplate\箭弹药袋\" />
+    <Folder Include="ItemTemplate\配方\" />
+    <Folder Include="ItemTemplate\钥匙\" />
+    <Folder Include="ObjectTemplate\一般\" />
+    <Folder Include="ObjectTemplate\任务\" />
+    <Folder Include="ObjectTemplate\传送门\" />
+    <Folder Include="ObjectTemplate\召唤石\" />
+    <Folder Include="ObjectTemplate\按钮\" />
+    <Folder Include="ObjectTemplate\文字\" />
+    <Folder Include="ObjectTemplate\椅子\" />
+    <Folder Include="ObjectTemplate\箱子\" />
+    <Folder Include="ObjectTemplate\门\" />
+    <Folder Include="ObjectTemplate\陷阱\" />
+    <Folder Include="ObjectTemplate\集合石\" />
+    <Folder Include="ObjectTemplate\魔法中心\" />
+    <Folder Include="Properties\" />
+  </ItemGroup>
+</Project>

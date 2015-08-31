@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Entity.Creature.BaseCreature">
+    <Position X="0.5" Y="0.75" Width="2.25" />
+    <Members>
+      <Field Name="m_Alive" Hidden="true" />
+      <Field Name="m_BaseCreaturesFriend" Hidden="true" />
+      <Field Name="m_BaseCreaturesGroup" Hidden="true" />
+      <Field Name="m_BaseCreaturesParty" Hidden="true" />
+      <Field Name="m_BaseCreatureState" Hidden="true" />
+      <Field Name="m_CreationTime" Hidden="true" />
+      <Field Name="m_CreatureTemplate" Hidden="true" />
+      <Field Name="m_GoldLoots" Hidden="true" />
+      <Field Name="m_Loots" Hidden="true" />
+      <Field Name="m_Name" Hidden="true" />
+      <Field Name="m_ToteItems" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>GQUBAEAQgAAAARTkAAogAAwAhSAgCBY0QACJgABBAAI=</HashCode>
+      <FileName>ServerEngine\Entity\Creature\BaseCreature.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="CreatureTemplate" />
+      <Property Name="BaseCreatureState" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Creature.BaseCreatureState">
+    <Position X="4.5" Y="2.5" Width="2.5" />
+    <Members>
+      <Field Name="m_AddFriendCall" Hidden="true" />
+      <Field Name="m_AddGroupCall" Hidden="true" />
+      <Field Name="m_AddItemCall" Hidden="true" />
+      <Field Name="m_AddPartyCall" Hidden="true" />
+      <Field Name="m_DeathCall" Hidden="true" />
+      <Field Name="m_EventAddedFriend" Hidden="true" />
+      <Field Name="m_EventAddedGroup" Hidden="true" />
+      <Field Name="m_EventAddedItem" Hidden="true" />
+      <Field Name="m_EventAddedParty" Hidden="true" />
+      <Field Name="m_EventAddingFriend" Hidden="true" />
+      <Field Name="m_EventAddingGroup" Hidden="true" />
+      <Field Name="m_EventAddingItem" Hidden="true" />
+      <Field Name="m_EventAddingParty" Hidden="true" />
+      <Field Name="m_EventDiedCall" Hidden="true" />
+      <Field Name="m_EventDieingCall" Hidden="true" />
+      <Field Name="m_EventLivedCall" Hidden="true" />
+      <Field Name="m_EventLivingCall" Hidden="true" />
+      <Field Name="m_EventRemovedFriend" Hidden="true" />
+      <Field Name="m_EventRemovedGroup" Hidden="true" />
+      <Field Name="m_EventRemovedItem" Hidden="true" />
+      <Field Name="m_EventRemovedParty" Hidden="true" />
+      <Field Name="m_EventRemovingFriend" Hidden="true" />
+      <Field Name="m_EventRemovingGroup" Hidden="true" />
+      <Field Name="m_EventRemovingItem" Hidden="true" />
+      <Field Name="m_EventRemovingParty" Hidden="true" />
+      <Field Name="m_EventUpdatedCreatureTemplate" Hidden="true" />
+      <Field Name="m_EventUpdatedGoldLoots" Hidden="true" />
+      <Field Name="m_EventUpdatedLoots" Hidden="true" />
+      <Field Name="m_EventUpdatedName" Hidden="true" />
+      <Field Name="m_EventUpdatingCreatureTemplate" Hidden="true" />
+      <Field Name="m_EventUpdatingGoldLoots" Hidden="true" />
+      <Field Name="m_EventUpdatingLoots" Hidden="true" />
+      <Field Name="m_EventUpdatingName" Hidden="true" />
+      <Field Name="m_LockEventAddedFriend" Hidden="true" />
+      <Field Name="m_LockEventAddedGroup" Hidden="true" />
+      <Field Name="m_LockEventAddedItem" Hidden="true" />
+      <Field Name="m_LockEventAddedParty" Hidden="true" />
+      <Field Name="m_LockEventAddingFriend" Hidden="true" />
+      <Field Name="m_LockEventAddingGroup" Hidden="true" />
+      <Field Name="m_LockEventAddingItem" Hidden="true" />
+      <Field Name="m_LockEventAddingParty" Hidden="true" />
+      <Field Name="m_LockEventDiedCall" Hidden="true" />
+      <Field Name="m_LockEventDieingCall" Hidden="true" />
+      <Field Name="m_LockEventLivedCall" Hidden="true" />
+      <Field Name="m_LockEventLivingCall" Hidden="true" />
+      <Field Name="m_LockEventRemovedFriend" Hidden="true" />
+      <Field Name="m_LockEventRemovedGroup" Hidden="true" />
+      <Field Name="m_LockEventRemovedItem" Hidden="true" />
+      <Field Name="m_LockEventRemovedParty" Hidden="true" />
+      <Field Name="m_LockEventRemovingFriend" Hidden="true" />
+      <Field Name="m_LockEventRemovingGroup" Hidden="true" />
+      <Field Name="m_LockEventRemovingItem" Hidden="true" />
+      <Field Name="m_LockEventRemovingParty" Hidden="true" />
+      <Field Name="m_LockEventUpdatedCreatureTemplate" Hidden="true" />
+      <Field Name="m_LockEventUpdatedGoldLoots" Hidden="true" />
+      <Field Name="m_LockEventUpdatedLoots" Hidden="true" />
+      <Field Name="m_LockEventUpdatedName" Hidden="true" />
+      <Field Name="m_LockEventUpdatingCreatureTemplate" Hidden="true" />
+      <Field Name="m_LockEventUpdatingGoldLoots" Hidden="true" />
+      <Field Name="m_LockEventUpdatingLoots" Hidden="true" />
+      <Field Name="m_LockEventUpdatingName" Hidden="true" />
+      <Field Name="m_RemoveFriendCall" Hidden="true" />
+      <Field Name="m_RemoveGroupCall" Hidden="true" />
+      <Field Name="m_RemoveItemCall" Hidden="true" />
+      <Field Name="m_RemovePartyCall" Hidden="true" />
+      <Field Name="m_RevivalCall" Hidden="true" />
+      <Field Name="m_UpdateCreatureTemplate" Hidden="true" />
+      <Field Name="m_UpdateGoldLoots" Hidden="true" />
+      <Field Name="m_UpdateLoots" Hidden="true" />
+      <Field Name="m_UpdateName" Hidden="true" />
+      <Method Name="RestoreAll" Hidden="true" />
+      <Field Name="s_BaseCreatureState" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>NCjDe2gKZ4T7ZC0A+KhBKaE5O94gdo3UWj1UbMorEUc=</HashCode>
+      <FileName>ServerEngine\Entity\Creature\BaseCreatureState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Creature.BaseCreatureTemplate">
+    <Position X="4.5" Y="0.75" Width="2.5" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Entity\Creature\BaseCreatureTemplate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Creature.CreatureTemplateManager&lt;T&gt;">
+    <Position X="7.5" Y="0.5" Width="2.75" />
+    <Members>
+      <Field Name="m_CreatureTemplates" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAQAAMAAAAAAAAAAAABCAAA=</HashCode>
+      <FileName>ServerEngine\Entity\Creature\CreatureTemplateManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Character.BaseCharacter">
+    <Position X="0.5" Y="7.75" Width="2" />
+    <Members>
+      <Field Name="m_AccessLevel" Hidden="true" />
+      <Field Name="m_BaseCharacterState" Hidden="true" />
+      <Field Name="m_NetState" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gBAAAAAAAAAAgAAAAAACIAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Entity\Character\BaseCharacter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Character.CharacterManager&lt;T&gt;">
+    <Position X="0.5" Y="9.5" Width="2.25" />
+    <Members>
+      <Field Name="m_Characters" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAABACAAAAAQAQAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>ServerEngine\Entity\Character\CharacterManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

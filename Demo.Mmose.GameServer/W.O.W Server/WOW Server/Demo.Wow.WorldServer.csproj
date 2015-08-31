@@ -1,0 +1,1308 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C04F0F39-EE26-489A-B652-64CDEDEE7152}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Wow.WorldServer</RootNamespace>
+    <AssemblyName>Demo.Wow.WorldServer</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <StartupObject>Demo.Wow.WorldServer.Program</StartupObject>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Demo.Wow.WorldServer.snk</AssemblyOriginatorKeyFile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\AnyCPU\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\AnyCPU\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Itanium' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\Itanium\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Itanium' ">
+    <OutputPath>Bin\Itanium\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>Bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>Bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo.Mmose.Collections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=97adcb60b0449d16, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Core, Version=0.0.1.0, Culture=neutral, PublicKeyToken=b69da7c49a8ec220, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data, Version=8.1.1.0, Culture=neutral, PublicKeyToken=3161fad63fc64e83, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data.Linq, Version=8.1.1.0, Culture=neutral, PublicKeyToken=3ad998b9e652190c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data.Xpo, Version=8.1.1.0, Culture=neutral, PublicKeyToken=b3bf71c53f4741f6, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.Xpo.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data.Xpo.Linq, Version=8.1.1.0, Culture=neutral, PublicKeyToken=f07cb02ab34ac9e1, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.Xpo.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Database\Model\Account.cs" />
+    <Compile Include="Common\Database\Model\AuctionHouse.cs" />
+    <Compile Include="Common\Database\Model\CharacterActionBar.cs" />
+    <Compile Include="Common\Database\Model\CharacterAura.cs" />
+    <Compile Include="Common\Database\Model\CharacterBase.cs" />
+    <Compile Include="Common\Database\Model\CharacterChatLog.cs" />
+    <Compile Include="Common\Database\Model\CharacterExplore.cs" />
+    <Compile Include="Common\Database\Model\CharacterHomeBind.cs" />
+    <Compile Include="Common\Database\Model\CharacterItem.cs" />
+    <Compile Include="Common\Database\Model\CharacterItemLog.cs" />
+    <Compile Include="Common\Database\Model\CharacterPet.cs" />
+    <Compile Include="Common\Database\Model\CharacterReputation.cs" />
+    <Compile Include="Common\Database\Model\CharactersGift.cs" />
+    <Compile Include="Common\Database\Model\CharactersHonor.cs" />
+    <Compile Include="Common\Database\Model\CharacterSkill.cs" />
+    <Compile Include="Common\Database\Model\CharacterSocial.cs" />
+    <Compile Include="Common\Database\Model\CharacterSpell.cs" />
+    <Compile Include="Common\Database\Model\CharacterSpellCooldown.cs" />
+    <Compile Include="Common\Database\Model\CharactersQuestStatus.cs" />
+    <Compile Include="Common\Database\Model\CharactersTaxi.cs" />
+    <Compile Include="Common\Database\Model\CharactersTutorial.cs" />
+    <Compile Include="Common\Database\Model\CharacterTradeLog.cs" />
+    <Compile Include="Common\Database\Model\Corpse.cs" />
+    <Compile Include="Common\Database\Model\CreatureBase.cs" />
+    <Compile Include="Common\Database\Model\CreatureMovement.cs" />
+    <Compile Include="Common\Database\Model\GMCommandLog.cs" />
+    <Compile Include="Common\Database\Model\Group.cs" />
+    <Compile Include="Common\Database\Model\GroupMember.cs" />
+    <Compile Include="Common\Database\Model\Guild.cs" />
+    <Compile Include="Common\Database\Model\GuildMember.cs" />
+    <Compile Include="Common\Database\Model\GuildRank.cs" />
+    <Compile Include="Common\Database\Model\Mail.cs" />
+    <Compile Include="Common\Database\Model\Model.cs" />
+    <Compile Include="Common\Database\Model\PetAura.cs" />
+    <Compile Include="Common\Database\Model\PetSpell.cs" />
+    <Compile Include="Common\Database\Model\PetSpellCooldown.cs" />
+    <Compile Include="Common\Database\Model\ServerUptime.cs" />
+    <Compile Include="Common\Database\OneDatabase.cs" />
+    <Compile Include="Common\Realm.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\WorldAssemblyInfo.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowCharacter.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowCharacter.Save.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowCharacter.Update.cs" />
+    <Compile Include="WorldServer\Entity\Common\BaseInventory.cs" />
+    <Compile Include="WorldServer\Entity\Common\Faction.cs" />
+    <Compile Include="WorldServer\Entity\Common\Interface.cs" />
+    <Compile Include="WorldServer\Entity\Common\ItemRecord.cs" />
+    <Compile Include="WorldServer\Entity\Common\UnitMechanics.cs" />
+    <Compile Include="WorldServer\Entity\Creature\WowCreature.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Creature\WowCreature.Update.cs" />
+    <Compile Include="WorldServer\Entity\Creature\WowPet.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Creature\WowPet.Update.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Delegate.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowCorpse.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowCorpse.Fields.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowCorpse.Update.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowDynamicObject.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowDynamicObject.Fields.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowDynamicObject.Update.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowGameObject.Fields.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowGameObject.Update.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowTransport.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowTransport.Fields.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowTransport.Update.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowWorldObject.cs" />
+    <Compile Include="WorldServer\Entity\Item\WowItem.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Item\WowItem.Update.cs" />
+    <Compile Include="WorldServer\Map\Strategy\WowPartitionSpace.cs" />
+    <Compile Include="WorldServer\Entity\Common\Enum.cs" />
+    <Compile Include="WorldServer\Entity\Common\Struct.cs" />
+    <Compile Include="WorldServer\Entity\Common\VisibilityManager.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Character\Character.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Character\Character.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Corpse\Corpse.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Corpse\Corpse.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Fields\DynamicObject\DynamicObject.cs" />
+    <Compile Include="WorldServer\Entity\Fields\DynamicObject\DynamicObject.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Fields\GameObject\GameObject.cs" />
+    <Compile Include="WorldServer\Entity\Fields\GameObject\GameObject.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Item\Item.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Item\Item.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Fields\NPC\NPC.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Fields\NPC\NPC.cs" />
+    <Compile Include="WorldServer\Entity\Fields\BaseField.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Entity\Fields\BaseField.Fields.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Entity\Fields\Unit\Unit.cs" />
+    <Compile Include="WorldServer\Entity\Fields\Unit\Unit.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Fields\WorldObject\WorldObject.cs" />
+    <Compile Include="WorldServer\Entity\Fields\WorldObject\WorldObject.Fields.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Aura\WowAura.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Aura\WowAuraHandler.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Aura\WowAuraTemplate.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Aura\WowAuraTemplateHandler.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Skill\WowSkill.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Skill\WowSkillHandler.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Skill\WowSkillTemplate.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Skill\WowSkillTemplateHandler.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Spell\WowSpellCooldown.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Entity\Suit\Ability\Spell\WowSpellCooldownHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Entity\Suit\Ability\Spell\WowSpellHandler.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Spell\WowSpellTemplateHandler.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Spell\WowSpell.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Spell\WowSpellTemplate.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Talent\WowTalent.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Talent\WowTalentHandler.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Talent\WowTalentTemplate.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Ability\Talent\WowTalentTemplateHandler.cs" />
+    <Compile Include="WorldServer\Entity\Character\Enum.cs" />
+    <Compile Include="WorldServer\Common\ConfigInfo.cs" />
+    <Compile Include="WorldServer\Common\CoordPair.cs" />
+    <Compile Include="WorldServer\Common\ExplorationReward.cs" />
+    <Compile Include="WorldServer\Common\GraveyardInfo.cs" />
+    <Compile Include="WorldServer\Common\WowCrypt.cs" />
+    <Compile Include="WorldServer\Common\WowExplorationRewardHandler.cs" />
+    <Compile Include="WorldServer\Common\WowGraveyardGhostHandler.cs" />
+    <Compile Include="WorldServer\Map\WowMap.cs" />
+    <Compile Include="WorldServer\Common\WowMapHandler.cs" />
+    <Compile Include="WorldServer\Entity\Character\GlobalCharacterManager.cs" />
+    <Compile Include="WorldServer\Entity\Creature\WowPet.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\DBCHandlers\DataStore.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\DBCHandlers\DBCFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\DBCHandlers\DBCRecord.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\DBCInstances.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\DBCHandlers\Interface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\AreaTableEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\AuctionHouseEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\BankBagSlotPricesEntry.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\BattlemasterListEntry.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\ChatChannelsEntry.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\ChrClassesEntry.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\ChrRacesEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\CreatureFamilyEntry.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\CreatureSpellDataEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\DurabilityCostsEntry.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\DurabilityQualityEntry.cs" />
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\EmotesTextEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\FactionEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\FactionTemplateEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\GemPropertiesEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\ItemExtendedCostEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\ItemRandomPropertiesEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\ItemSetEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\LockEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\MapEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\NameGenEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SkillLineAbilityEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SkillLineEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SpellCastTimesEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SpellDurationEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SpellEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SpellItemEnchantmentConditionEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SpellItemEnchantmentEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SpellRadiusEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\SpellRangeEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\StableSlotPricesEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\TalentEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\TalentTabEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\TaxiNodesEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\TaxiPathEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\TaxiPathNodeEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\TransportAnimationEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\WorldMapAreaEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\WorldMapOverlayEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Misc\DBCFile\FileStruct\WorldSafeLocsEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Entity\Item\Enum.cs" />
+    <Compile Include="WorldServer\Entity\Item\Struct.cs" />
+    <Compile Include="WorldServer\Entity\Item\WowActionBar.cs" />
+    <Compile Include="WorldServer\Entity\Item\WowActionBarHandler.cs" />
+    <Compile Include="WorldServer\Entity\Item\WowItem.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowItemBankManager.cs" />
+    <Compile Include="WorldServer\Entity\Item\WowItemContainer.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowItemBagManager.cs" />
+    <Compile Include="WorldServer\Entity\Item\WowItemTemplate.cs" />
+    <Compile Include="WorldServer\Map\TerrainInfo.cs" />
+    <Compile Include="WorldServer\Map\TerrainHandler.cs" />
+    <Compile Include="WorldServer\Entity\Creature\Enum.cs" />
+    <Compile Include="WorldServer\Entity\Creature\Struct.cs" />
+    <Compile Include="WorldServer\Entity\Creature\WowCreature.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Common\WowCharacterCreateInfoHandler.cs" />
+    <Compile Include="WorldServer\Common\WowCharacterLevelInfoHandler.cs" />
+    <Compile Include="WorldServer\Entity\Creature\WowCreatureTemplate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelNumMembersQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelNumMembersQuery\HandleHandleChannelNumMembersQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelNumMembersQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\Enum.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleChannelVoiceQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleChannelVoiceQuery\HandleChannelVoiceQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleChannelVoiceQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleEnableMicrophone\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleEnableMicrophone\HandleEnableMicrophone.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleEnableMicrophone\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleVoiceChatQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleVoiceChatQuery\HandleVoiceChatQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleVoiceChat\HandleVoiceChatQuery\Packets.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowGameObjectTemplate.cs" />
+    <Compile Include="WorldServer\Entity\Character\Struct.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowCharacter.cs" />
+    <Compile Include="WorldServer\Network\Common\OpCodeName.cs" />
+    <Compile Include="WorldServer\Network\Common\WaitQueueLogins.cs" />
+    <Compile Include="WorldServer\Network\Enum.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\Enum.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandlePong\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandlePong\HandlePong.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandlePong\Packets.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandleRegisterRealmResult\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandleRegisterRealmResult\HandleRegisterRealmResult.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandleRegisterRealmResult\Packets.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandleRequestSessionResult\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandleRequestSessionResult\HandleRequestSessionResult.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\HandleRequestSessionResult\Packets.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\RealmPackets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\Enum.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleRequestAccountData\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleRequestAccountData\HandleRequestAccountData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleRequestAccountData\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleSetAtWar\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleSetAtWar\HandleSetAtWar.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleSetAtWar\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleSetWatchedFactionIndex\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleSetWatchedFactionIndex\HandleSetWatchedFactionIndex.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleSetWatchedFactionIndex\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleTogglePVP\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleTogglePVP\HandleTogglePVP.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleTogglePVP\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleUpdateAccountData\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleUpdateAccountData\HandleUpdateAccountData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAccountData\HandleUpdateAccountData\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleACK\HandleAcknowledgement\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleACK\HandleAcknowledgement\HandleAcknowledgement.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleACK\HandleAcknowledgement\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleACK\HandleMoveTeleportAck\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleACK\HandleMoveTeleportAck\HandleMoveTeleportAck.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleACK\HandleMoveTeleportAck\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleActionButtons\HandleRepopRequest\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleActionButtons\HandleRepopRequest\HandleRepopRequest.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleActionButtons\HandleRepopRequest\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleActionButtons\HandleSetActionButton\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleActionButtons\HandleSetActionButton\HandleSetActionButton.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleActionButtons\HandleSetActionButton\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAreatrigger\HandleAreaTrigger\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAreatrigger\HandleAreaTrigger\HandleAreaTrigger.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAreatrigger\HandleAreaTrigger\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListBidderItems\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListBidderItems\HandleAuctionListBidderItems.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListBidderItems\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListItems\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListItems\HandleAuctionListItems.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListItems\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListOwnerItems\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListOwnerItems\HandleAuctionListOwnerItems.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionListOwnerItems\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionPlaceBid\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionPlaceBid\HandleAuctionPlaceBid.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionPlaceBid\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionSellItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionSellItem\HandleAuctionSellItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleAuctionSellItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleCancelAuction\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleCancelAuction\HandleCancelAuction.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleAuctionSystem\HandleCancelAuction\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleAreaSpiritHealerQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleAreaSpiritHealerQuery\HandleAreaSpiritHealerQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleAreaSpiritHealerQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleAreaSpiritHealerQueue\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleAreaSpiritHealerQueue\HandleAreaSpiritHealerQueue.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleAreaSpiritHealerQueue\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleArenaJoin\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleArenaJoin\HandleArenaJoin.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleArenaJoin\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldList\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldList\HandleBattlefieldList.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldList\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldPort\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldPort\HandleBattlefieldPort.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldPort\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldStatus\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldStatus\HandleBattlefieldStatus.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlefieldStatus\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlegroundPlayerPositions\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlegroundPlayerPositions\HandleBattlegroundPlayerPositions.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattlegroundPlayerPositions\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattleMasterHello\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattleMasterHello\HandleBattleMasterHello.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattleMasterHello\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattleMasterJoin\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattleMasterJoin\HandleBattleMasterJoin.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleBattleMasterJoin\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleInspectHonorStats\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleInspectHonorStats\HandleInspectHonorStats.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleInspectHonorStats\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleLeaveBattlefield\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleLeaveBattlefield\HandleLeaveBattlefield.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleLeaveBattlefield\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleMoveSplineComplete\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleMoveSplineComplete\HandleMoveSplineComplete.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleMoveSplineComplete\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandlePVPLogData\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandlePVPLogData\HandlePVPLogData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandlePVPLogData\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleSetActionBarToggles\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleSetActionBarToggles\HandleSetActionBarToggles.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleBattlegrounds\HandleSetActionBarToggles\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelAnnounce\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelAnnounce\HandleChannelAnnounce.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelAnnounce\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelBan\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelBan\HandleChannelBan.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelBan\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelInvite\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelInvite\HandleChannelInvite.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelInvite\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelJoin\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelJoin\HandleChannelJoin.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelJoin\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelKick\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelKick\HandleChannelKick.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelKick\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelLeave\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelLeave\HandleChannelLeave.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelLeave\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelList\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelList\HandleChannelList.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelList\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelModerate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelModerate\HandleChannelModerate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelModerate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelModerator\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelModerator\HandleChannelModerator.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelModerator\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelMute\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelMute\HandleChannelMute.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelMute\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelOwner\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelOwner\HandleChannelOwner.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelOwner\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelPassword\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelPassword\HandleChannelPassword.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelPassword\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelSetOwner\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelSetOwner\HandleChannelSetOwner.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelSetOwner\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnban\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnban\HandleChannelUnban.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnban\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnmoderator\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnmoderator\HandleChannelUnmoderator.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnmoderator\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnmute\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnmute\HandleChannelUnmute.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleChannels\HandleChannelUnmute\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleAttackStop\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleAttackStop\HandleAttackStop.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleAttackStop\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleAttackSwing\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleAttackSwing\HandleAttackSwing.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleAttackSwing\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleDuelAccepted\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleDuelAccepted\HandleDuelAccepted.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleDuelAccepted\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleDuelCancelled\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleDuelCancelled\HandleDuelCancelled.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleCombatDuel\HandleDuelCancelled\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleAddFriend\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleAddFriend\HandleAddFriend.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleAddFriend\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleAddIgnore\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleAddIgnore\HandleAddIgnore.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleAddIgnore\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleBug\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleBug\HandleBug.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleBug\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleDelFriend\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleDelFriend\HandleDelFriend.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleDelFriend\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleDelIgnore\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleDelIgnore\HandleDelIgnore.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleDelIgnore\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleFriendList\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleFriendList\HandleFriendList.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleFriends\HandleFriendList\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketCreate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketCreate\HandleGMTicketCreate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketCreate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketDelete\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketDelete\HandleGMTicketDelete.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketDelete\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketGetTicket\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketGetTicket\HandleGMTicketGetTicket.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketGetTicket\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketSystemStatus\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketSystemStatus\HandleGMTicketSystemStatus.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketSystemStatus\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketToggleSystemStatus\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketToggleSystemStatus\HandleGMTicketToggleSystemStatus.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketToggleSystemStatus\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketUpdate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketUpdate\HandleGMTicketUpdate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleGMTicketUpdate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleUnlearnSkill\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleUnlearnSkill\HandleUnlearnSkill.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGMTicketSystem\HandleUnlearnSkill\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleConvertGroupToRaid\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleConvertGroupToRaid\HandleConvertGroupToRaid.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleConvertGroupToRaid\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupAccept\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupAccept\HandleGroupAccept.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupAccept\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupAssistantLeader\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupAssistantLeader\HandleGroupAssistantLeader.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupAssistantLeader\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupCancel\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupCancel\HandleGroupCancel.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupCancel\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupChangeSubGroup\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupChangeSubGroup\HandleGroupChangeSubGroup.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupChangeSubGroup\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupDecline\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupDecline\HandleGroupDecline.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupDecline\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupDisband\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupDisband\HandleGroupDisband.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupDisband\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupInvite\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupInvite\HandleGroupInvite.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupInvite\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupSetLeader\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupSetLeader\HandleGroupSetLeader.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupSetLeader\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupUninviteGuild\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupUninviteGuild\HandleGroupUninviteGuild.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupUninviteGuild\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupUninvite\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupUninvite\HandleGroupUninvite.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleGroupUninvite\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleLootMethod\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleLootMethod\HandleLootMethod.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleLootMethod\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleMinimapPing\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleMinimapPing\HandleMinimapPing.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleMinimapPing\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleReadyCheck\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleReadyCheck\HandleReadyCheck.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleReadyCheck\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleRequestRaidInf\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleRequestRaidInf\HandleRequestRaidInf.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleRequestRaidInf\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleSetPlayerIcon\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleSetPlayerIcon\HandleSetPlayerIcon.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGroupsRaids\HandleSetPlayerIcon\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildQuery\HandleGuildQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildQuery\HandleGuildQuery\HandleGuildQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildQuery\HandleGuildQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterBuy\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterBuy\HandleCharterBuy.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterBuy\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterOffer\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterOffer\HandleCharterOffer.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterOffer\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterQuery\HandleCharterQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterRename\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterRename\HandleCharterRename.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterRename\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterShowSignatures\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterShowSignatures\HandleCharterShowSignatures.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterShowSignatures\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterSign\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterSign\HandleCharterSign.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterSign\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterTurnInCharter\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterTurnInCharter\HandleCharterTurnInCharter.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCharterTurnInCharter\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCreateGuild\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCreateGuild\HandleCreateGuild.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleCreateGuild\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildAccept\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildAccept\HandleGuildAccept.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildAccept\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildAddRank\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildAddRank\HandleGuildAddRank.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildAddRank\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDecline\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDecline\HandleGuildDecline.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDecline\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDelRank\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDelRank\HandleGuildDelRank.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDelRank\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDemote\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDemote\HandleGuildDemote.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDemote\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDisband\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDisband\HandleGuildDisband.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildDisband\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildInfo\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildInfo\HandleGuildInfo.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildInfo\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildLeader\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildLeader\HandleGuildLeader.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildLeader\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildLeave\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildLeave\HandleGuildLeave.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildLeave\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildMotd\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildMotd\HandleGuildMotd.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildMotd\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildPromote\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildPromote\HandleGuildPromote.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildPromote\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRank\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRank\HandleGuildRank.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRank\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRemove\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRemove\HandleGuildRemove.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRemove\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRoster\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRoster\HandleGuildRoster.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildRoster\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildSetOfficerNote\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildSetOfficerNote\HandleGuildSetOfficerNote.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildSetOfficerNote\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildSetPublicNote\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildSetPublicNote\HandleGuildSetPublicNote.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleGuildSetPublicNote\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleInviteToGuild\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleInviteToGuild\HandleInviteToGuild.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleInviteToGuild\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleSaveGuildEmblem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleSaveGuildEmblem\HandleSaveGuildEmblem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleSaveGuildEmblem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleSetGuildInformation\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleSetGuildInformation\HandleSetGuildInformation.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleGuildSystem\HandleSetGuildInformation\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAmmoSet\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAmmoSet\HandleAmmoSet.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAmmoSet\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoBankItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoBankItem\HandleAutoBankItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoBankItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoEquipItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoEquipItem\HandleAutoEquipItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoEquipItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoStoreBagItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoStoreBagItem\HandleAutoStoreBagItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoStoreBagItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoStoreBankItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoStoreBankItem\HandleAutoStoreBankItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleAutoStoreBankItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyBack\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyBack\HandleBuyBack.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyBack\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyItemInSlot\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyItemInSlot\HandleBuyItemInSlot.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyItemInSlot\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyItem\HandleBuyItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleBuyItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleCancelTemporaryEnchantment\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleCancelTemporaryEnchantment\HandleCancelTemporaryEnchantment.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleCancelTemporaryEnchantment\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleDestroyItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleDestroyItem\HandleDestroyItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleDestroyItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleInsertGem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleInsertGem\HandleInsertGem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleInsertGem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleItemQuerySingle\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleItemQuerySingle\HandleItemQuerySingle.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleItemQuerySingle\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleListInventory\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleListInventory\HandleListInventory.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleListInventory\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleReadItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleReadItem\HandleReadItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleReadItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleRepairItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleRepairItem\HandleRepairItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleRepairItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSellItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSellItem\HandleSellItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSellItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSplit\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSplit\HandleSplit.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSplit\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSwapInvItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSwapInvItem\HandleSwapInvItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSwapInvItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSwapItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSwapItem\HandleSwapItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleItemVendors\HandleSwapItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleDisableAutoAddMembers\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleDisableAutoAddMembers\HandleDisableAutoAddMembers.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleDisableAutoAddMembers\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleDisableAutoJoin\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleDisableAutoJoin\HandleDisableAutoJoin.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleDisableAutoJoin\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleEnableAutoAddMembers\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleEnableAutoAddMembers\HandleEnableAutoAddMembers.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleEnableAutoAddMembers\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleEnableAutoJoin\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleEnableAutoJoin\HandleEnableAutoJoin.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleEnableAutoJoin\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleMsgLookingForGroup\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleMsgLookingForGroup\HandleMsgLookingForGroup.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleMsgLookingForGroup\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleSetLookingForGroupComment\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleSetLookingForGroupComment\HandleSetLookingForGroupComment.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleSetLookingForGroupComment\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleSetLookingForGroup\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleSetLookingForGroup\HandleSetLookingForGroup.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLFGSystem\HandleSetLookingForGroup\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleAuthSession\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleAuthSession\HandleAuthSession.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleAuthSession\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharCreate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharCreate\HandleCharCreate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharCreate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharDelete\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharDelete\HandleCharDelete.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharDelete\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharEnum\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharEnum\HandleCharEnum.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharEnum\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharRename\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharRename\HandleCharRename.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleCharRename\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandlePlayerLogin\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandlePlayerLogin\HandlePlayerLogin.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandlePlayerLogin\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleRealmSplitStateRequest\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleRealmSplitStateRequest\HandleRealmSplitStateRequest.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoginScreen\HandleRealmSplitStateRequest\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleAutostoreLootItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleAutostoreLootItem\HandleAutostoreLootItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleAutostoreLootItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootMasterGive\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootMasterGive\HandleLootMasterGive.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootMasterGive\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootMoney\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootMoney\HandleLootMoney.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootMoney\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootRelease\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootRelease\HandleLootRelease.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootRelease\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootRoll\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootRoll\HandleLootRoll.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLootRoll\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLoot\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLoot\HandleLoot.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleLoot\HandleLoot\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleGetMail\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleGetMail\HandleGetMail.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleGetMail\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleItemTextQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleItemTextQuery\HandleItemTextQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleItemTextQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailCreateTextItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailCreateTextItem\HandleMailCreateTextItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailCreateTextItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailDelete\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailDelete\HandleMailDelete.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailDelete\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailTime\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailTime\HandleMailTime.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMailTime\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMarkAsRead\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMarkAsRead\HandleMarkAsRead.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleMarkAsRead\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleReturnToSender\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleReturnToSender\HandleReturnToSender.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleReturnToSender\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleSendMail\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleSendMail\HandleSendMail.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleSendMail\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleTakeItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleTakeItem\HandleTakeItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleTakeItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleTakeMoney\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleTakeMoney\HandleTakeMoney.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMailSystem\HandleTakeMoney\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneInfo\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneInfo\HandleMeetingStoneInfo.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneInfo\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneJoin\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneJoin\HandleMeetingStoneJoin.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneJoin\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneLeave\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneLeave\HandleMeetingStoneLeave.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleMeetingStoneLeave\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleRandomRoll\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleRandomRoll\HandleRandomRoll.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleRandomRoll\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleResetInstance\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleResetInstance\HandleResetInstance.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleResetInstance\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleSelfResurrect\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleSelfResurrect\HandleSelfResurrect.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMeetingStone\HandleSelfResurrect\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleCompleteCinematic\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleCompleteCinematic\HandleCompleteCinematic.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleCompleteCinematic\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleMountSpecialAnim\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleMountSpecialAnim\HandleMountSpecialAnim.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleMountSpecialAnim\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleOpenItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleOpenItem\HandleOpenItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleOpenItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandlePing\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandlePing\HandlePing.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandlePing\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleSetVisibleRank\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleSetVisibleRank\HandleSetVisibleRank.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleSetVisibleRank\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleToggleCloak\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleToggleCloak\HandleToggleCloak.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleToggleCloak\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleToggleHelm\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleToggleHelm\HandleToggleHelm.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMisc\HandleToggleHelm\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleBasicMovement\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleBasicMovement\HandleBasicMovement.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleBasicMovement\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleFall\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleFall\HandleFall.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleFall\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveHeartbeat\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveHeartbeat\HandleMoveHeartbeat.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveHeartbeat\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMovement\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMovement\HandleMovement.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMovement\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveNotActiveMover\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveNotActiveMover\HandleMoveNotActiveMover.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveNotActiveMover\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveStop\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveStop\HandleMoveStop.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveStop\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveTimeSkipped\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveTimeSkipped\HandleMoveTimeSkipped.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveTimeSkipped\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveWorldportAck\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveWorldportAck\HandleMoveWorldportAck.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleMoveWorldportAck\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleSetActiveMover\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleSetActiveMover\HandleSetActiveMover.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleMovement\HandleSetActiveMover\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleBuyStableSlot\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleBuyStableSlot\HandleBuyStableSlot.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleBuyStableSlot\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetAbandon\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetAbandon\HandlePetAbandon.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetAbandon\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetAction\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetAction\HandlePetAction.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetAction\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetInfo\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetInfo\HandlePetInfo.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetInfo\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetNameQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetNameQuery\HandlePetNameQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetNameQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetRename\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetRename\HandlePetRename.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetRename\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetSetAction\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetSetAction\HandlePetSetAction.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandlePetSetAction\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleStabledPetList\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleStabledPetList\HandleStabledPetList.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleStabledPetList\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleStablePet\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleStablePet\HandleStablePet.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleStablePet\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleUnstablePet\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleUnstablePet\HandleUnstablePet.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePets\HandleUnstablePet\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleGameObjectUse\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleGameObjectUse\HandleGameObjectUse.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleGameObjectUse\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleLogoutCancel\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleLogoutCancel\HandleLogoutCancel.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleLogoutCancel\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleLogoutRequest\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleLogoutRequest\HandleLogoutRequest.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleLogoutRequest\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleMessagechat\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleMessagechat\HandleMessagechat.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleMessagechat\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandlePlayedTime\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandlePlayedTime\HandlePlayedTime.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandlePlayedTime\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandlePlayerLogout\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandlePlayerLogout\HandlePlayerLogout.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandlePlayerLogout\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetSelection\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetSelection\HandleSetSelection.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetSelection\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetSheathed\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetSheathed\HandleSetSheathed.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetSheathed\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetTarget\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetTarget\HandleSetTarget.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleSetTarget\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleStandStateChange\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleStandStateChange\HandleStandStateChange.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleStandStateChange\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleTextEmote\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleTextEmote\HandleTextEmote.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleTextEmote\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleWho\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleWho\HandleWho.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleWho\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleZoneUpdate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleZoneUpdate\HandleZoneUpdate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandlePlayerInteraction\HandleZoneUpdate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleCorpseQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleCorpseQuery\HandleCorpseQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleCorpseQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleCreatureQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleCreatureQuery\HandleCreatureQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleCreatureQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleGameObjectQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleGameObjectQuery\HandleGameObjectQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleGameObjectQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleItemNameQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleItemNameQuery\HandleItemNameQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleItemNameQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleNameQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleNameQuery\HandleNameQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleNameQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandlePageTextQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandlePageTextQuery\HandlePageTextQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandlePageTextQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleQueryTime\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleQueryTime\HandleQueryTime.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQueries\HandleQueryTime\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleCorpseReclaim\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleCorpseReclaim\HandleCorpseReclaim.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleCorpseReclaim\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandlePushQuestToParty\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandlePushQuestToParty\HandlePushQuestToParty.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandlePushQuestToParty\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverAcceptQuest\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverAcceptQuest\HandleQuestgiverAcceptQuest.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverAcceptQuest\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverCancel\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverCancel\HandleQuestgiverCancel.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverCancel\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverChooseReward\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverChooseReward\HandleQuestgiverChooseReward.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverChooseReward\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverCompleteQuest\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverCompleteQuest\HandleQuestgiverCompleteQuest.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverCompleteQuest\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverHello\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverHello\HandleQuestgiverHello.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverHello\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestGiverQueryQuest\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestGiverQueryQuest\HandleQuestGiverQueryQuest.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestGiverQueryQuest\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverRequestReward\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverRequestReward\HandleQuestgiverRequestReward.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverRequestReward\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverStatusQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverStatusQuery\HandleQuestgiverStatusQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestgiverStatusQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestlogRemoveQuest\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestlogRemoveQuest\HandleQuestlogRemoveQuest.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestlogRemoveQuest\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestPushResult\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestPushResult\HandleQuestPushResult.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestPushResult\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestQuery\HandleQuestQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleQuestQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleResurrectResponse\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleResurrectResponse\HandleResurrectResponse.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleQuestSystem\HandleResurrectResponse\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelAura\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelAura\HandleCancelAura.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelAura\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelAutoRepeatSpell\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelAutoRepeatSpell\HandleCancelAutoRepeatSpell.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelAutoRepeatSpell\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelCast\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelCast\HandleCancelCast.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelCast\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelChannelling\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelChannelling\HandleCancelChannelling.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCancelChannelling\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCastSpell\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCastSpell\HandleCastSpell.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleCastSpell\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleLearnTalent\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleLearnTalent\HandleLearnTalent.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleLearnTalent\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleUnlearnTalents\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleUnlearnTalents\HandleUnlearnTalents.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleUnlearnTalents\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleUseItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleUseItem\HandleUseItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleSpellTalentSystem\HandleUseItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleActivateTaxi\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleActivateTaxi\HandleActivateTaxi.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleActivateTaxi\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleAuctionHello\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleAuctionHello\HandleAuctionHello.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleAuctionHello\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBankerActivate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBankerActivate\HandleBankerActivate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBankerActivate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBinderActivate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBinderActivate\HandleBinderActivate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBinderActivate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBuyBankSlot\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBuyBankSlot\HandleBuyBankSlot.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleBuyBankSlot\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleCharterShowList\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleCharterShowList\HandleCharterShowList.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleCharterShowList\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleGossipHello\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleGossipHello\HandleGossipHello.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleGossipHello\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleGossipSelectOption\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleGossipSelectOption\HandleGossipSelectOption.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleGossipSelectOption\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleMultipleActivateTaxi\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleMultipleActivateTaxi\HandleMultipleActivateTaxi.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleMultipleActivateTaxi\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleNpcTextQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleNpcTextQuery\HandleNpcTextQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleNpcTextQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleSpiritHealerActivate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleSpiritHealerActivate\HandleSpiritHealerActivate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleSpiritHealerActivate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTabardVendorActivate\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTabardVendorActivate\HandleTabardVendorActivate.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTabardVendorActivate\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTaxiNodeStatusQuery\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTaxiNodeStatusQuery\HandleTaxiNodeStatusQuery.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTaxiNodeStatusQuery\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTaxiQueryAvaibleNodes\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTaxiQueryAvaibleNodes\HandleTaxiQueryAvaibleNodes.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTaxiQueryAvaibleNodes\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTrainerBuySpell\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTrainerBuySpell\HandleTrainerBuySpell.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTrainerBuySpell\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTrainerList\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTrainerList\HandleTrainerList.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTaxi\HandleTrainerList\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleAcceptTrade\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleAcceptTrade\HandleAcceptTrade.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleAcceptTrade\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleBeginTrade\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleBeginTrade\HandleBeginTrade.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleBeginTrade\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleBusyTrade\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleBusyTrade\HandleBusyTrade.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleBusyTrade\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleCancelTrade\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleCancelTrade\HandleCancelTrade.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleCancelTrade\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleClearTradeItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleClearTradeItem\HandleClearTradeItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleClearTradeItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleIgnoreTrade\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleIgnoreTrade\HandleIgnoreTrade.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleIgnoreTrade\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleInitiateTrade\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleInitiateTrade\HandleInitiateTrade.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleInitiateTrade\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleSetTradeGold\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleSetTradeGold\HandleSetTradeGold.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleSetTradeGold\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleSetTradeItem\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleSetTradeItem\HandleSetTradeItem.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleSetTradeItem\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleUnacceptTrade\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleUnacceptTrade\HandleUnacceptTrade.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTrade\HandleUnacceptTrade\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialClear\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialClear\HandleTutorialClear.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialClear\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialFlag\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialFlag\HandleTutorialFlag.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialFlag\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialReset\ExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialReset\HandleTutorialReset.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\HandleTutorials\HandleTutorialReset\Packets.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\WorldPackets.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\RealmExtendData.cs" />
+    <Compile Include="WorldServer\Network\RealmPacketHandlers\RealmPacketHandlers.cs" />
+    <Compile Include="WorldServer\Network\Common\PendingLogins.cs" />
+    <Compile Include="WorldServer\Network\ProcessNet.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\WorldExtendData.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers\WorldPacketHandlers.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\Enum.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\Struct.cs" />
+    <Compile Include="WorldServer\Entity\GameObject\WowGameObject.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowCharacterCreateInfo.cs" />
+    <Compile Include="WorldServer\Entity\Character\WowCharacterLevelInfo.cs" />
+    <Compile Include="WorldServer\Program.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Quest\Enum.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Quest\Struct.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Quest\WowQuest.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Quest\WowQuestTemplate.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Reputation\WowReputation.cs" />
+    <Compile Include="WorldServer\Entity\Suit\Reputation\WowReputationHandler.cs" />
+    <Compile Include="WorldServer\Server\ProcessServer.cs" />
+    <Compile Include="WorldServer\Util\Extensions.cs" />
+    <Compile Include="WorldServer\Util\Utility.cs" />
+    <Compile Include="WorldServer\World\WowWorld.cs" />
+    <Compile Include="WorldServer\World\WowZoneCluster.cs" />
+    <Compile Include="WorldServer\Entity\Common\UpdateFieldId.cs" />
+    <Compile Include="WorldServer\Entity\Common\UpdateFields.cs" />
+    <Compile Include="WorldServer\Entity\Common\UpdateMask.cs" />
+    <Compile Include="WorldServer\Entity\Common\UpdateValue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bin\PostBuildEvent[WorldServer].bat" />
+    <None Include="ClassDiagramWowCharacter.cd" />
+    <None Include="ClassDiagramWowCreature.cd" />
+    <None Include="ClassDiagramWowItem.cd" />
+    <None Include="Demo.Wow.WorldServer.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>: 以下的复制是归并NET的EXE
+copy "$(TargetFileName)" "..\..\$(TargetFileName)"
+
+"..\..\PostBuildEvent[WorldServer].bat"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

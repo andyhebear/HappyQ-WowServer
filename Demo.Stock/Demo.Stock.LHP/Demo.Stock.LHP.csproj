@@ -1,0 +1,1554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3E425E92-6033-40CF-9112-08CB70980ED3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Stock.LHP</RootNamespace>
+    <AssemblyName>Demo.Stock.LHP</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base-SR\Definitions.cs" />
+    <Compile Include="Base-SR\Demo.Stock.MSRK.DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.MSRK.DocumentForm.Designer.cs">
+      <DependentUpon>Demo.Stock.MSRK.DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.MSRK.DocumentForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.MSRK.DocumentForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.MSRK.DocumentForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.DocumentForm.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.DocumentForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.DocumentForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.DocumentForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\GlobalSetting.cs" />
+    <Compile Include="Common\LHPScanInfo.cs" />
+    <Compile Include="Common\MSFL.cs" />
+    <Compile Include="Main\Common\OptionFormInfo.cs" />
+    <Compile Include="Common\PSRReport.cs" />
+    <Compile Include="Common\SRDynamicData.cs" />
+    <Compile Include="Common\SRDynamicDataManager.cs" />
+    <Compile Include="Base-SR\Common\SROptionFormInfo.cs" />
+    <Compile Include="Common\SRReport.cs" />
+    <Compile Include="Common\SRStaticData.cs" />
+    <Compile Include="Common\SRStaticDataManager.cs" />
+    <Compile Include="Common\StockFileInfo.cs" />
+    <Compile Include="Common\StockInfo.cs" />
+    <Compile Include="Common\TriggerInfo.cs" />
+    <Compile Include="Definitions.cs" />
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Designer.cs">
+      <DependentUpon>Demo.Stock.Document.HomeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub.Designer.cs">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.Document.HomeForm.Sub4.Designer.cs">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm2.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm2.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm2.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3Form.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormA.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub4.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub4.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Sub5.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Definitions.cs" />
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub2Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub2Form.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub2Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanDownForm.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanDownForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\Demo.Stock.OptionForm.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm.Sub1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm.Sub1Form.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm.Sub1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2A.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2A.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2B.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2C.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2C.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2C.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2C.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2CSRPrice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2CSRPrice.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2CSRPrice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2CSRUpFiltrate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2CSRUpFiltrate.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2CSRUpFiltrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2D.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3C.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3C.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3C.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3D.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3E.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3E.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3E.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub4.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanUpForm.Sub5.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Base-SR\Demo.Stock.MSRK.DocumentForm.resx">
+      <DependentUpon>Demo.Stock.MSRK.DocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.MSRK.DocumentForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.MSRK.DocumentForm.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.DocumentForm.resx">
+      <DependentUpon>Demo.Stock.SR.DocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.DocumentForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.SR.DocumentForm.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.MainForm.resx">
+      <DependentUpon>Demo.Stock.SR.MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.Sub3.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.Document.HomeForm.resx">
+      <DependentUpon>Demo.Stock.Document.HomeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.Document.HomeForm.Sub.resx">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.Document.HomeForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.Document.HomeForm.Sub2.resx">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.Document.HomeForm.Sub3.resx">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.Document.HomeForm.Sub4.resx">
+      <DependentUpon>Demo.Stock.Document.HomeForm.Sub4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm.resx">
+      <DependentUpon>Demo.Stock.DocumentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm.Sub1Form.resx">
+      <DependentUpon>Demo.Stock.DocumentForm.Sub1Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm2.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm2.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3Form.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3FormA.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3FormB.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub1.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub2.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub3.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub3FormB.Sub4.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub3FormB.Sub4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanDownForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanDownForm.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanDownForm.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanDownForm.Sub4.resx">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanDownForm.Sub5.resx">
+      <DependentUpon>Demo.Stock.ScanDownForm.Sub5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanUpForm.resx">
+      <DependentUpon>Demo.Stock.ScanUpForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.MainForm.resx">
+      <DependentUpon>Demo.Stock.MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.resx">
+      <DependentUpon>Demo.Stock.OptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub2.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\Demo.Stock.OptionForm.Sub2Form.resx">
+      <DependentUpon>Demo.Stock.OptionForm.Sub2Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanDownForm.resx">
+      <DependentUpon>Demo.Stock.ScanDownForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.resx">
+      <DependentUpon>Demo.Stock.ScanForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2A.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2A.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2A.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2A.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2B.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2B.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2C.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2C.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2C.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2C.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2CSRDownFiltrate.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2CSRDownFiltrate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2CSRPrice.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2CSRPrice.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2CSRUpFiltrate.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2CSRUpFiltrate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2D.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub3C.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3C.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub3D.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub3E.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3E.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanUpForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanUpForm.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanUpForm.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanUpForm.Sub4.resx">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanUpForm.Sub5.resx">
+      <DependentUpon>Demo.Stock.ScanUpForm.Sub5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.Sub1.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub3A.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3A.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub3B.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3B.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2AUp.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2AUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2ADown.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2ADown.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2DTrendFunction.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2DTrendFunction.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2DTrendGroup.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2DTrendGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.ScanForm.Sub2AGeneral.resx">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2AGeneral.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm2.resx">
+      <DependentUpon>Demo.Stock.DocumentForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm3.resx">
+      <DependentUpon>Demo.Stock.DocumentForm3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm3.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm3.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm4.resx">
+      <DependentUpon>Demo.Stock.DocumentForm4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm4.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm4.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm5.resx">
+      <DependentUpon>Demo.Stock.DocumentForm5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm5.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm5.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm6.resx">
+      <DependentUpon>Demo.Stock.DocumentForm6.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm6.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm6.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm7.resx">
+      <DependentUpon>Demo.Stock.DocumentForm7.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm7.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm7.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm8.resx">
+      <DependentUpon>Demo.Stock.DocumentForm8.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm8.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm8.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm9.resx">
+      <DependentUpon>Demo.Stock.DocumentForm9.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm9.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm9.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm10.resx">
+      <DependentUpon>Demo.Stock.DocumentForm10.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.DocumentForm10.Sub1.resx">
+      <DependentUpon>Demo.Stock.DocumentForm10.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2D.resx">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2D.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub1.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub2.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.Sub2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub3.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.Sub3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub4.resx">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UTMR-DTMS\Demo.Stock.UTMR.DTMS.MainForm.resx">
+      <DependentUpon>Demo.Stock.UTMR.DTMS.MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3A.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3A.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub3B.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub3B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2A.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2A.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2AUp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2AUp.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2AUp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2ADown.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2ADown.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2ADown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2DTrendFunction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2DTrendFunction.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2DTrendFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2DTrendGroup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2DTrendGroup.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2DTrendGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2AGeneral.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2AGeneral.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2AGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2CSRDownFiltrate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.ScanForm.Sub2CSRDownFiltrate.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanForm.Sub2CSRDownFiltrate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm2.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm3.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm3.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm3.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm3.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm4.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm4.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm4.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm4.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm5.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm5.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm5.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm5.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm5.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm6.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm6.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm6.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm6.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm6.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm7.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm7.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm7.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm7.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm8.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm8.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm8.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm8.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm8.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm9.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm9.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm9.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm9.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm9.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm10.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm10.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.DocumentForm10.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.DocumentForm10.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2D.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Base-SR\Demo.Stock.SR.OptionForm.Sub2D.Designer.cs">
+      <DependentUpon>Demo.Stock.SR.OptionForm.Sub2D.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2A.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2A.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2B.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2B.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2C.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2C.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2D.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2D.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2E.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2E.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub2F.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub2F.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3A.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3A.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3B.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3B.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3C.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3C.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3D.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3D.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3E.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3E.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub3F.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub3F.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.ScanPrimaryForm2.Sub4.Designer.cs">
+      <DependentUpon>Demo.Stock.ScanPrimaryForm2.Sub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.UTMR.DTMS.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UTMR-DTMS\Demo.Stock.UTMR.DTMS.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.UTMR.DTMS.MainForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxXtremeCalendarControl">
+      <Guid>{79EB16A5-917F-4145-AB5F-D3AEA60612D8}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeReportControl">
+      <Guid>{7CAC59E5-B703-4CCF-B326-8B956D962F27}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeShortcutBar">
+      <Guid>{C8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeTaskPanel">
+      <Guid>{B8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeCalendarControl">
+      <Guid>{79EB16A5-917F-4145-AB5F-D3AEA60612D8}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeReportControl">
+      <Guid>{7CAC59E5-B703-4CCF-B326-8B956D962F27}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeShortcutBar">
+      <Guid>{C8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeTaskPanel">
+      <Guid>{B8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

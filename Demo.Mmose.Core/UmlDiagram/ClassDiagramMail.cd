@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Mail.BaseMailHandler&lt;T, V&gt;">
+    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Members>
+      <Field Name="m_LockThreadEventAfterAddMailBoxCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveMailBoxCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddMailBoxCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveMailBoxCall" Hidden="true" />
+      <Field Name="m_MailBoxs" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddMailBoxCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveMailBoxCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddMailBoxCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveMailBoxCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BBAgEBAAQACAAAAAAAAAEiAQIJAAAAAQAAAIAABAAAA=</HashCode>
+      <FileName>ServerEngine\Mail\BaseMailHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Mail.BaseMailBox&lt;T&gt;">
+    <Position X="0.5" Y="3.25" Width="2.75" />
+    <Members>
+      <Field Name="m_LockThreadEventAfterAddMailMessageCall" Hidden="true" />
+      <Field Name="m_LockThreadEventAfterRemoveMailMessageCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeAddMailMessageCall" Hidden="true" />
+      <Field Name="m_LockThreadEventBeforeRemoveMailMessageCall" Hidden="true" />
+      <Field Name="m_MailMessages" Hidden="true" />
+      <Field Name="m_Serial" Hidden="true" />
+      <Field Name="m_ThreadEventAfterAddMailMessageCall" Hidden="true" />
+      <Field Name="m_ThreadEventAfterRemoveMailMessageCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeAddMailMessageCall" Hidden="true" />
+      <Field Name="m_ThreadEventBeforeRemoveMailMessageCall" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAEAEAAAAAAAQACCIAACABIQBABAIAAABgAAUBAAAA=</HashCode>
+      <FileName>ServerEngine\Mail\BaseMailBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Mail.BaseMailMessage">
+    <Position X="0.5" Y="6.5" Width="2.5" />
+    <Members>
+      <Field Name="m_Body" Hidden="true" />
+      <Field Name="m_DeliveryTime" Hidden="true" />
+      <Field Name="m_ExpireTime" Hidden="true" />
+      <Field Name="m_MessageId" Hidden="true" />
+      <Field Name="m_ReadTime" Hidden="true" />
+      <Field Name="m_SenderSerial" Hidden="true" />
+      <Field Name="m_SendTime" Hidden="true" />
+      <Field Name="m_Subject" Hidden="true" />
+      <Field Name="m_TargetSerial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAYACAEBACAACgAEIABoAAAAAAAAAAkAAQAAIAAgAA=</HashCode>
+      <FileName>ServerEngine\Mail\BaseMailMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.World.Zone.Zone&lt;T&gt;">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="BUFFER_SIZE" Hidden="true" />
+      <Method Name="ConnecterIniNetState" Hidden="true" />
+      <Method Name="ConnecterProcessReceive" Hidden="true" />
+      <Method Name="ConnectToZoneClusterServer" Hidden="true" />
+      <Method Name="GetPacketID" Hidden="true" />
+      <Method Name="GetPacketLength" Hidden="true" />
+      <Method Name="ListenerInitNetState" Hidden="true" />
+      <Method Name="ListenerProcessReceive" Hidden="true" />
+      <Field Name="m_ConfigZone" Hidden="true" />
+      <Field Name="m_Connecter" Hidden="true" />
+      <Field Name="m_ConnecterMessagePump" Hidden="true" />
+      <Field Name="m_IsLoginZoneCluster" Hidden="true" />
+      <Field Name="m_Listener" Hidden="true" />
+      <Field Name="m_ListenerMessagePump" Hidden="true" />
+      <Field Name="m_ProcessorBuffers" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Field Name="m_ZonePacketHandlers" Hidden="true" />
+      <Method Name="OnLoginZoneCluster" Hidden="true" />
+      <Field Name="PACKAGE_HEAD" Hidden="true" />
+      <Property Name="ProcessorBuffers" Hidden="true" />
+      <Method Name="ZoneExitWorld" Hidden="true" />
+      <Method Name="ZoneInitOnceServer" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Demo.Mmose.Core.World.Zone.Zone&lt;T&gt;.Option" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\World\Zone\Zone.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAABKAEBgAiAgIIQiACAgQCQEgAAAEAQEQAIBiEAA=</HashCode>
+      <FileName>ServerEngine\World\Zone\Zone.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.World.ZoneClusterWorld.ZoneCluster&lt;WorldT&gt;">
+    <Position X="3.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="BUFFER_SIZE" Hidden="true" />
+      <Method Name="ConnecterProcessReceive" Hidden="true" />
+      <Method Name="ConnectToDomainServer" Hidden="true" />
+      <Method Name="GetPacketID" Hidden="true" />
+      <Method Name="GetPacketLength" Hidden="true" />
+      <Method Name="ListenerInitNetState" Hidden="true" />
+      <Method Name="ListenerProcessReceive" Hidden="true" />
+      <Field Name="m_ConfigZoneCluster" Hidden="true" />
+      <Field Name="m_Connecter" Hidden="true" />
+      <Field Name="m_ConnecterMessagePump" Hidden="true" />
+      <Field Name="m_DomainHandler" Hidden="true" />
+      <Field Name="m_IsLoginDomain" Hidden="true" />
+      <Field Name="m_Listener" Hidden="true" />
+      <Field Name="m_ListenerMessagePump" Hidden="true" />
+      <Field Name="m_ProcessorBuffers" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Field Name="m_ZoneClusterPacketHandlers" Hidden="true" />
+      <Field Name="m_ZoneHandler" Hidden="true" />
+      <Field Name="PACKAGE_HEAD" Hidden="true" />
+      <Property Name="ProcessorBuffers" Hidden="true" />
+      <Method Name="ZoneClusterExitWorld" Hidden="true" />
+      <Method Name="ZoneClusterInitOnceServer" Hidden="true" />
+      <Property Name="ZoneClusterPacketHandlers" Hidden="true" />
+    </Members>
+    <NestedTypes>
+      <Class Name="Demo.Mmose.Core.World.ZoneClusterWorld.ZoneCluster&lt;WorldT&gt;.ZoneID" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\World\ZoneCluster\ZoneCluster.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Demo.Mmose.Core.World.ZoneClusterWorld.ZoneCluster&lt;WorldT&gt;.Channel" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\World\ZoneCluster\ZoneCluster.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAgAAIECBgAGEAMAQgACAgQCQAJAAAYFQAQAJBqEAA=</HashCode>
+      <FileName>ServerEngine\World\ZoneCluster\ZoneCluster.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.World.DomainWorld.Domain&lt;T&gt;">
+    <Position X="6.75" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="BUFFER_SIZE" Hidden="true" />
+      <Method Name="ConnecterIniNetState" Hidden="true" />
+      <Method Name="ConnecterProcessReceive" Hidden="true" />
+      <Method Name="DomainWorld_ExitWorld" Hidden="true" />
+      <Method Name="DomainWorld_InitOnceServer" Hidden="true" />
+      <Method Name="GetPacketID" Hidden="true" />
+      <Method Name="GetPacketLength" Hidden="true" />
+      <Method Name="ListenerDomainServer" Hidden="true" />
+      <Method Name="ListenerInitNetState" Hidden="true" />
+      <Method Name="ListenerProcessReceive" Hidden="true" />
+      <Field Name="m_ConfigDomain" Hidden="true" />
+      <Field Name="m_Connecter" Hidden="true" />
+      <Field Name="m_ConnecterMessagePump" Hidden="true" />
+      <Field Name="m_DomainPacketHandlers" Hidden="true" />
+      <Field Name="m_IsLoginDomain" Hidden="true" />
+      <Field Name="m_Listener" Hidden="true" />
+      <Field Name="m_ListenerMessagePump" Hidden="true" />
+      <Field Name="m_ProcessorBuffers" Hidden="true" />
+      <Field Name="m_World" Hidden="true" />
+      <Field Name="m_ZoneClusterHandler" Hidden="true" />
+      <Field Name="PACKAGE_HEAD" Hidden="true" />
+      <Property Name="ProcessorBuffers" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AIQAAAAAEBAAKUAIBQAACAgQCQACAACABQAQAIBjUAA=</HashCode>
+      <FileName>ServerEngine\World\Domain\Domain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.World.ZoneClusterWorld.ZoneHandler">
+    <Position X="0.5" Y="4.75" Width="2.25" />
+    <Members>
+      <Field Name="m_ZoneCluster" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAQAAAAAAAAAAAAAAAJAAAI=</HashCode>
+      <FileName>ServerEngine\World\ZoneCluster\ZoneHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.World.DomainWorld.ZoneClusterHandler">
+    <Position X="3.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\World\Domain\ZoneClusterHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>

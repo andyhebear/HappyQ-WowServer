@@ -1,0 +1,192 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83E7C9BB-2E52-413B-8427-E9DA1AFA41B3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Mmose.Sgl.Editor</RootNamespace>
+    <AssemblyName>Demo.Mmose.Sgl.Editor</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Demo Release|AnyCPU' ">
+    <OutputPath>bin\Demo Release\</OutputPath>
+    <DefineConstants>TRACE;DEMO</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Demo Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Demo Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEMO</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Atalasoft.dotImage, Version=4.0.2463.17734, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL" />
+    <Reference Include="Atalasoft.dotImage.Jpeg2000, Version=4.0.2463.17734, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86" />
+    <Reference Include="Atalasoft.dotImage.Lib, Version=4.0.2463.17734, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=x86" />
+    <Reference Include="Atalasoft.dotImage.WinControls, Version=4.0.2463.17734, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL" />
+    <Reference Include="Atalasoft.Shared, Version=1.0.2427.19247, Culture=neutral, PublicKeyToken=2b02b46f7326f73b, processorArchitecture=MSIL" />
+    <Reference Include="Demo.Mmose.Gui.CommandBars, Version=11.2.0.0, Culture=neutral, PublicKeyToken=82750aa7f12d9d93, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.CommandBars.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Gui.CommandBars.ActiveX, Version=11.2.0.0, Culture=neutral, PublicKeyToken=bb9c8187183ae309, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.CommandBars.ActiveX.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Gui.Controls, Version=11.2.0.0, Culture=neutral, PublicKeyToken=a0a162f078950451, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Gui.Controls.ActiveX, Version=11.2.0.0, Culture=neutral, PublicKeyToken=f6b74f3ef158f50d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.Controls.ActiveX.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Gui.PropertyGrid, Version=11.2.0.0, Culture=neutral, PublicKeyToken=e62e2c61c230d362, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.PropertyGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Gui.PropertyGrid.ActiveX, Version=11.2.0.0, Culture=neutral, PublicKeyToken=c8a021ec8b29c0d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.PropertyGrid.ActiveX.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Gui.TaskPanel, Version=11.2.0.0, Culture=neutral, PublicKeyToken=69127121b4f5c699, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.TaskPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Gui.TaskPanel.ActiveX, Version=11.2.0.0, Culture=neutral, PublicKeyToken=ffc3f9ab998d904e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Demo.Mmose.Gui\Net-DLL\Demo.Mmose.Gui.TaskPanel.ActiveX.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Demo.Mmose.Sgl.Editor.DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Mmose.Sgl.Editor.DocumentForm.Designer.cs">
+      <DependentUpon>Demo.Mmose.Sgl.Editor.DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Mmose.Sgl.Editor.Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Mmose.Sgl.Editor.Form.Designer.cs">
+      <DependentUpon>Demo.Mmose.Sgl.Editor.Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyWorkspaceViewer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Demo.Mmose.Sgl.Editor.DocumentForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Demo.Mmose.Sgl.Editor.DocumentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Mmose.Sgl.Editor.Form.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Demo.Mmose.Sgl.Editor.Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurrentImageControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CurrentImageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenImageControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>OpenImageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResourceID.cs" />
+    <Compile Include="SGLFile.cs" />
+    <Compile Include="CurrentImageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CurrentImageControl.Designer.cs">
+      <DependentUpon>CurrentImageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenImageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="OpenImageControl.Designer.cs">
+      <DependentUpon>OpenImageControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

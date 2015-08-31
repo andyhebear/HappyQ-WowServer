@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Stream.VirtualStream">
+    <Position X="1.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>VirtualStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Stream.VirtualFileManager">
+    <Position X="2" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="m_PackageArchives" Hidden="true" />
+      <Field Name="m_StreamArchives" Hidden="true" />
+      <Field Name="s_VirtualFileManager" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAAEAAAAAAAAAAAAAAAQAQAAEAAAAMAAAAAQAQBAAAA=</HashCode>
+      <FileName>VirtualFileManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Stream.FileVirtualStream">
+    <Position X="3.25" Y="7" Width="1.75" />
+    <Members>
+      <Method Name="CreateFile" Hidden="true" />
+      <Method Name="FileVirtualStream" Hidden="true" />
+      <Field Name="m_FileStream" Hidden="true" />
+      <Method Name="OpenFile" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQQAA0GAQAAABgAAAAAEAgAAAAAAGIQCA=</HashCode>
+      <FileName>FileVirtualStream.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Stream.FileArchive">
+    <Position X="3.25" Y="3.5" Width="1.75" />
+    <Members>
+      <Field Name="m_PackageName" Hidden="true" />
+      <Field Name="s_FileArchive" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAABAAAgAAAAAAAAAQAAAAAAAAQAEAgABEQAAQBAAA=</HashCode>
+      <FileName>FileArchive.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Demo.Mmose.Stream.IStreamArchive">
+    <Position X="1.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAgAAAAAAAAAQAAAAAAAAQAEAgAAEAAAABAAA=</HashCode>
+      <FileName>IStreamArchive.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="微软雅黑" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Demo.Mmose.Misc", "Demo.Mmose.Misc\Demo.Mmose.Misc.vcproj", "{5BEEE314-521F-45A5-BC79-D5B2299BAC7B}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs05.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Demo.Mmose.Misc\\Demo.Mmose.Misc.vcproj
+		SccProjectName1 = Demo.Mmose.Misc
+		SccLocalPath1 = Demo.Mmose.Misc
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BEEE314-521F-45A5-BC79-D5B2299BAC7B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5BEEE314-521F-45A5-BC79-D5B2299BAC7B}.Debug|Win32.Build.0 = Debug|Win32
+		{5BEEE314-521F-45A5-BC79-D5B2299BAC7B}.Release|Win32.ActiveCfg = Release|Win32
+		{5BEEE314-521F-45A5-BC79-D5B2299BAC7B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

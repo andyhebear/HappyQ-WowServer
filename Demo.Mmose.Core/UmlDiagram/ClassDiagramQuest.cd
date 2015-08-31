@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuest">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="m_BaseQuestTemplate" Hidden="true" />
+      <Field Name="m_Owner" Hidden="true" />
+      <Field Name="m_QuestObjectiveManager" Hidden="true" />
+      <Field Name="m_QuestStatus" Hidden="true" />
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAACACABAAAAAAAAACAAAABABIBAAAAAAAAiAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuest.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="QuestTemplate" />
+      <Property Name="QuestStatus" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestManager">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <Members>
+      <Field Name="m_Quests" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAIBAAAAAAgAAAAAAAACABAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestObjective">
+    <Position X="7.25" Y="8" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestObjective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestItemObjective">
+    <Position X="5.5" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAQgAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestObjective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestSourceObjective">
+    <Position X="10.5" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAABAAAAACAAAAABAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestObjective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestCreatureObjective">
+    <Position X="3" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAIAAAIAAAAAEAAgACAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestObjective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestGameobjectObjective">
+    <Position X="7.75" Y="9.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAEAAAAAQAAAAABAAAgA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestObjective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestSpellObjective">
+    <Position X="12.75" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestObjective.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestTemplate">
+    <Position X="4" Y="0.5" Width="1.75" />
+    <Members>
+      <Field Name="m_Serial" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestStatus">
+    <Position X="4" Y="2.25" Width="1.5" />
+    <Members>
+      <Field Name="m_Status" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAgAAAAAAAQAAAAAAQACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\Struct.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Entity.Suit.Quest.BaseQuestObjectiveManager">
+    <Position X="0.5" Y="7.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Quest\BaseQuestObjectiveManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

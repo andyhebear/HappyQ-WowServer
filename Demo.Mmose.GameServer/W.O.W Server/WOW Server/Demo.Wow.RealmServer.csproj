@@ -1,0 +1,250 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DCEFA208-ED4F-4567-BFFC-5F5077C2C3F6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Wow.RealmServer</RootNamespace>
+    <AssemblyName>Demo.Wow.RealmServer</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <StartupObject>Demo.Wow.RealmServer.Program</StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>Demo.Wow.RealmServer.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\AnyCPU\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\AnyCPU\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Itanium' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\Itanium\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Itanium' ">
+    <OutputPath>Bin\Itanium\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>Bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>Bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>Bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo.Mmose.Collections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=97adcb60b0449d16, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Core, Version=0.0.1.0, Culture=neutral, PublicKeyToken=b69da7c49a8ec220, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data, Version=8.1.1.0, Culture=neutral, PublicKeyToken=3161fad63fc64e83, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data.Linq, Version=8.1.1.0, Culture=neutral, PublicKeyToken=3ad998b9e652190c, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data.Xpo, Version=8.1.1.0, Culture=neutral, PublicKeyToken=b3bf71c53f4741f6, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.Xpo.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Data.Xpo.Linq, Version=8.1.1.0, Culture=neutral, PublicKeyToken=f07cb02ab34ac9e1, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Bin\Demo.Mmose.Data.Xpo.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Database\Model\Account.cs" />
+    <Compile Include="Common\Database\Model\AuctionHouse.cs" />
+    <Compile Include="Common\Database\Model\CharacterActionBar.cs" />
+    <Compile Include="Common\Database\Model\CharacterAura.cs" />
+    <Compile Include="Common\Database\Model\CharacterBase.cs" />
+    <Compile Include="Common\Database\Model\CharacterChatLog.cs" />
+    <Compile Include="Common\Database\Model\CharacterExplore.cs" />
+    <Compile Include="Common\Database\Model\CharacterHomeBind.cs" />
+    <Compile Include="Common\Database\Model\CharacterItem.cs" />
+    <Compile Include="Common\Database\Model\CharacterItemLog.cs" />
+    <Compile Include="Common\Database\Model\CharacterPet.cs" />
+    <Compile Include="Common\Database\Model\CharacterReputation.cs" />
+    <Compile Include="Common\Database\Model\CharactersGift.cs" />
+    <Compile Include="Common\Database\Model\CharactersHonor.cs" />
+    <Compile Include="Common\Database\Model\CharacterSkill.cs" />
+    <Compile Include="Common\Database\Model\CharacterSocial.cs" />
+    <Compile Include="Common\Database\Model\CharacterSpell.cs" />
+    <Compile Include="Common\Database\Model\CharacterSpellCooldown.cs" />
+    <Compile Include="Common\Database\Model\CharactersQuestStatus.cs" />
+    <Compile Include="Common\Database\Model\CharactersTaxi.cs" />
+    <Compile Include="Common\Database\Model\CharactersTutorial.cs" />
+    <Compile Include="Common\Database\Model\CharacterTradeLog.cs" />
+    <Compile Include="Common\Database\Model\Corpse.cs" />
+    <Compile Include="Common\Database\Model\CreatureBase.cs" />
+    <Compile Include="Common\Database\Model\CreatureMovement.cs" />
+    <Compile Include="Common\Database\Model\GMCommandLog.cs" />
+    <Compile Include="Common\Database\Model\Group.cs" />
+    <Compile Include="Common\Database\Model\GroupMember.cs" />
+    <Compile Include="Common\Database\Model\Guild.cs" />
+    <Compile Include="Common\Database\Model\GuildMember.cs" />
+    <Compile Include="Common\Database\Model\GuildRank.cs" />
+    <Compile Include="Common\Database\Model\Mail.cs" />
+    <Compile Include="Common\Database\Model\PetAura.cs" />
+    <Compile Include="Common\Database\Model\PetSpell.cs" />
+    <Compile Include="Common\Database\Model\PetSpellCooldown.cs" />
+    <Compile Include="Common\Database\Model\ServerUptime.cs" />
+    <Compile Include="Common\Realm.cs" />
+    <Compile Include="RealmServer\Common\ConfigInfo.cs" />
+    <Compile Include="Common\Database\OneDatabase.cs" />
+    <Compile Include="Common\Database\Model\Model.cs" />
+    <Compile Include="RealmServer\Common\RealmHandler.cs" />
+    <Compile Include="RealmServer\Common\Struct.cs" />
+    <Compile Include="RealmServer\Common\WowAccount.cs" />
+    <Compile Include="RealmServer\Common\WowAccountHandler.cs" />
+    <Compile Include="RealmServer\Common\SrpHandler.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\AuthExtendData.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\AuthPacketHandlers.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\AuthPackets.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\Enum.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleAuthChallenge\ExtendData.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleAuthChallenge\HandleAuthChallenge.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleAuthChallenge\Packets.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleAuthProof\ExtendData.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleAuthProof\HandleAuthProof.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleAuthProof\Packets.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleRealmList\Enum.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleRealmList\ExtendData.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleRealmList\HandleRealmList.cs" />
+    <Compile Include="RealmServer\Network\AuthPacketHandlers\HandleRealmList\Packets.cs" />
+    <Compile Include="RealmServer\Network\Common\Enum.cs" />
+    <Compile Include="RealmServer\Network\Common\OpCodeName.cs" />
+    <Compile Include="RealmServer\Network\Enum.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\Enum.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandlePing\ExtendData.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandlePing\HandlePing.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandlePing\Packets.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleRegisterRealm\Enum.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleRegisterRealm\ExtendData.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleRegisterRealm\HandleRegisterRealm.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleRegisterRealm\Packets.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleRequestSession\ExtendData.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleRequestSession\HandleRequestSession.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleRequestSession\Packets.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleSQLExecute\ExtendData.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleSQLExecute\HandleSQLExecute.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\HandleSQLExecute\Packets.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\RealmPackets.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\RealmPacketHandlers.cs" />
+    <Compile Include="RealmServer\Network\ProcessNet.cs" />
+    <Compile Include="Properties\RealmAssemblyInfo.cs" />
+    <Compile Include="RealmServer\Network\RealmPacketHandlers\RealmExtendData.cs" />
+    <Compile Include="RealmServer\Program.cs" />
+    <Compile Include="RealmServer\Server\ProcessServer.cs" />
+    <Compile Include="RealmServer\World\WowWorld.cs" />
+    <Compile Include="RealmServer\World\WowZoneCluster.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Bin\PostBuildEvent[RealmServer].bat" />
+    <None Include="Demo.Wow.RealmServer.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>: 以下的复制是归并NET的EXE
+copy "$(TargetFileName)" "..\..\$(TargetFileName)"
+
+"..\..\PostBuildEvent[RealmServer].bat"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

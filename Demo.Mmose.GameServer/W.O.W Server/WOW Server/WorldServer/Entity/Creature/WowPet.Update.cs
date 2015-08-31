@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Demo.Wow.WorldServer.Entity.Common;
+using Demo.Mmose.Core.Entity.Character;
+using Demo.Mmose.Core.Network;
+
+namespace Demo.Wow.WorldServer.Creature
+{
+    public partial class WowPet : IWowUpdate
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        public void BroadcastValueUpdate()
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="writer"></param>
+        /// <param name="updatingSelf"></param>
+        public void ObjectCreationUpdate( Packet packet, bool updatingSelf )
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="character"></param>
+        public void SendDestroyToPlayer( BaseCharacter character )
+        {
+        }
+    }
+}

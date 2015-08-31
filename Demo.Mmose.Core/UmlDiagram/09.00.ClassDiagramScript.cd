@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Scripts.ScriptAssemblyInfo">
+    <Position X="5" Y="0.75" Width="2.5" />
+    <Members>
+      <Method Name="AddHashCode" Hidden="true" />
+      <Method Name="AddScriptAssembly" Hidden="true" />
+      <Method Name="AddScriptFiles" Hidden="true" />
+      <Field Name="m_ScriptAssembly" Hidden="true" />
+      <Field Name="m_ScriptAssemblyInfos" Hidden="true" />
+      <Field Name="m_ScriptFiles" Hidden="true" />
+      <Field Name="m_ScriptName" Hidden="true" />
+      <Field Name="m_TypeCache" Hidden="true" />
+      <Field Name="m_VersionInfo" Hidden="true" />
+      <Field Name="s_AssemblyTypeCache" Hidden="true" />
+      <Method Name="SetScriptName" Hidden="true" />
+      <Method Name="SetVersion" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>KgASAAABAAiEgAAIAIAAAAQAAAAAAICAAAACAAEAQgI=</HashCode>
+      <FileName>ServerEngine\Scripts\ScriptAssemblyInfo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Demo.Mmose.Core.Scripts.ScriptCompiler">
+    <Position X="0.5" Y="1" Width="2.75" />
+    <Members>
+      <Method Name="CompileCSScripts" Hidden="true" />
+      <Method Name="CompileVBScripts" Hidden="true" />
+      <Method Name="DeleteFiles" Hidden="true" />
+      <Method Name="Display" Hidden="true" />
+      <Method Name="EnsureDirectory" Hidden="true" />
+      <Method Name="GetDefines" Hidden="true" />
+      <Method Name="GetHashCode" Hidden="true" />
+      <Method Name="GetReferenceAssemblies" Hidden="true" />
+      <Method Name="GetUnusedPath" Hidden="true" />
+      <Field Name="s_AdditionalReferenceArray" Hidden="true" />
+      <Field Name="s_AdditionalReferences" Hidden="true" />
+      <Field Name="s_LockScriptAssemblyInfos" Hidden="true" />
+      <Field Name="s_NullArray" Hidden="true" />
+      <Field Name="s_ScriptAssemblyInfoArray" Hidden="true" />
+      <Field Name="s_ScriptAssemblyInfos" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>IAAQQgAgEAAAEAAAAAAIAQgAAAABIIABAAEACAAEBkA=</HashCode>
+      <FileName>ServerEngine\Scripts\ScriptCompiler.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="ScriptAssemblyInfos" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Scripts.TypeCache">
+    <Position X="0.5" Y="3.75" Width="1.75" />
+    <Members>
+      <Field Name="m_FullNames" Hidden="true" />
+      <Field Name="m_Names" Hidden="true" />
+      <Field Name="m_Types" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AgAAgAAQAABABIAAAAAAAAAAAAAAAAgAAAAAAAAACAA=</HashCode>
+      <FileName>ServerEngine\Scripts\TypeCache.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Scripts.TypeTable">
+    <Position X="2.5" Y="3.75" Width="1.5" />
+    <Members>
+      <Field Name="m_Insensitive" Hidden="true" />
+      <Field Name="m_Sensitive" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAABAAAAAAAAIAAAAAAABAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Scripts\TypeTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="宋体" Size="9" />
+</ClassDiagram>

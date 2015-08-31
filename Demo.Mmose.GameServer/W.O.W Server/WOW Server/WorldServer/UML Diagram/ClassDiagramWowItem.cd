@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.WOW.WorldServer.Item.WoWItem">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AADBAACAAAAAAAAAAAAAAACAAAAAAAAAAEABAACAAAA=</HashCode>
+      <FileName>WorldServer\Item\WoWItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.WOW.WorldServer.Item.WoWItemTemplate">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FdEdRjYlASViMO7hPsSwl824ZviS2se2FAAieSA1CCI=</HashCode>
+      <FileName>WorldServer\Item\WoWItemTemplate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>

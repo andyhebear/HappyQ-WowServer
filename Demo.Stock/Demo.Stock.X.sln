@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Stock.X", "Demo.Stock.X\Demo.Stock.X.csproj", "{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs05.codeplex.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Demo.Stock.X\\Demo.Stock.X.csproj
+		SccProjectName1 = Demo.Stock.X
+		SccLocalPath1 = Demo.Stock.X
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Itanium = Debug|Itanium
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Itanium = Release|Itanium
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|Itanium.ActiveCfg = Debug|Itanium
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|Itanium.Build.0 = Debug|Itanium
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|x64.ActiveCfg = Debug|x64
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|x64.Build.0 = Debug|x64
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|x86.ActiveCfg = Debug|x86
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Debug|x86.Build.0 = Debug|x86
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|Itanium.ActiveCfg = Release|Itanium
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|Itanium.Build.0 = Release|Itanium
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|x64.ActiveCfg = Release|x64
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|x64.Build.0 = Release|x64
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|x86.ActiveCfg = Release|x86
+		{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

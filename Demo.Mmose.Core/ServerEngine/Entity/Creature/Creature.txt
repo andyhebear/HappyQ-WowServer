@@ -1,0 +1,2797 @@
+﻿
+#region zh-CHS 2006 - 2007 DemoSoft 团队 | en 2006 - 2007 DemoSoft Team
+
+//     NOTES
+// ---------------
+//
+// This file is a part of the G.O.S.E(Game Online Server Engine) for .NET.
+//
+//                 2006-2007 DemoSoft Team
+//
+//
+// First Version : by H.Q.Cai - mailto:caihuanqing@hotmail.com
+
+/***************************************************************************
+ *
+ *   This program is free software; you can redistribute it and/or modify
+ *   it under the terms of the GNU Lesser General Public License as published
+ *   by the Free Software Foundation; either version 2.1 of the License, or
+ *   (at your option) any later version.
+ *
+ ***************************************************************************/
+
+#region zh-CHS 包含名字空间 | en Include namespace
+using System;
+using System.Text;
+using System.Threading;
+using System.Reflection;
+using System.Collections;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using Demo.Mmose.Core.Map;
+using Demo.Mmose.Core.Util;
+using Demo.Mmose.Core.Entity.Item;
+using Demo.Mmose.Core.Skill;
+using Demo.Mmose.Core.Entity.Suit.Guild;
+using Demo.Mmose.Core.World;
+using Demo.Mmose.Core.Common;
+using Demo.Mmose.Core.Network;
+using Demo.Mmose.Core.Entity.Suit.Treasure;
+using System.Diagnostics;
+#endregion
+
+namespace Demo.Mmose.Core.Mobile
+{
+    // 人物的信息
+    //////////////////////////////////////////////////////////////////////////
+    // 人物的种族
+    // 人物的状态
+    // 人物的抗性
+    // 人物的信息
+    // 人物的道具(包裹&身上)
+
+    // 人物的动作
+    //////////////////////////////////////////////////////////////////////////
+    // 人物的移动
+    // 人物的说话
+    // 人物用道具
+    // 人物的死亡
+    // 人物的复活(NPC/怪物-刷出)
+
+    // 人物的AI
+    //////////////////////////////////////////////////////////////////////////
+    // 人物的AI(移动/说话/攻击/防御/做任务)
+    // 人物的普通(攻击/防御)
+    // 人物的技能(攻击/增益/诅咒)
+    // 人物的魔法(攻击/增益/诅咒)
+
+    // 人物掉落的道具(玩家/NPC-可不掉落)
+    // 人物可用的道具
+    // 人物可见的范围
+    // 
+    // 
+    // 
+
+    /// <summary>
+    /// Base class representing players, npcs, and creatures.
+    /// </summary>
+    public class BaseMobile : IEntity, IComparable, IComparable<BaseMobile>
+    {
+        #region zh-CHS 构造和初始化和清理 | en Constructors and Initializers and Dispose
+        /// <summary>
+        /// 构造
+        /// </summary>
+        public BaseMobile()
+        {
+            DefaultMobileInit();
+        }
+
+        /// <summary>
+        /// 构造
+        /// </summary>
+        /// <param name="serial"></param>
+        public BaseMobile( Serial serial )
+        {
+            m_Serial = serial;
+            DefaultMobileInit();
+        }
+
+        #region zh-CHS 人物的初始化 | en
+        /// <summary>
+        /// 缺省的初始化人物
+        /// </summary>
+        protected virtual void DefaultMobileInit()
+        {
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 共有属性 | en Public Properties
+
+        #region zh-CHS X属性 | en Public Properties
+
+        /// <summary>
+        /// 人物所在的X坐标点
+        /// </summary>
+        [CommandProperty( AccessLevel.Counselor, AccessLevel.GameMaster )]
+        public long X
+        {
+            get { return m_Location.X; }
+            set { UpdateX( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual bool OnXChange( long newX )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual void OnAfterXChange( long oldX )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateX( long newX )
+        {
+            if ( m_Deleted )
+                return false;
+
+            long oldX = m_Location.X;
+
+            if ( OnXChange( newX ) == false )
+                return false;
+            else
+                m_Location.X = newX;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateX(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaXUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterXChange( oldX );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Y属性 | en Public Properties
+
+        /// <summary>
+        /// 人物所在的Y坐标点
+        /// </summary>
+        [CommandProperty( AccessLevel.Counselor, AccessLevel.GameMaster )]
+        public long Y
+        {
+            get { return m_Location.Y; }
+            set { UpdateY( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual bool OnYChange( long newY )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual void OnAfterYChange( long oldY )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateY( long newY )
+        {
+            if ( m_Deleted )
+                return false;
+
+            long oldY = m_Location.Y;
+
+            if ( OnYChange( newY ) == false )
+                return false;
+            else
+                m_Location.Y = newY;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateY(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaYUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterYChange( oldY );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Z属性 | en Public Properties
+
+        /// <summary>
+        /// 人物所在的Z坐标点
+        /// </summary>
+        [CommandProperty( AccessLevel.Counselor, AccessLevel.GameMaster )]
+        public long Z
+        {
+            get { return m_Location.Z; }
+            set { UpdateZ( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual bool OnZChange( long newZ )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual void OnAfterZChange( long oldZ )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateZ( long newZ )
+        {
+            if ( m_Deleted )
+                return false;
+
+            long oldZ = m_Location.Z;
+
+            if ( OnZChange( newZ ) == false )
+                return false;
+            else
+                m_Location.Z = newZ;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateZ(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaZUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterZChange( oldZ );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Location属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物所在地图的位置
+        /// </summary>
+        private Point3D m_Location = new Point3D();
+        #endregion
+        /// <summary>
+        /// 人物所在地图的位置
+        /// </summary>
+        [CommandProperty( AccessLevel.Counselor, AccessLevel.GameMaster )]
+        public Point3D Location
+        {
+            get { return m_Location; }
+            set { UpdateLocation( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual bool OnLocationChange( Point3D newLocation )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual void OnAfterLocationChange( Point3D oldLocation )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateLocation( Point3D newLocation )
+        {
+            if ( m_Deleted )
+                return false;
+
+            Point3D oldLocation = m_Location;
+
+            if ( OnLocationChange( newLocation ) == false )
+                return false;
+            else
+                m_Location = newLocation;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateLocation(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaLocationUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterLocationChange( oldLocation );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Direction属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物所面向的方向
+        /// </summary>
+        private long m_Direction;
+        #endregion
+        /// <summary>
+        /// 人物所面向的方向
+        /// </summary>
+        [CommandProperty( AccessLevel.GameMaster )]
+        public long Direction
+        {
+            get { return m_Direction; }
+            set { UpdateDirection( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnDirectionChange( long newDirection )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterDirectionChange( long oldDirection )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateDirection( long newDirection )
+        {
+            if ( m_Deleted )
+                return false;
+
+            long oldDirection = m_Direction;
+
+            if ( OnDirectionChange( newDirection ) == false )
+                return false;
+            else
+                m_Direction = newDirection;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateDirection(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaDirectionUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterDirectionChange( oldDirection );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Serial属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物所定义的唯一序号GUID
+        /// </summary>
+        private Serial m_Serial = new Serial();
+        #endregion
+        /// <summary>
+        /// 人物所定义的唯一序号GUID
+        /// </summary>
+        [CommandProperty( AccessLevel.Counselor )]
+        public Serial Serial
+        {
+            get { return m_Serial; }
+            set { UpdateSerial( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnSerialChange( Serial newSerial )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterSerialChange( Serial oldSerial )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateSerial( Serial newSerial )
+        {
+            if ( m_Deleted )
+                return false;
+
+            Serial oldSerial = m_Serial;
+
+            if ( OnSerialChange( newSerial ) == false )
+                return false;
+            else
+                m_Serial = newSerial;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateMap(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaSerialUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterSerialChange( oldSerial );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Map属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物所在的地图
+        /// </summary>
+        private BaseMap m_BaseMap = BaseMap.NullMap;
+        #endregion
+        /// <summary>
+        /// 人物所在的地图
+        /// </summary>
+        [CommandProperty( AccessLevel.Counselor, AccessLevel.GameMaster )]
+        public BaseMap Map
+        {
+            get { return m_BaseMap; }
+            set { UpdateMap( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnMapChange( BaseMap newMap )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterMapChange( BaseMap oldMap )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateMap( BaseMap newMap )
+        {
+            if ( m_Deleted )
+                return false;
+
+            BaseMap oldMap = m_BaseMap;
+
+            if ( OnMapChange( newMap ) == false )
+                return false;
+            else
+                m_BaseMap = newMap;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateMap(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaMapUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterMapChange( oldMap );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Player属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 指示当前是否是玩家(true) 还是 NPC与怪物(false)
+        /// </summary>
+        private bool m_Player = false;
+        #endregion
+        /// <summary>
+        /// 指示当前是否是玩家(true) 还是 NPC与怪物(false)
+        /// </summary>
+        [CommandProperty( AccessLevel.GameMaster, AccessLevel.Administrator )]
+        public bool Player
+        {
+            get { return m_Player; }
+            set { UpdatePlayer( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnPlayerChange( bool newPlayer )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterPlayerChange( bool oldPlayer )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdatePlayer( bool newPlayer )
+        {
+            if ( m_Deleted )
+                return false;
+
+            bool oldPlayer = m_Player;
+
+            if ( OnPlayerChange( newPlayer ) == false )
+                return false;
+            else
+                m_Player = newPlayer;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdatePlayer(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaPlayerUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterPlayerChange( oldPlayer );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Name属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物的名字
+        /// </summary>
+        private string m_Name = string.Empty;
+        #endregion
+        /// <summary>
+        /// 人物的名字
+        /// </summary>
+        [CommandProperty( AccessLevel.GameMaster, AccessLevel.Administrator )]
+        public string Name
+        {
+            get { return m_Name; }
+            set { UpdateName( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnNameChange( string newName )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterNameChange( string oldName )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateName( string newName )
+        {
+            if ( m_Deleted )
+                return false;
+
+            string oldName = m_Name;
+
+            if ( OnNameChange( newName ) == false )
+                return false;
+            else
+                m_Name = newName;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateName(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaNameUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterNameChange( oldName );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Hidden属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物是否隐藏
+        /// </summary>
+        private bool m_Hidden = false;
+        #endregion
+        /// <summary>
+        /// 人物是否隐藏(其他人看不见的)
+        /// </summary>
+        [CommandProperty( AccessLevel.GameMaster )]
+        public virtual bool Hidden
+        {
+            get { return m_Hidden; }
+            set { UpdateHidden( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnHiddenChange( bool newHidden )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterHiddenChange( bool oldHidden )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateHidden( bool newHidden )
+        {
+            if ( m_Deleted )
+                return false;
+
+            bool oldHidden = newHidden;
+
+            if ( OnHiddenChange( newHidden ) == false )
+                return false;
+            else
+                m_Hidden = newHidden;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateHidden(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaHiddenUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterHiddenChange( oldHidden );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS NetState属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物的网络状态
+        /// </summary>
+        private NetState m_NetState = null;
+        #endregion
+        /// <summary>
+        /// 人物的网络状态
+        /// </summary>
+        public NetState NetState
+        {
+            get { return m_NetState; }
+            set { UpdateNetState( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 连接(用于新的架构中)
+        /// </summary>
+        protected virtual void OnConnected( NetState newNetState )
+        {
+        }
+
+        /// <summary>
+        /// 断开(用于新的架构中)
+        /// </summary>
+        protected virtual void OnDisconnected( NetState netState )
+        {
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnNetStateChange( NetState newNetState )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterNetStateChange( NetState oldNetState )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateNetState( NetState newNetState )
+        {
+            if ( m_Deleted || newNetState == null )
+                return false;
+
+            NetState oldNetState = m_NetState;
+
+            if ( OnNetStateChange( newNetState ) == false )
+                return false;
+            else
+            {
+                if ( m_NetState != null )
+                    OnDisconnected( m_NetState );
+
+                m_NetState = newNetState;
+                OnConnected( m_NetState );
+            }
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateNetState(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaNetStateUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterNetStateChange( oldNetState );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS AccessLevel属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物的帐号等级
+        /// </summary>
+        private AccessLevel m_AccessLevel;
+        #endregion
+        /// <summary>
+        /// 人物的帐号等级
+        /// </summary>
+        public AccessLevel AccessLevel
+        {
+            get { return m_AccessLevel; }
+            set { UpdateAccessLevel( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnAccessLevelChange( AccessLevel newAccessLevel )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterAccessLevelChange( AccessLevel oldAccessLevel )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateAccessLevel( AccessLevel newAccessLevel )
+        {
+            if ( m_Deleted )
+                return false;
+
+            AccessLevel oldAccessLevel = m_AccessLevel;
+
+            if ( OnAccessLevelChange( newAccessLevel ) == false )
+                return false;
+            else
+                m_AccessLevel = newAccessLevel;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateAccessLevel(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaAccessLevelUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterAccessLevelChange( oldAccessLevel );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Alive属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 
+        /// </summary>
+        private bool m_Alive = true;
+        #endregion
+        /// <summary>
+        /// 人物是否在活着(true)或死亡(false)
+        /// </summary>
+        [CommandProperty( AccessLevel.Counselor )]
+        public virtual bool Alive
+        {
+            get { return m_Alive; }
+            set { UpdateAlive( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnAliveChange( bool newAlive )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterAliveChange( bool oldAlive )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateAlive( bool newAlive )
+        {
+            if ( m_Deleted )
+                return false;
+
+            bool oldAlive = m_Alive;
+
+            if ( OnAliveChange( newAlive ) == false )
+                return false;
+            else
+                m_Alive = newAlive;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateAlive(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaAliveUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterAliveChange( oldAlive );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS MobileDelta属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物的状态机
+        /// </summary>
+        private IMobileDelta m_MobileDelta = new BaseMobileDelta();
+        #endregion
+        /// <summary>
+        /// 人物的状态机
+        /// </summary>
+        public IMobileDelta MobileDelta
+        {
+            get { return m_MobileDelta; }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnMobileDeltaChange( IMobileDelta newMobileDelta )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterMobileDeltaChange( IMobileDelta oldMobileDelta )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        protected bool UpdateMobileDelta( IMobileDelta newMobileDelta )
+        {
+            if ( m_Deleted || newMobileDelta == null )
+                return false;
+
+            IMobileDelta oldMobileDelta = m_MobileDelta;
+
+            if ( OnMobileDeltaChange( newMobileDelta ) == false )
+                return false;
+            else
+                m_MobileDelta = newMobileDelta;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateMobileDelta(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaMobileDeltaUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterMobileDeltaChange( oldMobileDelta );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Deleted属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物是否删除
+        /// </summary>
+        private bool m_Deleted = false;
+        #endregion
+        /// <summary>
+        /// BaseMobile是否已无效删除
+        /// </summary>
+        public bool Deleted
+        {
+            get { return m_Deleted; }
+        }
+
+        #region zh-CHS 人物的删除 | en
+
+        #region zh-CHS 内部保护方法 | en Protected Internal Methods
+        /// <summary>
+        /// 在删除前
+        /// </summary>
+        protected virtual void OnDelete()
+        {
+        }
+
+        /// <summary>
+        /// 删除之后
+        /// </summary>
+        protected virtual void OnAfterDelete()
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 删除
+        /// </summary>
+        public void Delete()
+        {
+            OnDelete();
+
+            m_Deleted = true;
+
+            OnAfterDelete();
+        }
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region zh-CHS Loots属性 | en Public Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 
+        /// </summary>
+        BaseTreasure[] m_Loots = null;
+        #endregion
+        /// <summary>
+        /// 
+        /// </summary>
+        public BaseTreasure[] Loots
+        {
+            get { return m_Loots; }
+            set { UpdateLoots( value ); }
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual bool OnLootsChange( BaseTreasure[] newBaseTreasure )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void OnAfterLootsChange( BaseTreasure[] oldBaseTreasure )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        protected bool UpdateLoots( BaseTreasure[] newBaseTreasure )
+        {
+            if ( m_Deleted || newBaseTreasure == null )
+                return false;
+
+            BaseTreasure[] oldBaseTreasure = m_Loots;
+
+            if ( OnLootsChange( newBaseTreasure ) == false )
+                return false;
+            else
+                m_Loots = newBaseTreasure;
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.UpdateLoots(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaLootsUpdate();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterLootsChange( oldBaseTreasure );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物实例产生的时间
+        /// </summary>
+        private DateTime m_CreationTime = DateTime.Now;
+        #endregion
+        /// <summary>
+        /// 实例人物时产生的时间
+        /// </summary>
+        [CommandProperty( AccessLevel.GameMaster )]
+        public DateTime CreationTime
+        {
+            get { return m_CreationTime; }
+        }
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 人物的道具列表
+        /// </summary>
+        private Dictionary<long, BaseItem> m_ToteItems = new Dictionary<long, BaseItem>();
+        #endregion
+        /// <summary>
+        /// 人物的道具列表(包裹与身上) 
+        /// </summary>
+        public Dictionary<long, BaseItem> Items
+        {
+            get { return m_ToteItems; }
+        }
+
+        #endregion
+
+        #region zh-CHS 共有静态属性 | en Public Static Properties
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 
+        /// </summary>
+        private static char[] m_GhostChars = new char[2] { 'o', 'O' };
+        #endregion
+        /// <summary>
+        /// 人物的处理变异话语的数据
+        /// </summary>
+        public static char[] GhostChars
+        {
+            get { return m_GhostChars; }
+            set { m_GhostChars = value; }
+        }
+
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+
+        #region zh-CHS 人物的网络状态 | en
+
+        #region zh-CHS 内部保护方法 | en Protected Internal Methods
+        /// <summary>
+        /// 网络改变(用于新的架构中)
+        /// </summary>
+        protected virtual bool OnNetStateTransfer( NetState newNetState )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 网络改变(用于新的架构中)
+        /// </summary>
+        protected virtual void OnAfterNetStateTransfer( NetState oldNetState )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="newNetState"></param>
+        public bool NetStateTransfer( NetState newNetState )
+        {
+            if ( m_Deleted )
+                return false;
+
+            NetState oldNetState = m_NetState;
+
+            if ( OnNetStateTransfer( newNetState ) == false )
+                return false;
+            else
+            {
+                if ( UpdateNetState( newNetState ) == false )
+                    return false;
+            }
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.SetLocation(...) - NetStateTransfer == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaNetStateTransferCall();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterNetStateTransfer( oldNetState );
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 人物的移动 | en
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 人物的移动方向时
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        protected virtual bool OnMoveTo( Point3D newLocation )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 人物的移动之后调用
+        /// </summary>
+        /// <param name="oldLocation"></param>
+        protected virtual void OnAfterMoveTo( Point3D oldLocation )
+        {
+        }
+
+        /// <summary>
+        /// 人物的移动方向时
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        protected virtual bool OnSetLocation( Point3D newLocation )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 人物的移动之后调用
+        /// </summary>
+        /// <param name="oldLocation"></param>
+        protected virtual void OnAfterSetLocation( Point3D oldLocation )
+        {
+        }
+
+        /// <summary>
+        /// 当前的地图改变
+        /// </summary>
+        /// <param name="oldBaseMap"></param>
+        protected virtual bool OnMoveToWorld( Point3D newLocation, BaseMap newBaseMap )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前的地图改变
+        /// </summary>
+        /// <param name="oldBaseMap"></param>
+        protected virtual void OnAfterMoveToWorld( Point3D oldLocation, BaseMap oldBaseMap )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 内部保护方法 | en Protected Internal Methods
+        /// <summary>
+        /// 地图点激活
+        /// </summary>
+        protected internal virtual void OnSectorActivate()
+        {
+        }
+
+        /// <summary>
+        /// 地图点不激活
+        /// </summary>
+        protected internal virtual void OnSectorDeactivate()
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 人物的移动方向
+        /// </summary>
+        /// <param name="d"></param>
+        /// <returns></returns>
+        public bool MoveTo( Point3D newLocation )
+        {
+            if ( m_Deleted || m_BaseMap == null || m_BaseMap == BaseMap.NullMap )
+                return false;
+
+            //MovementEventArgs l_EventArgs = MovementEventArgs.Instance( this, newLocation );
+            //if ( l_EventArgs == null )
+            //{
+            //    Debug.WriteLine( "BaseMobile.InternalOnMove(...) - l_EventArgs == null error!" );
+
+            //    return false;
+            //}
+
+            //EventSink.InvokeMovement( l_EventArgs );
+            //bool l_bReturn = !l_EventArgs.Blocked;
+
+            //l_EventArgs.Release();
+
+            //if ( l_bReturn == false )
+            //    return false;
+
+            Point3D oldLocation = m_Location;
+
+            if ( OnMoveTo( newLocation ) == false )
+                return false;
+            else
+            {
+                if ( UpdateLocation( newLocation ) == false )
+                    return false;
+            }
+
+            m_BaseMap.OnMove( oldLocation, this );
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.MoveTo(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaMoveToCall();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterMoveTo( oldLocation );
+
+            return true;
+        }
+
+        /// <summary>
+        /// 移动到当前地图的某个点
+        /// </summary>
+        /// <param name="newLocation"></param>
+        /// <param name="isTeleport"></param>
+        public bool SetLocation( Point3D newLocation )
+        {
+            if ( m_Deleted || m_BaseMap == null || m_BaseMap == BaseMap.NullMap )
+                return false;
+
+            Point3D oldLocation = m_Location;
+
+            if ( OnSetLocation( newLocation ) == false )
+                return false;
+            else
+            {
+                if ( UpdateLocation( newLocation ) == false )
+                    return false;
+            }
+
+            m_BaseMap.OnMove( oldLocation, this );
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.SetLocation(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaSetLocationCall();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterSetLocation( oldLocation );
+
+            return true;
+        }
+
+        /// <summary>
+        /// 移动到世界的某地图的某个点
+        /// </summary>
+        /// <param name="newLocation"></param>
+        /// <param name="map"></param>
+        public bool MoveToWorld( Point3D newLocation, BaseMap newBaseMap )
+        {
+            if ( m_Deleted || newBaseMap == null || newBaseMap == BaseMap.NullMap )
+                return false;
+
+            if ( m_BaseMap == newBaseMap )
+                return SetLocation( newLocation );
+            else
+            {
+                Point3D oldLocation = m_Location;
+                BaseMap oldBaseMap = m_BaseMap;
+
+                if ( OnMoveToWorld( newLocation, newBaseMap ) == false )
+                    return false;
+                else
+                {
+                    if ( UpdateLocation( newLocation ) == false )
+                        return false;
+
+                    if ( UpdateMap( newBaseMap ) == false )
+                        return false;
+                }
+
+                m_BaseMap.OnLeave( this );
+                m_BaseMap.OnEnter( this );
+
+                BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+                if ( l_MobileDelta == null )
+                    Debug.WriteLine( "BaseMobile.MoveToWorld(...) - l_MobileDelta == null warning!" );
+                else
+                {
+                    l_MobileDelta.DeltaMoveToWorldCall();
+                    Delta( m_MobileDelta );
+                }
+
+                OnAfterMoveToWorld( oldLocation, oldBaseMap );
+
+                return true;
+            }
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 人物的说话 | en
+
+        #region zh-CHS 内部保护方法 | en Protected Internal Methods
+        /// <summary>
+        /// 检测是否可以听到变异的话
+        /// </summary>
+        /// <param name="m"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        protected virtual bool OnCheckHearsMutatedSpeech( BaseMobile baseMobile, ref object context )
+        {
+            return true;
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 变异说的话
+        /// </summary>
+        /// <param name="hears">听得到的人的列表</param>
+        /// <param name="text"></param>
+        /// <param name="context"></param>
+        /// <returns>变异说的话</returns>
+        public string MutateSpeech( BaseMobile[] baseMobileHears, out bool[] CheckHears, string strText, ref object objectContext )
+        {
+            CheckHears = new bool[baseMobileHears.Length];
+
+            int iIndex = 0;
+            foreach ( BaseMobile baseMobile in baseMobileHears )
+            {
+                CheckHears[iIndex] = OnCheckHearsMutatedSpeech( baseMobile, ref objectContext );
+                ++iIndex;
+            }
+
+            StringBuilder l_StringBuilder = new StringBuilder( strText.Length, strText.Length );
+
+            foreach ( char charText in strText )
+            {
+                if ( charText != ' ' )
+                    l_StringBuilder.Append( m_GhostChars[Utility.Random( m_GhostChars.Length )] );
+                else
+                    l_StringBuilder.Append( ' ' );
+            }
+
+            return l_StringBuilder.ToString();
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 人物可见的范围 | en
+
+        #region zh-CHS 给出目标的距离 | en
+        /// <summary>
+        /// 给出目标的距离
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public double GetDistanceToSqrt( BaseMobile baseMobile )
+        {
+            if ( baseMobile == null )
+            {
+                Debug.WriteLine( "BaseMobile.GetDistanceToSqrt(...) - baseMobile == null error!" );
+
+                return 0.0f;
+            }
+
+            return GetDistanceToSqrt( baseMobile as IPoint2D );
+        }
+
+        /// <summary>
+        /// 给出目标的距离
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public double GetDistanceToSqrt( BaseItem baseItem )
+        {
+            if ( baseItem == null )
+            {
+                Debug.WriteLine( "BaseMobile.GetDistanceToSqrt(...) - baseItem == null error!" );
+
+                return 0.0f;
+            }
+
+            return GetDistanceToSqrt( baseItem as IPoint2D );
+        }
+
+        /// <summary>
+        /// 给出目标的距离
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public double GetDistanceToSqrt( Point3D point3D )
+        {
+            return GetDistanceToSqrt( point3D as IPoint2D );
+        }
+
+        /// <summary>
+        /// 给出目标的距离
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public double GetDistanceToSqrt( IPoint3D point3D )
+        {
+            return GetDistanceToSqrt( point3D as IPoint2D );
+        }
+
+        /// <summary>
+        /// 给出目标的距离
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public double GetDistanceToSqrt( Point2D point2D )
+        {
+            return GetDistanceToSqrt( point2D as IPoint2D );
+        }
+
+        /// <summary>
+        /// 给出目标的距离
+        /// </summary>
+        /// <param name="p"></param>
+        /// <returns></returns>
+        public double GetDistanceToSqrt( IPoint2D point2D )
+        {
+            long xDelta = m_Location.X - point2D.X;
+            long yDelta = m_Location.Y - point2D.Y;
+
+            return Math.Sqrt( ( xDelta * xDelta ) + ( yDelta * yDelta ) );
+        }
+        #endregion
+
+        #region zh-CHS 给出人物范围内的道具或人物或对象 | en
+        /// <summary>
+        /// 给出人物范围内的道具
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public IPooledEnumerable GetItemsInRange( int iRange )
+        {
+            if ( m_BaseMap == null || m_BaseMap == BaseMap.NullMap )
+                return NullEnumerable.Instance;
+
+            return m_BaseMap.GetItemsInRange( m_Location, iRange );
+        }
+
+        /// <summary>
+        /// 给出人物范围内的对象
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public IPooledEnumerable GetObjectsInRange( int iRange )
+        {
+            if ( m_BaseMap == null || m_BaseMap == BaseMap.NullMap )
+                return NullEnumerable.Instance;
+
+            return m_BaseMap.GetObjectsInRange( m_Location, iRange );
+        }
+
+        /// <summary>
+        /// 给出人物范围内的人物
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public IPooledEnumerable GetMobilesInRange( int iRange )
+        {
+            if ( m_BaseMap == null || m_BaseMap == BaseMap.NullMap )
+                return NullEnumerable.Instance;
+
+            return m_BaseMap.GetMobilesInRange( m_Location, iRange );
+        }
+
+        /// <summary>
+        /// 给出人物范围内的客户端
+        /// </summary>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public IPooledEnumerable GetClientsInRange( int iRange )
+        {
+            if ( m_BaseMap == null || m_BaseMap == BaseMap.NullMap )
+                return NullEnumerable.Instance;
+
+            return m_BaseMap.GetClientsInRange( m_Location, iRange );
+        }
+        #endregion
+
+        #region zh-CHS 给出人物或道具或位置是否在此人物的范围内 | en
+        /// <summary>
+        /// 人物是否在范围内
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public bool InRange( BaseMobile baseMobile, int iRange )
+        {
+            if ( baseMobile == null )
+            {
+                Debug.WriteLine( "BaseMobile.InRange(...) - baseMobile == null error!" );
+
+                return false;
+            }
+
+            return InRange( baseMobile as IPoint2D, iRange );
+        }
+
+        /// <summary>
+        /// 道具是否在范围内
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public bool InRange( BaseItem baseItem, int iRange )
+        {
+            if ( baseItem == null )
+            {
+                Debug.WriteLine( "BaseMobile.InRange(...) - baseItem == null error!" );
+
+                return false;
+            }
+
+            return InRange( baseItem as IPoint2D, iRange );
+        }
+
+        /// <summary>
+        /// 位置是否在范围内
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public bool InRange( Point3D point3D, int iRange )
+        {
+            return InRange( point3D as IPoint2D, iRange );
+        }
+
+        /// <summary>
+        /// 位置是否在范围内
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public bool InRange( IPoint3D point3D, int iRange )
+        {
+            return InRange( point3D as IPoint2D, iRange );
+        }
+
+        /// <summary>
+        /// 位置是否在范围内
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public bool InRange( Point2D point2D, int iRange )
+        {
+            return InRange( point2D as IPoint2D, iRange );
+        }
+
+        /// <summary>
+        /// 位置是否在范围内
+        /// </summary>
+        /// <param name="p"></param>
+        /// <param name="range"></param>
+        /// <returns></returns>
+        public bool InRange( IPoint2D point2D, int iRange )
+        {
+            return ( point2D.X >= ( m_Location.X - iRange ) )
+                && ( point2D.X <= ( m_Location.X + iRange ) )
+                && ( point2D.Y >= ( m_Location.Y - iRange ) )
+                && ( point2D.Y <= ( m_Location.Y + iRange ) );
+        }
+        #endregion
+
+        #region zh-CHS 给出人物或道具是否可被此人物看见 | en
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="baseItem"></param>
+        /// <returns></returns>
+        protected virtual bool OnCanSee( object xObject )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="baseItem"></param>
+        /// <returns></returns>
+        protected virtual bool OnCanSee( BaseItem baseItem )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="baseMobile"></param>
+        /// <returns></returns>
+        protected virtual bool OnCanSee( BaseMobile baseMobile )
+        {
+            return true;
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 能否看见
+        /// </summary>
+        /// <param name="o"></param>
+        /// <returns></returns>
+        public virtual bool CanSee( object xObject )
+        {
+            if ( xObject == null )
+            {
+                Debug.WriteLine( "BaseMobile.CanSee(...) - xObject == null error!" );
+
+                return false;
+            }
+            
+            BaseItem l_BaseItem = xObject as BaseItem;
+            if ( l_BaseItem != null )
+                return CanSee( l_BaseItem );
+
+            BaseMobile l_BaseMobile = xObject as BaseMobile;
+            if ( l_BaseMobile != null )
+                return CanSee( l_BaseMobile );
+
+            return OnCanSee( xObject );
+        }
+
+        /// <summary>
+        /// 能否看见
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public virtual bool CanSee( BaseItem baseItem )
+        {
+            if ( baseItem == null )
+            {
+                Debug.WriteLine( "BaseMobile.CanSee(...) - baseItem == null error!" );
+
+                return false;
+            }
+
+            if (  m_Deleted || baseItem.Deleted )
+                return false;
+
+            if ( m_BaseMap == null || baseItem.Map == null )
+                return false;
+
+            if ( m_BaseMap == BaseMap.NullMap || baseItem.Map == BaseMap.NullMap )
+                return false;
+
+            if ( baseItem.Parent != null )
+            {
+                BaseItem l_BaseItem = baseItem.Parent as BaseItem;
+                if ( l_BaseItem != null )
+                    return CanSee( l_BaseItem );
+
+                BaseMobile l_BaseMobile = baseItem.Parent as BaseMobile;
+                if ( l_BaseMobile != null )
+                    return CanSee( l_BaseMobile );
+
+                return false;
+            }
+
+            if ( baseItem.Map == m_BaseMap && baseItem.Visible )
+                return OnCanSee( baseItem );
+
+            return false;
+        }
+
+        /// <summary>
+        /// 能否看见
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public virtual bool CanSee( BaseMobile baseMobile )
+        {
+            if ( baseMobile == null )
+            {
+                Debug.WriteLine( "BaseMobile.CanSee(...) - baseMobile == null error!" );
+
+                return false;
+            }
+
+            if ( m_Deleted || baseMobile.m_Deleted )
+                return false;
+
+            if ( m_BaseMap == null || baseMobile.m_BaseMap == null )
+                return false;
+
+            if ( m_BaseMap == BaseMap.NullMap || baseMobile.m_BaseMap == BaseMap.NullMap )
+                return false;
+
+            if ( baseMobile.m_BaseMap == m_BaseMap && ( baseMobile.m_Hidden == false && baseMobile.m_Alive ) )
+                return OnCanSee( baseMobile );
+
+            return false;
+        }
+        #endregion
+
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 人物可用的道具 | en
+
+        #region zh-CHS 内部保护方法 | en Protected Internal Methods
+        /// <summary>
+        /// 道具添加
+        /// </summary>
+        /// <param name="item"></param>
+        protected virtual bool OnAddItem( BaseItem baseItem )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 道具添加
+        /// </summary>
+        /// <param name="item"></param>
+        protected virtual void OnAfterAddItem( BaseItem baseItem )
+        {
+        }
+
+        /// <summary>
+        /// 道具移去
+        /// </summary>
+        /// <param name="item"></param>
+        protected virtual bool OnRemoveItem( BaseItem baseItem )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 道具移去
+        /// </summary>
+        /// <param name="item"></param>
+        protected virtual void OnAfterRemoveItem( BaseItem baseItem )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 添加道具
+        /// </summary>
+        /// <param name="item"></param>
+        public bool AddItem( long slotNumber, BaseItem baseItem )
+        {
+            if ( m_Deleted )
+                return false;
+
+            BaseItem l_BaseItem = null;
+            if ( m_ToteItems.TryGetValue( slotNumber, out l_BaseItem ) == false )
+                return false;
+
+            if ( l_BaseItem != null )
+                return false;
+
+            if ( OnAddItem( baseItem ) == false )
+                return false;
+
+            m_ToteItems.Add( slotNumber, baseItem );
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.AddItem(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaAddItemCall();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterAddItem( baseItem );
+
+            return true;
+        }
+
+        /// <summary>
+        /// 移出道具
+        /// </summary>
+        /// <param name="item"></param>
+        public bool RemoveItem( long slotNumber, BaseItem baseItem )
+        {
+            if ( m_Deleted )
+                return false;
+
+            BaseItem l_BaseItem = null;
+            if ( m_ToteItems.TryGetValue( slotNumber, out l_BaseItem ) == false )
+                return false;
+
+            if ( l_BaseItem == null )
+                return false;
+
+            if ( OnRemoveItem( baseItem ) == false )
+                return false;
+
+            m_ToteItems.Remove( slotNumber );
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.RemoveItem(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaRemoveItemCall();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterRemoveItem( baseItem );
+
+            return true;
+        }
+
+        /// <summary>
+        /// 在身上找道具
+        /// </summary>
+        /// <param name="layer"></param>
+        /// <returns></returns>
+        public BaseItem[] FindItemOnLayer( Layer layer )
+        {
+            List<BaseItem> l_BaseItem = new List<BaseItem>();
+            foreach ( KeyValuePair<long, BaseItem> Item in m_ToteItems )
+            {
+                if ( Item.Value.Deleted == false && Item.Value.Layer == layer )
+                    l_BaseItem.Add(Item.Value);
+            }
+
+            return l_BaseItem.ToArray();
+        }
+
+        /// <summary>
+        /// 在身上找道具
+        /// </summary>
+        /// <param name="layer"></param>
+        /// <returns></returns>
+        public BaseItem FindItemOnSlot( long slotNumber )
+        {
+            BaseItem l_BaseItem = null;
+
+            m_ToteItems.TryGetValue( slotNumber, out l_BaseItem );
+
+            return l_BaseItem;
+        }
+
+        /// <summary>
+        /// 掉落道具
+        /// </summary>
+        /// <returns></returns>
+        public BaseItem[] GenerateLoot()
+        {
+            if ( m_Loots == null )
+                return null;
+
+            List<BaseItem> baseTreasureList = new List<BaseItem>();
+
+            foreach ( BaseTreasure baseTreasure in m_Loots )
+            {
+                if ( baseTreasure.IsDrop() )
+                {
+                    BaseItem[] baseItemArray = baseTreasure.RandomDrop();
+                    if ( baseItemArray != null )
+                        baseTreasureList.AddRange( baseItemArray );
+                }
+            }
+
+            if ( baseTreasureList.Count <= 0 )
+                return null;
+            else
+                return baseTreasureList.ToArray();
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 人物的死亡 | en
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 人物的被杀死,死亡之前
+        /// </summary>
+        /// <returns></returns>
+        protected virtual bool OnDeath( BaseMobile mobileKiller )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 人物死亡后时调用
+        /// </summary>
+        /// <param name="c"></param>
+        protected virtual void OnAfterDeath()
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mobileKiller"></param>
+        /// <returns></returns>
+        public bool Death( BaseMobile mobileKiller )
+        {
+            if ( m_Deleted )
+                return false;
+
+            if ( OnDeath( mobileKiller ) == false )
+                return false;
+            else
+            {
+                if ( UpdateAlive( false ) == false )
+                    return false;
+            }
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.Death(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaDeathCall();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterDeath();
+
+            return true;
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 人物的复活(NPC/怪物-刷出) | en
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 复活之前,检查是否允许复活
+        /// </summary>
+        protected virtual bool OnResurrect()
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 复活之后
+        /// </summary>
+        protected virtual void OnAfterResurrect()
+        {
+        }
+        #endregion
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public bool Resurrect()
+        {
+            if ( m_Deleted )
+                return false;
+
+            if ( OnResurrect() == false )
+                return false;
+            else
+            {
+                if ( UpdateAlive( true ) == false )
+                    return false;
+            }
+
+            BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            if ( l_MobileDelta == null )
+                Debug.WriteLine( "BaseMobile.Resurrect(...) - l_MobileDelta == null warning!" );
+            else
+            {
+                l_MobileDelta.DeltaResurrectCall();
+                Delta( m_MobileDelta );
+            }
+
+            OnAfterResurrect();
+
+            return true;
+
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 创建一个新的自身人物 | en Method
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 
+        /// </summary>
+        private ConstructorInfo m_ConstructorInfo = null;
+        #endregion
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        public object CreateNewInstance()
+        {
+            if ( m_ConstructorInfo != null )
+            {
+                object l_ReturnObject = m_ConstructorInfo.Invoke( null );
+
+                BaseMobile l_BaseMobile = l_ReturnObject as BaseMobile;
+                if ( l_BaseMobile == null )
+                {
+                    Debug.WriteLine( "BaseMobile.CreateNewInstance(...) - l_BaseMobile == null error!" );
+                    return null;
+                }
+
+                return l_ReturnObject;
+            }
+
+            Type l_Type = GetType();
+            ConstructorInfo[] l_ConstructorInfoArray = l_Type.GetConstructors();
+
+            foreach ( ConstructorInfo l_ConstructorInfo in l_ConstructorInfoArray )
+            {
+                ParameterInfo[] l_ParameterInfoArray = l_ConstructorInfo.GetParameters();
+                if ( l_ParameterInfoArray.Length == 0 )
+                {
+                    m_ConstructorInfo = l_ConstructorInfo;
+
+                    object l_ReturnObject = m_ConstructorInfo.Invoke( null );
+
+                    BaseMobile l_BaseMobile = l_ReturnObject as BaseMobile;
+                    if ( l_BaseMobile == null )
+                    {
+                        Debug.WriteLine( "BaseMobile.CreateNewInstance(...) - l_BaseMobile == null error!" );
+                        return null;
+                    }
+
+                    return l_ReturnObject;
+                }
+            }
+
+            return null;
+        }
+        #endregion
+
+        #region zh-CHS 人物的主处理行为 | en
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="flag"></param>
+        public virtual void Delta( IMobileDelta mobileDelta )
+        {
+            if ( mobileDelta == null || m_BaseMap == null || m_BaseMap == BaseMap.NullMap || m_Deleted )
+                return;
+
+            if ( mobileDelta.LoginDeltaQueue() == false )
+                return;
+
+            if ( m_MobileDelta != mobileDelta )
+                m_MobileDelta = mobileDelta;
+
+            Monitor.Enter( s_LockDeltaQueue );
+            {
+                s_DeltaQueue.Enqueue( this );
+            }
+            Monitor.Exit( s_LockDeltaQueue );
+
+            BaseWorld.SetSignal();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        protected virtual void ProcessDelta()
+        {
+        }
+        #endregion
+
+        #endregion
+
+        #region zh-CHS 共有静态方法 | en Public Static Methods
+
+        #region zh-CHS 私有静态成员变量 | en Private Static Member Variables
+        /// <summary>
+        /// 
+        /// </summary>
+        private static Queue<BaseMobile> s_DeltaQueue = new Queue<BaseMobile>();
+        /// <summary>
+        /// 
+        /// </summary>
+        private static object s_LockDeltaQueue = new object();
+        #endregion
+        /// <summary>
+        /// 处理Delta
+        /// </summary>
+        public static void ProcessDeltaQueue()
+        {
+            // 使用数组减少锁定时间
+            BaseMobile[] baseMobileArray = null;
+
+            if ( Monitor.TryEnter( s_LockDeltaQueue ) == false ) return;
+            {
+                if ( s_DeltaQueue.Count > 0 )
+                {
+                    baseMobileArray = s_DeltaQueue.ToArray();
+                    s_DeltaQueue.Clear();
+                }
+            }
+            Monitor.Exit( s_LockDeltaQueue );
+
+            // 如果没有需要处理的数据则返回
+            if ( baseMobileArray == null )
+                return;
+
+            foreach ( BaseMobile baseMobile in baseMobileArray )
+            {
+                baseMobile.MobileDelta.LogoutDeltaQueue();
+                baseMobile.ProcessDelta();
+            }
+        }
+
+        #endregion
+
+        #region zh-CHS 接口实现 | en Interface Implementation
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+        public int CompareTo( IEntity other )
+		{
+			if( other == null )
+				return 1;
+
+            return m_Serial.CompareTo( other.Serial );
+		}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+		public int CompareTo( BaseMobile other )
+		{
+            return CompareTo( other as IEntity );
+		}
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="other"></param>
+        /// <returns></returns>
+		public int CompareTo( object xObject )
+		{
+            return CompareTo( xObject as IEntity );
+        }
+
+        #endregion
+
+        #region zh-CHS 好友列表 方法 | en Friend Method
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 好友的集合
+        /// </summary>
+        private Dictionary<long, BaseMobile> m_BaseMobiles = new Dictionary<long, BaseMobile>();
+        /// <summary>
+        /// 好友的集合锁
+        /// </summary>
+        private object m_LockBaseMobiles = new object();
+        #endregion
+        /// <summary>
+        /// 添加好友到集合
+        /// </summary>
+        public void AddFriend( Serial iMobileID, BaseMobile baseMobile )
+        {
+            Monitor.Enter( m_LockBaseMobiles );
+            {
+                m_BaseMobiles.Add( iMobileID, baseMobile );
+
+                m_bIsMobilesChange = true;
+            }
+            Monitor.Exit( m_LockBaseMobiles );
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual bool OnAddFriendChange( Point3D newLocation )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual void OnAfterAddFriendChange( Point3D oldLocation )
+        {
+        }
+        #endregion
+
+        /// <summary>
+        /// 在好友的集合内给出某好友
+        /// </summary>
+        /// <param name="iMapID"></param>
+        /// <returns></returns>
+        public BaseMobile GetFriend( Serial iMobileID )
+        {
+            BaseMobile l_BaseMap = null;
+
+            Monitor.Enter( m_LockBaseMobiles );
+            {
+                m_BaseMobiles.TryGetValue( iMobileID, out l_BaseMap );
+            }
+            Monitor.Exit( m_LockBaseMobiles );
+
+            return l_BaseMap;
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual bool OnGetFriendChange( Point3D newLocation )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual void OnAfterGetFriendChange( Point3D oldLocation )
+        {
+        }
+        #endregion
+
+        /// <summary>
+        /// 在好友的集合内删除某好友
+        /// </summary>
+        /// <param name="iMapID"></param>
+        public void RemoveFriend( Serial iMobileID )
+        {
+            Monitor.Enter( m_LockBaseMobiles );
+            {
+                m_BaseMobiles.Remove( iMobileID );
+
+                m_bIsMobilesChange = true;
+            }
+            Monitor.Exit( m_LockBaseMobiles );
+        }
+
+        #region zh-CHS 保护方法 | en Protected Methods
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual bool OnRemoveFriendChange( Point3D newLocation )
+        {
+            return true;
+        }
+
+        /// <summary>
+        /// 当前地图的某个位置点改变
+        /// </summary>
+        protected virtual void OnAfterRemoveFriendChange( Point3D oldLocation )
+        {
+        }
+        #endregion
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 全部好友
+        /// </summary>
+        private BaseMobile[] m_MobileArray = new BaseMobile[0];
+        /// <summary>
+        /// 好友的集合数据是否已经改变过
+        /// </summary>
+        private bool m_bIsMobilesChange = true;
+        #endregion
+        /// <summary>
+        /// 全部好友的数组
+        /// </summary>
+        /// <returns></returns>
+        [MultiThreadedWarningAttribute( "(好友)当前的数组是列表临时产生的,不能保存数组用于以后操作:警告!" )]
+        public BaseMobile[] FriendToArray()
+        {
+            Monitor.Enter( m_LockBaseMobiles );
+            {
+                if ( m_bIsMobilesChange )
+                {
+                    m_MobileArray = new BaseMobile[m_BaseMobiles.Count];
+
+                    int iIndex = 0;
+                    foreach ( KeyValuePair<long, BaseMobile> itemBaseMap in m_BaseMobiles )
+                    {
+                        m_MobileArray[iIndex] = itemBaseMap.Value;
+                        ++iIndex;
+                    }
+
+                    m_bIsMobilesChange = false;
+                }
+            }
+            Monitor.Exit( m_LockBaseMobiles );
+
+            return m_MobileArray;
+        }
+        #endregion
+
+        #region zh-CHS 组队列表 方法 | en Group Method
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 好友的集合
+        /// </summary>
+        private Dictionary<long, BaseMobile> m_BaseMobilesGroup = new Dictionary<long, BaseMobile>();
+        /// <summary>
+        /// 好友的集合锁
+        /// </summary>
+        private object m_LockBaseMobilesGroup = new object();
+        #endregion
+        /// <summary>
+        /// 添加好友到集合
+        /// </summary>
+        public void AddGroup( Serial iMobileID, BaseMobile baseMobile )
+        {
+            Monitor.Enter( m_LockBaseMobilesGroup );
+            {
+                m_BaseMobilesGroup.Add( iMobileID, baseMobile );
+
+                m_bIsMobilesChangeGroup = true;
+            }
+            Monitor.Exit( m_LockBaseMobilesGroup );
+        }
+
+        /// <summary>
+        /// 在好友的集合内给出某好友
+        /// </summary>
+        /// <param name="iMapID"></param>
+        /// <returns></returns>
+        public BaseMobile GetGroup( Serial iMobileID )
+        {
+            BaseMobile l_BaseMap = null;
+
+            Monitor.Enter( m_LockBaseMobilesGroup );
+            {
+                m_BaseMobilesGroup.TryGetValue( iMobileID, out l_BaseMap );
+            }
+            Monitor.Exit( m_LockBaseMobilesGroup );
+
+            return l_BaseMap;
+        }
+
+        /// <summary>
+        /// 在好友的集合内删除某好友
+        /// </summary>
+        /// <param name="iMapID"></param>
+        public void RemoveGroup( Serial iMobileID )
+        {
+            Monitor.Enter( m_LockBaseMobilesGroup );
+            {
+                m_BaseMobilesGroup.Remove( iMobileID );
+
+                m_bIsMobilesChangeGroup = true;
+            }
+            Monitor.Exit( m_LockBaseMobilesGroup );
+        }
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 全部好友
+        /// </summary>
+        private BaseMobile[] m_MobileArrayGroup = new BaseMobile[0];
+        /// <summary>
+        /// 好友的集合数据是否已经改变过
+        /// </summary>
+        private bool m_bIsMobilesChangeGroup = true;
+        #endregion
+        /// <summary>
+        /// 全部好友的数组
+        /// </summary>
+        /// <returns></returns>
+        [MultiThreadedWarningAttribute( "(好友)当前的数组是列表临时产生的,不能保存数组用于以后操作:警告!" )]
+        public BaseMobile[] GroupToArray()
+        {
+            Monitor.Enter( m_bIsMobilesChangeGroup );
+            {
+                if ( m_bIsMobilesChangeGroup )
+                {
+                    m_MobileArrayGroup = new BaseMobile[m_BaseMobilesGroup.Count];
+
+                    int iIndex = 0;
+                    foreach ( KeyValuePair<long, BaseMobile> itemBaseMap in m_BaseMobilesGroup )
+                    {
+                        m_MobileArrayGroup[iIndex] = itemBaseMap.Value;
+                        ++iIndex;
+                    }
+
+                    m_bIsMobilesChangeGroup = false;
+                }
+            }
+            Monitor.Exit( m_bIsMobilesChangeGroup );
+
+            return m_MobileArrayGroup;
+        }
+        #endregion
+
+        #region zh-CHS 团体列表 方法 | en Party Method
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 好友的集合
+        /// </summary>
+        private Dictionary<long, BaseMobile> m_BaseMobilesParty = new Dictionary<long, BaseMobile>();
+        /// <summary>
+        /// 好友的集合锁
+        /// </summary>
+        private object m_LockBaseMobilesParty = new object();
+        #endregion
+        /// <summary>
+        /// 添加好友到集合
+        /// </summary>
+        public void AddParty( Serial iMobileID, BaseMobile baseMobile )
+        {
+            Monitor.Enter( m_LockBaseMobilesParty );
+            {
+                m_BaseMobilesParty.Add( iMobileID, baseMobile );
+
+                m_bIsMobilesChangeParty = true;
+            }
+            Monitor.Exit( m_LockBaseMobilesParty );
+        }
+
+        /// <summary>
+        /// 在好友的集合内给出某好友
+        /// </summary>
+        /// <param name="iMapID"></param>
+        /// <returns></returns>
+        public BaseMobile GetParty( Serial iMobileID )
+        {
+            BaseMobile l_BaseMap = null;
+
+            Monitor.Enter( m_LockBaseMobilesParty );
+            {
+                m_BaseMobilesParty.TryGetValue( iMobileID, out l_BaseMap );
+            }
+            Monitor.Exit( m_LockBaseMobilesParty );
+
+            return l_BaseMap;
+        }
+
+        /// <summary>
+        /// 在好友的集合内删除某好友
+        /// </summary>
+        /// <param name="iMapID"></param>
+        public void RemoveParty( Serial iMobileID )
+        {
+            Monitor.Enter( m_LockBaseMobilesParty );
+            {
+                m_BaseMobilesParty.Remove( iMobileID );
+
+                m_bIsMobilesChangeParty = true;
+            }
+            Monitor.Exit( m_LockBaseMobilesParty );
+        }
+
+        #region zh-CHS 私有成员变量 | en Private Member Variables
+        /// <summary>
+        /// 全部好友
+        /// </summary>
+        private BaseMobile[] m_MobileArrayParty = new BaseMobile[0];
+        /// <summary>
+        /// 好友的集合数据是否已经改变过
+        /// </summary>
+        private bool m_bIsMobilesChangeParty = true;
+        #endregion
+        /// <summary>
+        /// 全部好友的数组
+        /// </summary>
+        /// <returns></returns>
+        [MultiThreadedWarningAttribute( "(好友)当前的数组是列表临时产生的,不能保存数组用于以后操作:警告!" )]
+        public BaseMobile[] PartyToArray()
+        {
+            Monitor.Enter( m_LockBaseMobilesParty );
+            {
+                if ( m_bIsMobilesChangeParty )
+                {
+                    m_MobileArrayParty = new BaseMobile[m_BaseMobilesParty.Count];
+
+                    int iIndex = 0;
+                    foreach ( KeyValuePair<long, BaseMobile> itemBaseMap in m_BaseMobilesParty )
+                    {
+                        m_MobileArrayParty[iIndex] = itemBaseMap.Value;
+                        ++iIndex;
+                    }
+
+                    m_bIsMobilesChangeParty = false;
+                }
+            }
+            Monitor.Exit( m_LockBaseMobilesParty );
+
+            return m_MobileArrayParty;
+        }
+        #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        private Sector m_Sector = Sector.NullSector;
+        /// <summary>
+        /// 
+        /// </summary>
+        internal Sector Sector
+        {
+            get { return m_Sector; }
+            set { m_Sector = value; }
+        }
+
+
+        #region zh-CHS 共有方法 | en Public Methods
+        /// <summary>
+        /// 更新全部类型的数量
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="type"></param>
+        /// <param name="delta"></param>
+        public bool UpdateBaseMobile( UpdateBaseMobile updateMobile, object newValue )
+        {
+            if ( m_Deleted )
+                return false;
+
+            //long oldX = m_Location.X;
+
+            //if ( OnXChange( newX ) == false )
+            //    return false;
+            //else
+            //    m_Location.X = newX;
+
+            //BaseMobileDelta l_MobileDelta = m_MobileDelta as BaseMobileDelta;
+            //if ( l_MobileDelta == null )
+            //    Debug.WriteLine( "BaseMobile.UpdateX(...) - l_MobileDelta == null warning!" );
+            //else
+            //{
+            //    l_MobileDelta.DeltaXUpdate();
+            //    Delta( m_MobileDelta );
+            //}
+
+            //OnAfterXChange( oldX );
+
+            return true;
+        }
+        #endregion
+
+    }
+}
+#endregion

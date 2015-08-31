@@ -1,0 +1,279 @@
+﻿using Demo.Mmose.Core.Common.LockFree;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Collections;
+
+namespace Demo.Mmose.Core.Test
+{
+    /// <summary>
+    ///这是 LockFreeStackTest 的测试类，旨在
+    ///包含所有 LockFreeStackTest 单元测试
+    ///</summary>
+    [TestClass()]
+    public class LockFreeStackTest
+    {
+        private TestContext testContextInstance;
+        /// <summary>
+        ///获取或设置测试上下文，上下文提供
+        ///有关当前测试运行及其功能的信息。
+        ///</summary>
+        public TestContext TestContext
+        {
+            get { return testContextInstance; }
+            set { testContextInstance = value; }
+        }
+
+        #region 附加测试属性
+        // 
+        //编写测试时，还可使用以下属性:
+        //
+        //使用 ClassInitialize 在运行类中的第一个测试前先运行代码
+        //[ClassInitialize()]
+        //public static void MyClassInitialize(TestContext testContext)
+        //{
+        //}
+        //
+        //使用 ClassCleanup 在运行完类中的所有测试后再运行代码
+        //[ClassCleanup()]
+        //public static void MyClassCleanup()
+        //{
+        //}
+        //
+        //使用 TestInitialize 在运行每个测试前先运行代码
+        //[TestInitialize()]
+        //public void MyTestInitialize()
+        //{
+        //}
+        //
+        //使用 TestCleanup 在运行完每个测试后运行代码
+        //[TestCleanup()]
+        //public void MyTestCleanup()
+        //{
+        //}
+        //
+        #endregion
+
+        /// <summary>
+        ///TryPop 的测试
+        ///</summary>
+        public void TryPopTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT itemT = default( ValueT ); // TODO: 初始化为适当的值
+            ValueT itemTExpected = default( ValueT ); // TODO: 初始化为适当的值
+            bool expected = false; // TODO: 初始化为适当的值
+            bool actual;
+            actual = target.TryPop( out itemT );
+            Assert.AreEqual( itemTExpected, itemT );
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        public void TryPopTest()
+        {
+            TryPopTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///ToArrayAndClear 的测试
+        ///</summary>
+        public void ToArrayAndClearTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT[] expected = null; // TODO: 初始化为适当的值
+            ValueT[] actual;
+            actual = target.ToArrayAndClear();
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        public void ToArrayAndClearTest()
+        {
+            ToArrayAndClearTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///ToArray 的测试
+        ///</summary>
+        public void ToArrayTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT[] expected = null; // TODO: 初始化为适当的值
+            ValueT[] actual;
+            actual = target.ToArray();
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        public void ToArrayTest()
+        {
+            ToArrayTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///System.Collections.IEnumerable.GetEnumerator 的测试
+        ///</summary>
+        public void GetEnumeratorTest1Helper<ValueT>()
+        {
+            IEnumerable target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            IEnumerator expected = null; // TODO: 初始化为适当的值
+            IEnumerator actual;
+            actual = target.GetEnumerator();
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        [DeploymentItem( "Demo.Mmose.Core.dll" )]
+        public void GetEnumeratorTest1()
+        {
+            GetEnumeratorTest1Helper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///Push 的测试
+        ///</summary>
+        public void PushTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT itemT = default( ValueT ); // TODO: 初始化为适当的值
+            target.Push( itemT );
+            Assert.Inconclusive( "无法验证不返回值的方法。" );
+        }
+
+        [TestMethod()]
+        public void PushTest()
+        {
+            PushTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///Pop 的测试
+        ///</summary>
+        public void PopTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT expected = default( ValueT ); // TODO: 初始化为适当的值
+            ValueT actual;
+            actual = target.Pop();
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        public void PopTest()
+        {
+            PopTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///Peek 的测试
+        ///</summary>
+        public void PeekTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT expected = default( ValueT ); // TODO: 初始化为适当的值
+            ValueT actual;
+            actual = target.Peek();
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        public void PeekTest()
+        {
+            PeekTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///GetEnumerator 的测试
+        ///</summary>
+        public void GetEnumeratorTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            IEnumerator<ValueT> expected = null; // TODO: 初始化为适当的值
+            IEnumerator<ValueT> actual;
+            actual = target.GetEnumerator();
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        public void GetEnumeratorTest()
+        {
+            GetEnumeratorTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///CopyTo 的测试
+        ///</summary>
+        public void CopyToTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT[] arrayT = null; // TODO: 初始化为适当的值
+            int iArrayIndex = 0; // TODO: 初始化为适当的值
+            target.CopyTo( arrayT, iArrayIndex );
+            Assert.Inconclusive( "无法验证不返回值的方法。" );
+        }
+
+        [TestMethod()]
+        public void CopyToTest()
+        {
+            CopyToTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///Contains 的测试
+        ///</summary>
+        public void ContainsTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            ValueT value = default( ValueT ); // TODO: 初始化为适当的值
+            bool expected = false; // TODO: 初始化为适当的值
+            bool actual;
+            actual = target.Contains( value );
+            Assert.AreEqual( expected, actual );
+            Assert.Inconclusive( "验证此测试方法的正确性。" );
+        }
+
+        [TestMethod()]
+        public void ContainsTest()
+        {
+            ContainsTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///Clear 的测试
+        ///</summary>
+        public void ClearTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>(); // TODO: 初始化为适当的值
+            target.Clear();
+            Assert.Inconclusive( "无法验证不返回值的方法。" );
+        }
+
+        [TestMethod()]
+        public void ClearTest()
+        {
+            ClearTestHelper<GenericParameterHelper>();
+        }
+
+        /// <summary>
+        ///LockFreeStack`1 构造函数 的测试
+        ///</summary>
+        public void LockFreeStackConstructorTestHelper<ValueT>()
+        {
+            LockFreeStack<ValueT> target = new LockFreeStack<ValueT>();
+            Assert.Inconclusive( "TODO: 实现用来验证目标的代码" );
+        }
+
+        [TestMethod()]
+        public void LockFreeStackConstructorTest()
+        {
+            LockFreeStackConstructorTestHelper<GenericParameterHelper>();
+        }
+    }
+}

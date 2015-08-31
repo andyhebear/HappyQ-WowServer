@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo R.O.S.E.LoginServer", "R.O.S.E.Server\Demo R.O.S.E.LoginServer.csproj", "{EF4FAA08-38AB-4817-9B92-C17E4FB2DC8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF4FAA08-38AB-4817-9B92-C17E4FB2DC8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF4FAA08-38AB-4817-9B92-C17E4FB2DC8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF4FAA08-38AB-4817-9B92-C17E4FB2DC8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF4FAA08-38AB-4817-9B92-C17E4FB2DC8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

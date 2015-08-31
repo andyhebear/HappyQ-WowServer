@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.AIEngine.FiniteStateMachine.State&lt;EntityT&gt;">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <Members>
+      <Method Name="EnterState" Hidden="true" />
+      <Method Name="ExecuteState" Hidden="true" />
+      <Method Name="ExitState" Hidden="true" />
+      <Field Name="m_LockStateListener" Hidden="true" />
+      <Field Name="m_StateListener" Hidden="true" />
+      <Field Name="m_SubMachine" Hidden="true" />
+      <Method Name="OnStateEvent" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAgQAAAAAQABQAEAEAAAAIAIEAAgAAAA=</HashCode>
+      <FileName>ServerEngine\AIEngine\FiniteStateMachine\State.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.AIEngine.FiniteStateMachine.NullState&lt;EntityT&gt;">
+    <Position X="2.75" Y="3.25" Width="1.75" />
+    <Members>
+      <Method Name="NullState" Hidden="true" />
+      <Field Name="s_UniqueInstance" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAQAAAAAAAAAAAAEAAAAIAAQAAAAAAA=</HashCode>
+      <FileName>ServerEngine\AIEngine\FiniteStateMachine\State.NullState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.AIEngine.FiniteStateMachine.NullState">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <Members>
+      <Method Name="NullState" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\AIEngine\FiniteStateMachine\State.NullState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.AIEngine.FiniteStateMachine.Machine&lt;EntityT&gt;">
+    <Position X="0.5" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="m_CurrentState" Hidden="true" />
+      <Field Name="m_Owner" Hidden="true" />
+      <Field Name="m_PreviousState" Hidden="true" />
+      <Field Name="m_StartState" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AFAAAACCAoAADAAAAAAAACABAAAAAAAACAAAAACAAAA=</HashCode>
+      <FileName>ServerEngine\AIEngine\FiniteStateMachine\Machine.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

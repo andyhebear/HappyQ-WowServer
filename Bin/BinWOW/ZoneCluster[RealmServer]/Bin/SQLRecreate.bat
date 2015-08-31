@@ -1,0 +1,1 @@
+"Demo.WOW.RealmServer" -SQLRecreate

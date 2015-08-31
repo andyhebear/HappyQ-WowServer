@@ -1,0 +1,115 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{098D50B7-EC64-4C4C-9DDC-AED1967336AD}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo_R.O.S.E.WorldServer</RootNamespace>
+    <AssemblyName>Demo R.O.S.E.WorldServer</AssemblyName>
+    <StartupObject>Demo_R.O.S.E.WorldServer.Program</StartupObject>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo G.O.S.E.Core, Version=0.0.1.0, Culture=neutral, PublicKeyToken=b69da7c49a8ec220, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Demo G.O.S.E.Core\Bin\Demo G.O.S.E.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo G.O.S.E.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d01d4e7053d96f06, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Demo G.O.S.E.Data\Bin\Demo G.O.S.E.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\CharServer\InitCharacter.cs" />
+    <Compile Include="Common\CharServer\InitCharacterItem.cs" />
+    <Compile Include="Common\Database\BaseDatabase.cs" />
+    <Compile Include="Common\Database\Interface.cs" />
+    <Compile Include="Common\Database\Model\Model.cs" />
+    <Compile Include="Common\ROSECrypt.cs" />
+    <Compile Include="Common\WorldServer\Item\MoneyItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEArmsItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEBackItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEBodyItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSECapItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEFaceItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEFootItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEJemItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEJewelItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSENaturalItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEPatItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEQuestItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSESubwpnItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEUseItem.cs" />
+    <Compile Include="Common\WorldServer\Item\ROSEWeaponItem.cs" />
+    <Compile Include="Common\WorldServer\Map\RoseMap.cs" />
+    <Compile Include="Common\WorldServer\Mobile\ROSECharacter.cs" />
+    <Compile Include="Common\WorldServer\Mobile\ROSEMobile.cs" />
+    <Compile Include="WorldServer\Network\ProcessNet.cs" />
+    <Compile Include="WorldServer\Network\WorldPacketHandlers.cs" />
+    <Compile Include="WorldServer\Network\WorldPackets.cs" />
+    <Compile Include="WorldServer\Program.cs" />
+    <Compile Include="Properties\WorldAssemblyInfo.cs" />
+    <Compile Include="Common\WorldServer\Quest\ROSEQuest.cs" />
+    <Compile Include="Common\WorldServer\RespawnZone\ROSERespawnZone.cs" />
+    <Compile Include="Common\WorldServer\Skill\ROSESkill.cs" />
+    <Compile Include="Common\WorldServer\TeleportGate\ROSETeleportGate.cs" />
+    <Compile Include="WorldServer\Treasure\BaseTreasure.cs" />
+    <Compile Include="WorldServer\Treasure\Loot.cs" />
+    <Compile Include="WorldServer\WorldCommon\ConfigInfo.cs" />
+    <Compile Include="WorldServer\WorldCommon\DropData.cs" />
+    <Compile Include="WorldServer\WorldCommon\ExtendData.cs" />
+    <Compile Include="WorldServer\WorldCommon\Maps.cs" />
+    <Compile Include="WorldServer\WorldCommon\NPC.cs" />
+    <Compile Include="WorldServer\WorldCommon\NPCData.cs" />
+    <Compile Include="WorldServer\WorldCommon\RespawnPoint.cs" />
+    <Compile Include="WorldServer\WorldCommon\RoseSerial.cs" />
+    <Compile Include="WorldServer\WorldCommon\SpawnArea.cs" />
+    <Compile Include="WorldServer\WorldCommon\STBData.cs" />
+    <Compile Include="WorldServer\WorldCommon\TeleGate.cs" />
+    <Compile Include="WorldServer\World\ROSEWorld.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PostBuildEvent>: -----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;
+: 以下的复制是能够让WorldServer程序运行
+copy "$(TargetName).exe" "..\..\..\..\Bin\Bin3\3. $(TargetName).exe"
+
+: 以下的复制是能够让R.O.S.E.Scripts项目编写脚本测试
+copy "$(TargetName).exe" "..\..\..\..\Bin\Scripts\Demo G.O.S.E.Scripts.dll"
+: -----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;-----&gt;</PostBuildEvent>
+  </PropertyGroup>
+</Project>

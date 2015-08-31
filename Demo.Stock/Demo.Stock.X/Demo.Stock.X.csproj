@@ -1,0 +1,1145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2C1059BE-C3F1-485B-ABAC-A844AECC8B86}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Demo.Stock.X</RootNamespace>
+    <AssemblyName>Demo.Stock.X</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|Itanium' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Itanium\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|Itanium' ">
+    <OutputPath>bin\Itanium\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>Itanium</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\Bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Demo.Mmose.Collections, Version=1.0.0.0, Culture=neutral, PublicKeyToken=97adcb60b0449d16, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Demo.Mmose.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Demo.Mmose.Core, Version=0.0.1.0, Culture=neutral, PublicKeyToken=b69da7c49a8ec220, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Demo.Mmose.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DundasWinChart, Version=6.1.0.1726, Culture=neutral, PublicKeyToken=a4c03dce5db22406, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Dundas Software\Charting`\WinControlVS2005\bin\DundasWinChart.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\FileInfo.cs" />
+    <Compile Include="Common\GlobalSetting.cs" />
+    <Compile Include="Common\GlobalStockManager.cs" />
+    <Compile Include="Common\MSFL.cs" />
+    <Compile Include="Common\NullForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\NullForm.Designer.cs">
+      <DependentUpon>NullForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\PlateInfo.cs" />
+    <Compile Include="Common\ProcessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Common\ProcessForm.Designer.cs">
+      <DependentUpon>ProcessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\StockData.cs" />
+    <Compile Include="Common\StockInfo.cs" />
+    <Compile Include="Common\StockManager.cs" />
+    <Compile Include="Common\VarietyInfo.cs" />
+    <Compile Include="Demo.Stock.D50\Common\D50GlobalSetting.cs" />
+    <Compile Include="Demo.Stock.D50\Form\Definitions.cs" />
+    <Compile Include="Demo.Stock.D50\Form\Demo.Stock.D50.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.D50\Form\Demo.Stock.D50.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.D50.MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.RealD50\Common\RealD50GlobalSetting.cs" />
+    <Compile Include="Demo.Stock.RealD50\Form\Demo.Stock.RealD50.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.RealD50\Form\Demo.Stock.RealD50.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.RealD50.MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.RealU50\Common\RealU50GlobalSetting.cs" />
+    <Compile Include="Demo.Stock.RealU50\Form\Demo.Stock.RealU50.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.RealU50\Form\Demo.Stock.RealU50.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.RealU50.MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Common\PolicyInfo.cs" />
+    <Compile Include="Demo.Stock.U50\Common\PolicyManager.cs" />
+    <Compile Include="Demo.Stock.U50\Common\ReportInfo.cs" />
+    <Compile Include="Demo.Stock.U50\Common\ReportManager.cs" />
+    <Compile Include="Demo.Stock.U50\Common\TaskInfo.cs" />
+    <Compile Include="Demo.Stock.U50\Common\TaskManager.cs" />
+    <Compile Include="Demo.Stock.U50\Common\U50GlobalSetting.cs" />
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentFormScanNow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentFormScanNow.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentFormScanNow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub7.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub0.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub4.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub5.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub6.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentA.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentB.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentC.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.Sub1Form.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.Sub1Form.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentForm.Sub1Form.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentReport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentReport.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskC.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.TaskC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub0.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub1.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub2.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub3.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub4.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub5.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskDForm.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.TaskDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskE.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.TaskE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyA.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.AboutForm.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Definitions.cs" />
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentGraph.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub0Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub0Form.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub0Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskForm.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.TaskForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyC.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyB.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyF.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskA.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.TaskA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskD.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.TaskD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskB.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.TaskB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub6.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.Sub1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.Sub1Form.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.DocumentForm.Sub1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Definitions.cs" />
+    <Compile Include="Form\Demo.Stock.ConfigB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigB.Designer.cs">
+      <DependentUpon>Demo.Stock.ConfigB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigC.Designer.cs">
+      <DependentUpon>Demo.Stock.ConfigC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionA.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionB.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionC.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionD.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionE.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionF.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionF.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.OptionForm.Designer.cs">
+      <DependentUpon>Demo.Stock.OptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigForm.Designer.cs">
+      <DependentUpon>Demo.Stock.ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.KLineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.KLineForm.Designer.cs">
+      <DependentUpon>Demo.Stock.KLineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigA.Designer.cs">
+      <DependentUpon>Demo.Stock.ConfigA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ToolsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ToolsForm.Designer.cs">
+      <DependentUpon>Demo.Stock.ToolsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigASubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Demo.Stock.ConfigASubForm.Designer.cs">
+      <DependentUpon>Demo.Stock.ConfigASubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigA.Designer.cs">
+      <DependentUpon>KLineD50ConfigA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigB.Designer.cs">
+      <DependentUpon>KLineD50ConfigB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigC.Designer.cs">
+      <DependentUpon>KLineD50ConfigC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigD.Designer.cs">
+      <DependentUpon>KLineD50ConfigD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigB.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigB.Designer.cs">
+      <DependentUpon>KLineU50ConfigB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigC.Designer.cs">
+      <DependentUpon>KLineU50ConfigC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub1.Designer.cs">
+      <DependentUpon>KLineU50ConfigCSub1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub2.Designer.cs">
+      <DependentUpon>KLineU50ConfigCSub2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub3.Designer.cs">
+      <DependentUpon>KLineU50ConfigCSub3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub4.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub4.Designer.cs">
+      <DependentUpon>KLineU50ConfigCSub4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub5.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub5.Designer.cs">
+      <DependentUpon>KLineU50ConfigCSub5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub6.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub6.Designer.cs">
+      <DependentUpon>KLineU50ConfigCSub6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigD.Designer.cs">
+      <DependentUpon>KLineU50ConfigD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigForm.Designer.cs">
+      <DependentUpon>KLineU50ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineD50ConfigForm.Designer.cs">
+      <DependentUpon>KLineD50ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineViewFormSubForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineViewFormSubForm.Designer.cs">
+      <DependentUpon>KLineViewFormSubForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineDefinitions.cs" />
+    <Compile Include="Form\Tools\KLineViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineViewForm.Designer.cs">
+      <DependentUpon>KLineViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineViewFormDocument.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineViewFormDocument.Designer.cs">
+      <DependentUpon>KLineViewFormDocument.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineViewOptionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineViewOptionForm.Designer.cs">
+      <DependentUpon>KLineViewOptionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\MSFLViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\MSFLViewForm.Designer.cs">
+      <DependentUpon>MSFLViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\RandomDStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\RandomDStockForm.Designer.cs">
+      <DependentUpon>RandomDStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigA.Designer.cs">
+      <DependentUpon>KLineU50ConfigA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub0.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Tools\KLineU50ConfigCSub0.Designer.cs">
+      <DependentUpon>KLineU50ConfigCSub0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Common\NullForm.resx">
+      <DependentUpon>NullForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Common\ProcessForm.resx">
+      <DependentUpon>ProcessForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.D50\Form\Demo.Stock.D50.MainForm.resx">
+      <DependentUpon>Demo.Stock.D50.MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.RealD50\Form\Demo.Stock.RealD50.MainForm.resx">
+      <DependentUpon>Demo.Stock.RealD50.MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.RealU50\Form\Demo.Stock.RealU50.MainForm.resx">
+      <DependentUpon>Demo.Stock.RealU50.MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentFormScanNow.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentFormScanNow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyC.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub6.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub6.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub7.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub7.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub0.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub0.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub1.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub2.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub3.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub4.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub5.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyE.Sub6.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyE.Sub6.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentA.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentB.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentC.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.Sub1Form.Sub1.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentForm.Sub1Form.Sub1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentReport.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskA.resx">
+      <DependentUpon>Demo.Stock.U50.TaskA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskC.resx">
+      <DependentUpon>Demo.Stock.U50.TaskC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub0.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub0.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub0Form.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub0Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub1.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub2.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub3.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub4.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyD.Sub5.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyD.Sub5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskD.resx">
+      <DependentUpon>Demo.Stock.U50.TaskD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskDForm.resx">
+      <DependentUpon>Demo.Stock.U50.TaskDForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskE.resx">
+      <DependentUpon>Demo.Stock.U50.TaskE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyA.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyForm.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentGraph.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskForm.resx">
+      <DependentUpon>Demo.Stock.U50.TaskForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyB.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyF.resx">
+      <DependentUpon>Demo.Stock.U50.PolicyF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.TaskB.resx">
+      <DependentUpon>Demo.Stock.U50.TaskB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.DocumentForm.Sub1Form.resx">
+      <DependentUpon>Demo.Stock.U50.DocumentForm.Sub1Form.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.ConfigA.resx">
+      <DependentUpon>Demo.Stock.ConfigA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.ConfigASubForm.resx">
+      <DependentUpon>Demo.Stock.ConfigASubForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.ConfigB.resx">
+      <DependentUpon>Demo.Stock.ConfigB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.ConfigC.resx">
+      <DependentUpon>Demo.Stock.ConfigC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.ConfigForm.resx">
+      <DependentUpon>Demo.Stock.ConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.KLineForm.resx">
+      <DependentUpon>Demo.Stock.KLineForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.OptionA.resx">
+      <DependentUpon>Demo.Stock.OptionA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.OptionB.resx">
+      <DependentUpon>Demo.Stock.OptionB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.OptionC.resx">
+      <DependentUpon>Demo.Stock.OptionC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.OptionD.resx">
+      <DependentUpon>Demo.Stock.OptionD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.OptionE.resx">
+      <DependentUpon>Demo.Stock.OptionE.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.MainForm.resx">
+      <DependentUpon>Demo.Stock.MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.OptionF.resx">
+      <DependentUpon>Demo.Stock.OptionF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.OptionForm.resx">
+      <DependentUpon>Demo.Stock.OptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Demo.Stock.ToolsForm.resx">
+      <DependentUpon>Demo.Stock.ToolsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineD50ConfigA.resx">
+      <DependentUpon>KLineD50ConfigA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineD50ConfigB.resx">
+      <DependentUpon>KLineD50ConfigB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineD50ConfigC.resx">
+      <DependentUpon>KLineD50ConfigC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineD50ConfigD.resx">
+      <DependentUpon>KLineD50ConfigD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineD50ConfigForm.resx">
+      <DependentUpon>KLineD50ConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigB.resx">
+      <DependentUpon>KLineU50ConfigB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigC.resx">
+      <DependentUpon>KLineU50ConfigC.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigCSub0.resx">
+      <DependentUpon>KLineU50ConfigCSub0.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigCSub1.resx">
+      <DependentUpon>KLineU50ConfigCSub1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigCSub2.resx">
+      <DependentUpon>KLineU50ConfigCSub2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigCSub3.resx">
+      <DependentUpon>KLineU50ConfigCSub3.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigCSub4.resx">
+      <DependentUpon>KLineU50ConfigCSub4.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigCSub5.resx">
+      <DependentUpon>KLineU50ConfigCSub5.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigCSub6.resx">
+      <DependentUpon>KLineU50ConfigCSub6.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigD.resx">
+      <DependentUpon>KLineU50ConfigD.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigForm.resx">
+      <DependentUpon>KLineU50ConfigForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineViewFormSubForm.resx">
+      <DependentUpon>KLineViewFormSubForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineViewForm.resx">
+      <DependentUpon>KLineViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineViewFormDocument.resx">
+      <DependentUpon>KLineViewFormDocument.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineViewOptionForm.resx">
+      <DependentUpon>KLineViewOptionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\MSFLViewForm.resx">
+      <DependentUpon>MSFLViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\RandomDStockForm.resx">
+      <DependentUpon>RandomDStockForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Tools\KLineU50ConfigA.resx">
+      <DependentUpon>KLineU50ConfigA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.Stock.U50\Form\Demo.Stock.U50.MainForm.resx">
+      <DependentUpon>Demo.Stock.U50.MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.PolicyForm.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.PolicyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Stock.U50\Form\Demo.Stock.U50.MainForm.Designer.cs">
+      <DependentUpon>Demo.Stock.U50.MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util\DrawingEx.cs" />
+    <Compile Include="Util\Utility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxXtremeCalendarControl">
+      <Guid>{79EB16A5-917F-4145-AB5F-D3AEA60612D8}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeShortcutBar">
+      <Guid>{C8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AxXtremeTaskPanel">
+      <Guid>{B8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeCalendarControl">
+      <Guid>{79EB16A5-917F-4145-AB5F-D3AEA60612D8}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeCommandBars">
+      <Guid>{555E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeDockingPane">
+      <Guid>{945E8FCC-830E-45CC-AF00-A012D5AE7451}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeShortcutBar">
+      <Guid>{C8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeSkinFramework">
+      <Guid>{BD0C1912-66C3-49CC-8B12-7B347BF6C846}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeSuiteControls">
+      <Guid>{A8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="XtremeTaskPanel">
+      <Guid>{B8E5842E-102B-4289-9D57-3B3F5B5E15D3}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Form\Tools\KLineView\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

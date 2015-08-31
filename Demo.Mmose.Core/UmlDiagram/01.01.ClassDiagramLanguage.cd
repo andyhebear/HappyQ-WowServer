@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Demo.Mmose.Core.Server.Language.LanguageString">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Field Name="m_CultureInfo" Hidden="true" />
+      <Field Name="s_LanguageString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>gAMAUAIEAAgAIGEAfAAGoDwADBABUJ5cIQMQIIOnECA=</HashCode>
+      <FileName>ServerEngine\Server\Language\LanguageString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Server.Language.LanguageStringFromAssembly">
+    <Position X="3.25" Y="0.5" Width="2.5" />
+    <Members>
+      <Method Name="SetDefaultLanguageString" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAABAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ServerEngine\Server\Language\LanguageStringFromAssembly.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Demo.Mmose.Core.Server.Language.LanguageStringFromFile">
+    <Position X="6.25" Y="0.5" Width="3.25" />
+    <Members>
+      <Method Name="InitSetStringHandler" Hidden="true" />
+      <Field Name="s_SetStringHandler" Hidden="true" />
+      <Method Name="SetStringBaseCreatureString001" Hidden="true" />
+      <Method Name="SetStringBaseCreatureString002" Hidden="true" />
+      <Method Name="SetStringBaseItemString001" Hidden="true" />
+      <Method Name="SetStringBaseItemString002" Hidden="true" />
+      <Method Name="SetStringBaseWorldString001" Hidden="true" />
+      <Method Name="SetStringBaseWorldString002" Hidden="true" />
+      <Method Name="SetStringBaseWorldString003" Hidden="true" />
+      <Method Name="SetStringCallbackThreadPoolString001" Hidden="true" />
+      <Method Name="SetStringConnecterString001" Hidden="true" />
+      <Method Name="SetStringDomainString001" Hidden="true" />
+      <Method Name="SetStringDomainString002" Hidden="true" />
+      <Method Name="SetStringDomainString003" Hidden="true" />
+      <Method Name="SetStringFileLoggerString001" Hidden="true" />
+      <Method Name="SetStringListenerString001" Hidden="true" />
+      <Method Name="SetStringListenerString002" Hidden="true" />
+      <Method Name="SetStringListenerString003" Hidden="true" />
+      <Method Name="SetStringListenerString004" Hidden="true" />
+      <Method Name="SetStringMultiTextWriterString001" Hidden="true" />
+      <Method Name="SetStringNetStateString001" Hidden="true" />
+      <Method Name="SetStringNetStateString002" Hidden="true" />
+      <Method Name="SetStringOneServerString001" Hidden="true" />
+      <Method Name="SetStringOneServerString002" Hidden="true" />
+      <Method Name="SetStringOneServerString003" Hidden="true" />
+      <Method Name="SetStringOneServerString004" Hidden="true" />
+      <Method Name="SetStringOneServerString005" Hidden="true" />
+      <Method Name="SetStringOneServerString006" Hidden="true" />
+      <Method Name="SetStringOneServerString007" Hidden="true" />
+      <Method Name="SetStringOneServerString008" Hidden="true" />
+      <Method Name="SetStringOneServerString009" Hidden="true" />
+      <Method Name="SetStringOneServerString010" Hidden="true" />
+      <Method Name="SetStringOneServerString011" Hidden="true" />
+      <Method Name="SetStringOneServerString012" Hidden="true" />
+      <Method Name="SetStringOneServerString013" Hidden="true" />
+      <Method Name="SetStringOneServerString014" Hidden="true" />
+      <Method Name="SetStringOneServerString015" Hidden="true" />
+      <Method Name="SetStringOneServerString016" Hidden="true" />
+      <Method Name="SetStringOneServerString017" Hidden="true" />
+      <Method Name="SetStringOneServerString018" Hidden="true" />
+      <Method Name="SetStringOneServerString019" Hidden="true" />
+      <Method Name="SetStringOneServerString020" Hidden="true" />
+      <Method Name="SetStringOneServerString021" Hidden="true" />
+      <Method Name="SetStringOneServerString022" Hidden="true" />
+      <Method Name="SetStringOneServerString023" Hidden="true" />
+      <Method Name="SetStringOneServerString024" Hidden="true" />
+      <Method Name="SetStringOneServerString025" Hidden="true" />
+      <Method Name="SetStringOneServerString026" Hidden="true" />
+      <Method Name="SetStringOneServerString027" Hidden="true" />
+      <Method Name="SetStringOneServerString028" Hidden="true" />
+      <Method Name="SetStringOneServerString029" Hidden="true" />
+      <Method Name="SetStringOneServerString030" Hidden="true" />
+      <Method Name="SetStringOneServerString031" Hidden="true" />
+      <Method Name="SetStringOneServerString032" Hidden="true" />
+      <Method Name="SetStringOneServerString033" Hidden="true" />
+      <Method Name="SetStringOneServerString034" Hidden="true" />
+      <Method Name="SetStringPacketReaderString001" Hidden="true" />
+      <Method Name="SetStringPacketReaderString002" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString001" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString002" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString003" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString004" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString005" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString006" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString007" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString008" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString009" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString010" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString011" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString012" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString013" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString014" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString015" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString016" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString017" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString018" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString019" Hidden="true" />
+      <Method Name="SetStringScriptCompilerString020" Hidden="true" />
+      <Method Name="SetStringTimerThreadString001" Hidden="true" />
+      <Method Name="SetStringTimerThreadString002" Hidden="true" />
+      <Method Name="SetStringTimerThreadString003" Hidden="true" />
+      <Method Name="SetStringTimerThreadString004" Hidden="true" />
+      <Method Name="SetStringTimerThreadString005" Hidden="true" />
+      <Method Name="SetStringTimerThreadString006" Hidden="true" />
+      <Method Name="SetStringTimerThreadString007" Hidden="true" />
+      <Method Name="SetStringZoneClusterString001" Hidden="true" />
+      <Method Name="SetStringZoneClusterString002" Hidden="true" />
+      <Method Name="SetStringZoneClusterString003" Hidden="true" />
+      <Method Name="SetStringZoneClusterString004" Hidden="true" />
+      <Method Name="SetStringZoneString001" Hidden="true" />
+      <Method Name="SetStringZoneString002" Hidden="true" />
+      <Method Name="SetStringZoneString003" Hidden="true" />
+      <Method Name="SetStringZoneString004" Hidden="true" />
+      <Method Name="SetStringZoneString005" Hidden="true" />
+    </Members>
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="Demo.Mmose.Core.Server.Language.LanguageStringFromFile.SetStringEventHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\Server\Language\LanguageStringFromFile.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+      <Class Name="Demo.Mmose.Core.Server.Language.LanguageStringFromFile.SetStringHandler" Collapsed="true">
+        <Members>
+          <Field Name="m_Handlers" Hidden="true" />
+        </Members>
+        <TypeIdentifier>
+          <NewMemberFileName>ServerEngine\Server\Language\LanguageStringFromFile.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>xwESABQEwAAA4BUheQAADgiFGgIAAQyCIAmGwAUQEgg=</HashCode>
+      <FileName>ServerEngine\Server\Language\LanguageStringFromFile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="SimSun" Size="9" />
+</ClassDiagram>
