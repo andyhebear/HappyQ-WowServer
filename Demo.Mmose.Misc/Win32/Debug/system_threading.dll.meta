@@ -1,0 +1,136 @@
+Assembly system_threading, Version=1.0.*, Culture=固定语言(固定国家/地区): 
+	hash=SHA1, flags=PublicKey
+Assembly mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=None
+Assembly System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089: 
+	hash=SHA1, flags=None
+Class System.MonoTODOAttribute: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Attribute
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.String): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Fields:
+    System.String _desc : Public
+Class System.Tuple`2[T1,T2]: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Type parameter: T1
+  Type parameter: T2
+    Void .ctor(T1, T2): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    T1 Item1   'get set' : 
+    T2 Item2   'get set' : 
+  Methods:
+    get_Item1(): PrivateScope, Public, HideBySig, SpecialName
+    set_Item1(T1): PrivateScope, Public, HideBySig, SpecialName
+    get_Item2(): PrivateScope, Public, HideBySig, SpecialName
+    set_Item2(T2): PrivateScope, Public, HideBySig, SpecialName
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+Class System.Tuple`3[T1,T2,T3]: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Type parameter: T1
+  Type parameter: T2
+  Type parameter: T3
+    Void .ctor(T1, T2, T3): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    T1 Item1   'get set' : 
+    T2 Item2   'get set' : 
+    T3 Item3   'get set' : 
+  Methods:
+    get_Item1(): PrivateScope, Public, HideBySig, SpecialName
+    set_Item1(T1): PrivateScope, Public, HideBySig, SpecialName
+    get_Item2(): PrivateScope, Public, HideBySig, SpecialName
+    set_Item2(T2): PrivateScope, Public, HideBySig, SpecialName
+    get_Item3(): PrivateScope, Public, HideBySig, SpecialName
+    set_Item3(T3): PrivateScope, Public, HideBySig, SpecialName
+    Equals(Object): PrivateScope, Public, Virtual, HideBySig
+    GetHashCode(): PrivateScope, Public, Virtual, HideBySig
+Class System.Tuple: AutoLayout, AnsiClass, Class, Public, Abstract, Sealed, BeforeFieldInit
+  Methods:
+    Create(T1, T2): PrivateScope, Public, Static, HideBySig
+    Create(T1, T2, T3): PrivateScope, Public, Static, HideBySig
+Struct System.Threading.SpinLock: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+    Void .ctor(Boolean): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Properties:
+    Boolean IsThreadOwnerTrackingEnabled 'get ' : 
+    Boolean IsHeld 'get ' : 
+    Boolean IsHeldByCurrentThread 'get ' : 
+  Methods:
+    get_IsThreadOwnerTrackingEnabled(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsHeld(): PrivateScope, Public, HideBySig, SpecialName
+    get_IsHeldByCurrentThread(): PrivateScope, Public, HideBySig, SpecialName
+    Enter(Boolean&): PrivateScope, Public, HideBySig
+    TryEnter(Boolean&): PrivateScope, Public, HideBySig
+    TryEnter(TimeSpan, Boolean&): PrivateScope, Public, HideBySig
+    TryEnter(Int32, Boolean&): PrivateScope, Public, HideBySig
+    Exit(): PrivateScope, Public, HideBySig
+    Exit(Boolean): PrivateScope, Public, HideBySig
+Struct System.Threading.SpinWait: AutoLayout, AnsiClass, Class, Public, SequentialLayout, Sealed, BeforeFieldInit
+  :System.ValueType
+  Properties:
+    Boolean NextSpinWillYield 'get ' : 
+    Int32 Count 'get ' : 
+  Methods:
+    SpinOnce(): PrivateScope, Public, HideBySig
+    SpinUntil(Func`1): PrivateScope, Public, Static, HideBySig
+    SpinUntil(Func`1, TimeSpan): PrivateScope, Public, Static, HideBySig
+    SpinUntil(Func`1, Int32): PrivateScope, Public, Static, HideBySig
+    Reset(): PrivateScope, Public, HideBySig
+    get_NextSpinWillYield(): PrivateScope, Public, HideBySig, SpecialName
+    get_Count(): PrivateScope, Public, HideBySig, SpecialName
+Interface System.Collections.Concurrent.IProducerConsumerCollection`1[T]: AutoLayout, AnsiClass, Class, Public, ClassSemanticsMask, Abstract
+  Type parameter: T
+  Interfaces:
+    System.Collections.Generic.IEnumerable`1[T]
+    System.Collections.IEnumerable
+    System.Collections.ICollection
+  Methods:
+    TryAdd(T): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    TryTake(T&(Out)): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    ToArray(): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+    CopyTo(T[], Int32): PrivateScope, Public, Virtual, HideBySig, VtableLayoutMask, Abstract
+Class System.Collections.Concurrent.ConcurrentStack`1[T]: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Type parameter: T
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Collections.Generic.IEnumerable`1[T]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Collections.Concurrent.IProducerConsumerCollection`1[T]
+    System.Collections.Generic.IEnumerable`1[T]
+    System.Collections.IEnumerable
+    System.Collections.ICollection
+  Properties:
+    Int32 Count 'get ' : 
+    Boolean IsEmpty 'get ' : 
+  Methods:
+    Push(T): PrivateScope, Public, HideBySig
+    PushRange(T[]): PrivateScope, Public, HideBySig
+    PushRange(T[], Int32, Int32): PrivateScope, Public, HideBySig
+    TryPop(T&(Out)): PrivateScope, Public, HideBySig
+    TryPopRange(T[]): PrivateScope, Public, HideBySig
+    TryPopRange(T[], Int32, Int32): PrivateScope, Public, HideBySig
+    TryPeek(T&(Out)): PrivateScope, Public, HideBySig
+    Clear(): PrivateScope, Public, HideBySig
+    GetEnumerator(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    CopyTo(T[], Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    ToArray(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_Count(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IsEmpty(): PrivateScope, Public, HideBySig, SpecialName
+Class System.Collections.Concurrent.ConcurrentQueue`1[T]: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  Type parameter: T
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(System.Collections.Generic.IEnumerable`1[T]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+  Interfaces:
+    System.Collections.Concurrent.IProducerConsumerCollection`1[T]
+    System.Collections.Generic.IEnumerable`1[T]
+    System.Collections.IEnumerable
+    System.Collections.ICollection
+  Properties:
+    Int32 Count 'get ' : 
+    Boolean IsEmpty 'get ' : 
+  Methods:
+    Enqueue(T): PrivateScope, Public, HideBySig
+    TryDequeue(T&(Out)): PrivateScope, Public, HideBySig
+    TryPeek(T&(Out)): PrivateScope, Public, HideBySig
+    GetEnumerator(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    CopyTo(T[], Int32): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    ToArray(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask
+    get_Count(): PrivateScope, Public, Final, Virtual, HideBySig, VtableLayoutMask, SpecialName
+    get_IsEmpty(): PrivateScope, Public, HideBySig, SpecialName

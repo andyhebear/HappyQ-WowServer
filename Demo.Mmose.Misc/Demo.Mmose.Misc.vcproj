@@ -196,10 +196,9 @@
 			AssemblyName="System.Core, Version=3.5.0.0, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL"
 			MinFrameworkVersion="196613"
 		/>
-		<AssemblyReference
-			RelativePath="System.Threading.dll"
-			AssemblyName="System.Threading, Version=1.0.3058.34407, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL"
-			MinFrameworkVersion="196613"
+		<ProjectReference
+			ReferencedProjectIdentifier="{C8C17D33-FC7E-46E7-BAB2-131048F7416C}"
+			RelativePathToProject=".\system_threading\system_threading.csproj"
 		/>
 	</References>
 	<Files>
