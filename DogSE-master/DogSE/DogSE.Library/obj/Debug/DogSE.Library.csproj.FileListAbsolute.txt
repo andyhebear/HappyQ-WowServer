@@ -1,0 +1,6 @@
+E:\GitHub\HappyQ-WowServer\DogSE-master\DogSE\DogSE.Library\bin\Debug\DogSE.Library.dll
+E:\GitHub\HappyQ-WowServer\DogSE-master\DogSE\DogSE.Library\bin\Debug\DogSE.Library.pdb
+E:\GitHub\HappyQ-WowServer\DogSE-master\DogSE\DogSE.Library\bin\Debug\DogSE.Library.XML
+E:\GitHub\HappyQ-WowServer\DogSE-master\DogSE\DogSE.Library\obj\Debug\DogSE.Library.csprojResolveAssemblyReference.cache
+E:\GitHub\HappyQ-WowServer\DogSE-master\DogSE\DogSE.Library\obj\Debug\DogSE.Library.dll
+E:\GitHub\HappyQ-WowServer\DogSE-master\DogSE\DogSE.Library\obj\Debug\DogSE.Library.pdb

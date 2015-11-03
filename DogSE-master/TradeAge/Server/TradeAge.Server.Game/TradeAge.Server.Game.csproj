@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CEBAA71-7742-4AA6-857E-81BFC81EAF84}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TradeAge.Server.Game</RootNamespace>
+    <AssemblyName>TradeAge.Server.Game</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DogSE\DogSE.Library\DogSE.Library.csproj">
+      <Project>{797943e1-dd93-4363-be95-8a1758d5bae1}</Project>
+      <Name>DogSE.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DogSE\DogSE.Server.Core\DogSE.Server.Core.csproj">
+      <Project>{cf95170e-0dc6-46b1-b7d3-8d16dd94106f}</Project>
+      <Name>DogSE.Server.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DogSE\DogSE.Server.Database\DogSE.Server.Database.csproj">
+      <Project>{85faf347-7046-408a-9cd8-b5f5eed84301}</Project>
+      <Name>DogSE.Server.Database</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\DogSE\DogSE.Server.Net\DogSE.Server.Net.csproj">
+      <Project>{79e78eef-5810-4a54-abfa-901bffeab249}</Project>
+      <Name>DogSE.Server.Net</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\TradeAge.Common.Entity\TradeAge.Common.Entity.csproj">
+      <Project>{22ebede1-f9eb-40ec-97ec-89440f54f690}</Project>
+      <Name>TradeAge.Common.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TradeAge.Server.Interface\TradeAge.Server.Interface.csproj">
+      <Project>{71dc0ea6-94e6-4348-a86f-636ccd449b3b}</Project>
+      <Name>TradeAge.Server.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradeAge.Server.Entity\TradeAge.Server.Entity.csproj">
+      <Project>{7e2f65e0-1c97-40c9-bdf8-12008bede0ca}</Project>
+      <Name>TradeAge.Server.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradeAge.Server.Logic\TradeAge.Server.Logic.csproj">
+      <Project>{c45d9121-12a2-44b4-8274-c5fc5098a780}</Project>
+      <Name>TradeAge.Server.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradeAge.Server.Protocol\TradeAge.Server.Protocol.csproj">
+      <Project>{6780b91b-af66-4874-810a-0ad67df40841}</Project>
+      <Name>TradeAge.Server.Protocol</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

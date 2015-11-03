@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{69DAC743-A6B6-46F7-9C07-1D80F86EB13C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TradeAge.Client</RootNamespace>
+    <AssemblyName>TradeAge.Client.Controller</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controller\Auto\LogicInterface.cs" />
+    <Compile Include="Controller\GameController.cs" />
+    <Compile Include="Controller\Login\LoginController.Logic.cs" />
+    <Compile Include="Controller\Login\LoginController.Net.cs" />
+    <Compile Include="Controller\Login\LoginController.Proxy.cs" />
+    <Compile Include="Controller\Scene\SceneController.Logic.cs" />
+    <Compile Include="Controller\Scene\SceneController.Net.cs" />
+    <Compile Include="Controller\Scene\SceneController.Proxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\DogSE\DogSE.Library\DogSE.Library.net35.csproj">
+      <Project>{e7fe81a8-ce39-46c1-8eb2-c1f5d0ad130a}</Project>
+      <Name>DogSE.Library.net35</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DogSE.Client.Core\DogSE.Client.Core.csproj">
+      <Project>{c9bbbe58-672b-4fec-b66e-b020966186d0}</Project>
+      <Name>DogSE.Client.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TradeAge.Client.Entity\TradeAge.Client.Entity.csproj">
+      <Project>{82f1aff6-2c00-43ef-b923-bc39311c71a1}</Project>
+      <Name>TradeAge.Client.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

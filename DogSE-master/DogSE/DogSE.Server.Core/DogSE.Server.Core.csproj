@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CF95170E-0DC6-46B1-B7D3-8D16DD94106F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DogSE.Server.Core</RootNamespace>
+    <AssemblyName>DogSE.Server.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>..\Doc\DogSE.Server.Core.XML</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\GMCommand.cs" />
+    <Compile Include="Config\KeyValueConfig.cs" />
+    <Compile Include="Entity\HotDataManager.cs" />
+    <Compile Include="GameServerService.cs" />
+    <Compile Include="Config\DynamicConfigFileManager.cs" />
+    <Compile Include="Config\ServerConfig.cs" />
+    <Compile Include="Config\StaticConfigFileManager.cs" />
+    <Compile Include="Config\XmlFileConfig.cs" />
+    <Compile Include="Interface\Interface.cs" />
+    <Compile Include="Interface\Serial.cs" />
+    <Compile Include="LogicModule\ILogicModule.cs" />
+    <Compile Include="LogicModule\LogicModuleManager.cs" />
+    <Compile Include="Net\NetState.ComponentManager.cs" />
+    <Compile Include="Net\WhiteList.cs" />
+    <Compile Include="Protocol\CreateProxyCode.cs" />
+    <Compile Include="Protocol\CreateReadCode.cs" />
+    <Compile Include="Protocol\NetMethodAttribute.cs" />
+    <Compile Include="Protocol\RegisterNetMethod.cs" />
+    <Content Include="Protocol\TestClass.txt" />
+    <Compile Include="ServerState\IServerState.cs" />
+    <Compile Include="ServerState\ServerStateManager.cs" />
+    <Compile Include="TaskT\ActionTaskT.cs" />
+    <Compile Include="Task\ActionTaskCodeRuntimeWriter.cs" />
+    <Compile Include="TaskT\NetTaskT.cs" />
+    <Compile Include="Task\NetTaskCodeRuntimeWriter.cs" />
+    <Compile Include="TaskT\PacketHandlersT.cs" />
+    <Compile Include="TaskT\TaskManagerT.cs" />
+    <Compile Include="Task\TaskMonitor.cs" />
+    <Compile Include="Timer\DelayCallTimer.cs" />
+    <Compile Include="Timer\DelayStateCallTimer.cs" />
+    <Compile Include="Timer\Delegate.cs" />
+    <Compile Include="Timer\Enum.cs" />
+    <Compile Include="Timer\TimerChangeEntry.cs" />
+    <Compile Include="Timer\TimerProfile.cs" />
+    <Compile Include="Timer\TimerThread.cs" />
+    <Compile Include="Timer\TimeSlice.cs" />
+    <Compile Include="Timer\TimeSliceUtil.cs" />
+    <Compile Include="Util\AssemblyUtil.cs" />
+    <Compile Include="WorldBase.cs" />
+    <Compile Include="Net\NetState.cs" />
+    <Compile Include="Net\NetStateManager.cs" />
+    <Compile Include="Task\ActionTask.cs" />
+    <Compile Include="Task\Interface.cs" />
+    <Compile Include="Task\PacketHandler.cs" />
+    <Compile Include="Task\PacketHandlersBase.cs" />
+    <Compile Include="Net\PacketProfile.cs" />
+    <Compile Include="Net\PacketReader.cs" />
+    <Compile Include="Net\Packets.cs" />
+    <Compile Include="Net\PacketWriter.cs" />
+    <Compile Include="Net\ReceiveQueue.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Task\NetTask.cs" />
+    <Compile Include="Task\TaskManager.cs" />
+    <Content Include="Timer\Timer.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DogSE.Library\DogSE.Library.csproj">
+      <Project>{797943e1-dd93-4363-be95-8a1758d5bae1}</Project>
+      <Name>DogSE.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DogSE.Server.Net\DogSE.Server.Net.csproj">
+      <Project>{79e78eef-5810-4a54-abfa-901bffeab249}</Project>
+      <Name>DogSE.Server.Net</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Net\Package.dgml" />
+    <None Include="Task\Task.dgml" />
+    <None Include="Timer\Timer.dgml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

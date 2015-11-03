@@ -1,0 +1,2927 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DogSE.Library</name>
+    </assembly>
+    <members>
+        <member name="T:DogSE.Library.Common.ObjectPool`1">
+            <summary>
+            对象池
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:DogSE.Library.Common.IPoolInfo">
+            <summary>
+            对象池信息
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Common.IPoolInfo.GetPoolInfo">
+            <summary>
+            获得对象池信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Common.IPoolInfo.Name">
+            <summary>
+            对象池的名字
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Common.ObjectPool`1.m_InitialCapacity">
+            <summary>
+            内存池的容量
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Common.ObjectPool`1.m_FreePool">
+            <summary>
+            内存池
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Common.ObjectPool`1.m_Misses">
+            <summary>
+            内存池的容量不足时再次请求数据的次数
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.#ctor(System.Int64,System.Int32)">
+            <summary>
+            初始化内存池
+            </summary>
+            <param name="iInitialCapacity">初始化内存池对象的数量</param>
+            <param name="maxCapacity">最大容量</param>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.Extend">
+            <summary>
+            扩展数据
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.ToString">
+            <summary>
+            输出对象池的一些状态
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.#ctor(System.String,System.Int64)">
+            <summary>
+            初始化内存池
+            </summary>
+            <param name="name">对象池的名字</param>
+            <param name="iInitialCapacity">初始化内存池对象的数量</param>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.AcquireContent">
+            <summary>
+            内存池请求数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.ReleaseContent(`0)">
+            <summary>
+            内存池释放数据
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.Free">
+            <summary>
+            释放内存池内全部的数据
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPool`1.GetPoolInfo">
+            <summary>
+            给出内存池的详细信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Common.ObjectPool`1.MaxCapacity">
+            <summary>
+            最大持有容量
+            如果发生miss，仍然会按照初始容量去扩容
+            但是，一旦发生回收，池里的数量大于最大容量，则不会再往池里丢数据
+            会直接抛弃掉
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Common.ObjectPool`1.Name">
+            <summary>
+            对象池的名字
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Common.StaticInstanceObjectPool`1">
+            <summary>
+            带单例模式的对象池
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:DogSE.Library.Common.StaticInstanceObjectPool`1.Instatnce">
+            <summary>
+            单例模式
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Common.PoolInfo">
+            <summary>
+            对象池信息
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Common.PoolInfo.ToString">
+            <summary>
+            输出当前数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Common.PoolInfo.FreeCount">
+            <summary>
+            空闲数量
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Common.PoolInfo.AcquireCount">
+            <summary>
+            申请的数量
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Common.PoolInfo.ReleaseCount">
+            <summary>
+            释放的数量
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Common.PoolInfo.InitialCapacity">
+            <summary>
+            初始化池数量
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Common.PoolInfo.CurrentCapacity">
+            <summary>
+            当前池数量
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Common.PoolInfo.Misses">
+            <summary>
+            请求失败次数
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Common.PoolInfo.Name">
+            <summary>
+            对象池的名字
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Common.ObjectPoolStateInfo">
+            <summary>
+            对象池信息
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPoolStateInfo.GetPoolInfos">
+            <summary>
+            获得所有内存池的信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Common.ObjectPoolStateInfo.GetPoolInfos(System.String)">
+            <summary>
+            获得指定名称的内存池信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DogSE.Library.Common.StaticObjectPool`1">
+            <summary>
+            泛型的，静态唯一的对象池【线程安全，放心使用】
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:DogSE.Library.Common.StaticObjectPool`1.AcquireContent">
+            <summary>
+            内存池请求数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Common.StaticObjectPool`1.ReleaseContent(`0)">
+            <summary>
+            回收内存
+            </summary>
+            <param name="contentT"></param>
+        </member>
+        <member name="T:DogSE.Library.Common.TInstance`1">
+            <summary>
+            单例模板
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:DogSE.Library.Common.TInstance`1.Instance">
+            <summary>
+            单例
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Component.ComponentManager">
+            <summary>
+            组件管理器的实现模式
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Component.IComponentManager">
+            <summary>
+            组件模式模块
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Component.IComponentManager.RegisterComponent``1(System.String,``0)">
+            <summary>
+            注册一个组件数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="componentId">组件ID</param>
+            <param name="component">组件实例（非空）</param>
+        </member>
+        <member name="M:DogSE.Library.Component.IComponentManager.GetComponent``1(System.String)">
+            <summary>
+            获得一个组件数据
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="componentId">组件ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Component.IComponentManager.ReleaseComponent``1">
+            <summary>
+            释放组件的资源
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:DogSE.Library.Component.ComponentManager.RegisterComponent``1(System.String,``0)">
+            <summary>
+            注册一个组件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="componentId"></param>
+            <param name="component"></param>
+        </member>
+        <member name="M:DogSE.Library.Component.ComponentManager.GetComponent``1(System.String)">
+            <summary>
+            获得一个组件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="componentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Component.ComponentManager.ReleaseComponent``1">
+            <summary>
+            释放组件资源
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:DogSE.Library.Component.ComponentManager.Clear">
+            <summary>
+            清理所有数据（为GC用，注意使用场所）
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Log.DebugAppender">
+            <summary>
+            控制台日志输出
+            </summary>
+            <remarks>
+            虽然这里实现的是实例的接口
+            但控制台只有一个，因此这边的数据都是写入一个静态的列表
+            </remarks>
+        </member>
+        <member name="T:DogSE.Library.Log.ILogAppender">
+            <summary>
+            日志输出的适配器，所有需要接管日志输入的都需要实现这个接口
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.ILogAppender.Write(DogSE.Library.Log.LogInfo)">
+            <summary>
+            输出日志
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="P:DogSE.Library.Log.ILogAppender.Level">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.DebugAppender.s_LogInfoQueue">
+            <summary>
+            当前需要处理的集合
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.DebugAppender.s_LockLogInfoQueue">
+            <summary>
+            日志操作的锁
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.DebugAppender.s_IsLock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.DebugAppender.Write(DogSE.Library.Log.LogInfo)">
+            <summary>
+            写日志（可以多线程操作）
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="F:DogSE.Library.Log.DebugAppender.level">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.DebugAppender.s_strInput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.DebugAppender.s_strDosPrompt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.DebugAppender.InternalWriteLine(DogSE.Library.Log.LogMessageType,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageFlag"></param>
+            <param name="strFormat"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.DebugAppender.InternalWriteLine(DogSE.Library.Log.LogMessageType,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="messageFlag"></param>
+            <param name="strFormat"></param>
+            <param name="arg"></param>
+        </member>
+        <member name="P:DogSE.Library.Log.DebugAppender.Level">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Performance.GCNotify">
+            <summary>
+            GC通知功能
+            </summary>
+        </member>
+        <member name="E:DogSE.Library.Performance.GCNotify.Notify">
+            <summary>
+            GC通知事件
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Performance.GCNotify.GCObject.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="g"></param>
+        </member>
+        <member name="F:DogSE.Library.Performance.GCNotify.GCObject.G">
+            <summary>
+            第几代
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Serialize.EmptyLineBehavior">
+            <summary>
+                Determines how empty lines are interpreted when reading CSV files.
+                These values do not affect empty lines that occur within quoted fields
+                or empty lines that appear at the end of the input file.
+            </summary>
+            <remarks>
+            code from http://www.blackbeltcoder.com/Articles/files/reading-and-writing-csv-files-in-c
+            </remarks>
+        </member>
+        <member name="F:DogSE.Library.Serialize.EmptyLineBehavior.NoColumns">
+            <summary>
+                Empty lines are interpreted as a line with zero columns.
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Serialize.EmptyLineBehavior.EmptyColumn">
+            <summary>
+                Empty lines are interpreted as a line with a single empty column.
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Serialize.EmptyLineBehavior.Ignore">
+            <summary>
+                Empty lines are skipped over as though they did not exist.
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Serialize.EmptyLineBehavior.EndOfFile">
+            <summary>
+                An empty line is interpreted as the end of the input file.
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Serialize.CsvFileCommon">
+            <summary>
+                Common base class for CSV reader and writer classes.
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Serialize.CsvFileCommon.SpecialChars">
+            <summary>
+                These are special characters in CSV files. If a column contains any
+                of these characters, the entire column is wrapped in double quotes.
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Serialize.CsvFileCommon.Delimiter">
+            <summary>
+                Gets/sets the character used for column delimiters.
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Serialize.CsvFileCommon.Quote">
+            <summary>
+                Gets/sets the character used for column quotes.
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Serialize.CsvFileReader">
+            <summary>
+                Class for reading from comma-separated-value (CSV) files
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileReader.#ctor(System.IO.Stream,DogSE.Library.Serialize.EmptyLineBehavior)">
+            <summary>
+                Initializes a new instance of the CsvFileReader class for the
+                specified stream.
+            </summary>
+            <param name="stream">The stream to read from</param>
+            <param name="emptyLineBehavior">Determines how empty lines are handled</param>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileReader.#ctor(System.String,DogSE.Library.Serialize.EmptyLineBehavior)">
+            <summary>
+                Initializes a new instance of the CsvFileReader class for the
+                specified file path.
+            </summary>
+            <param name="path">The name of the CSV file to read from</param>
+            <param name="emptyLineBehavior">Determines how empty lines are handled</param>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileReader.Dispose">
+            <summary>
+                Propagate Dispose to StreamReader
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileReader.ReadRow(System.Collections.Generic.List{System.String})">
+            <summary>
+                Reads a row of columns from the current CSV file. Returns false if no
+                more data could be read because the end of the file was reached.
+            </summary>
+            <param name="columns">Collection to hold the columns read</param>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileReader.ReadQuotedColumn">
+            <summary>
+                Reads a quoted column by reading from the current line until a
+                closing quote is found or the end of the file is reached. On return,
+                the current position points to the delimiter or the end of the last
+                line in the file. Note: CurrLine may be set to null on return.
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileReader.ReadUnquotedColumn">
+            <summary>
+                Reads an unquoted column by reading from the current line until a
+                delimiter is found or the end of the line is reached. On return, the
+                current position points to the delimiter or the end of the current
+                line.
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Serialize.CsvFileWriter">
+            <summary>
+                Class for writing to comma-separated-value (CSV) files.
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileWriter.#ctor(System.IO.Stream)">
+            <summary>
+                Initializes a new instance of the CsvFileWriter class for the
+                specified stream.
+            </summary>
+            <param name="stream">The stream to write to</param>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileWriter.#ctor(System.String)">
+            <summary>
+                Initializes a new instance of the CsvFileWriter class for the
+                specified file path.
+            </summary>
+            <param name="path">The name of the CSV file to write to</param>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileWriter.Dispose">
+            <summary>
+                Propagate Dispose to StreamReader
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileWriter.WriteRow(System.Collections.Generic.List{System.String})">
+            <summary>
+                Writes a row of columns to the current CSV file.
+            </summary>
+            <param name="columns">The list of columns to write</param>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CsvFileWriter.Flush">
+            <summary>
+            刷新数据
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Serialize.CSVSerializeUtil">
+            <summary>
+            CSV 文件序列化
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CSVSerializeUtil.CSVDeserialize(System.String,System.Type)">
+            <summary>
+            将csv文件反序列化到对象数组里
+            </summary>
+            <param name="csvStr"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="F:DogSE.Library.Serialize.CSVSerializeUtil.CurrentLine">
+            <summary>
+            当前正在处理的列
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CSVSerializeUtil.GetPropertyByAliases(System.Type,System.String)">
+            <summary>
+            通过别名或者列属性
+            </summary>
+            <param name="type"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CSVSerializeUtil.IsListEnum(System.Type)">
+            <summary>
+            释放时List&lt;枚举&gt;
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CSVSerializeUtil.CSVDeserialize``1(System.String)">
+            <summary>
+            CSV 反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="csvStr">csv的字符串</param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CSVSerializeUtil.CSVDeserializeFile``1(System.String)">
+            <summary>
+            CSV 反序列一个文件
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="csvFileName">某个csv的文件</param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CSVSerializeUtil.CSVSerialize``1(``0[])">
+            <summary>
+            序列化到csv字符串
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="values"></param>
+        </member>
+        <member name="T:DogSE.Library.Serialize.CSVColumnAttribute">
+            <summary>
+            给一个csv的列定义一个别名
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.CSVColumnAttribute.#ctor(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="name">别名</param>
+        </member>
+        <member name="P:DogSE.Library.Serialize.CSVColumnAttribute.Aliases">
+            <summary>
+            别名
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Serialize.XmlSerializeUtil">
+            <summary>
+            xml序列化辅助类
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Serialize.XmlSerializeUtil.XmlDeserialize``1(System.String)">
+            <summary>
+            Xml 反序列化
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="xmlStr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Serialize.XmlSerializeUtil.XmlDeserialize(System.String,System.Type)">
+            <summary>
+            Xml 反序列化
+            </summary>
+            <param name="xmlStr"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Serialize.XmlSerializeUtil.XmlSerialize``1(``0)">
+            <summary>
+            将一个对象序列化为一个xml对象
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DogSE.Library.Log.ConsoleAppender">
+            <summary>
+            控制台日志输出
+            </summary>
+            <remarks>
+            虽然这里实现的是实例的接口
+            但控制台只有一个，因此这边的数据都是写入一个静态的列表
+            </remarks>
+        </member>
+        <member name="F:DogSE.Library.Log.ConsoleAppender.s_LogInfoQueue">
+            <summary>
+            当前需要处理的集合
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.ConsoleAppender.s_LockLogInfoQueue">
+            <summary>
+            日志操作的锁
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.ConsoleAppender.s_IsLock">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.ConsoleAppender.Write(DogSE.Library.Log.LogInfo)">
+            <summary>
+            写日志（可以多线程操作）
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="F:DogSE.Library.Log.ConsoleAppender.level">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.ConsoleAppender.s_strInput">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.ConsoleAppender.s_strDosPrompt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.ConsoleAppender.InternalWriteLine(DogSE.Library.Log.LogMessageType,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="messageFlag"></param>
+            <param name="strFormat"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ConsoleAppender.InternalWriteLine(DogSE.Library.Log.LogMessageType,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="messageFlag"></param>
+            <param name="strFormat"></param>
+            <param name="arg"></param>
+        </member>
+        <member name="P:DogSE.Library.Log.ConsoleAppender.Level">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Log.DefultLog">
+            <summary>
+            默认的日志处理对象
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Log.ILog">
+            <summary>
+            日志组件的接口
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Debug(System.String)">
+            <summary>
+            输出Debug信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Debug(System.String,System.Object[])">
+            <summary>
+            输出Debug信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Info(System.String)">
+            <summary>
+            输出Info信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Info(System.String,System.Object[])">
+            <summary>
+            输出Info信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Warn(System.String)">
+            <summary>
+            输出Warn信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Warn(System.String,System.Object[])">
+            <summary>
+            输出Warn信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Error(System.String)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Error(System.String,System.Object[])">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Error(System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="str"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Error(System.String,System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="str"></param>
+            <param name="ex"></param>
+            <param name="param1"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Error(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="str"></param>
+            <param name="ex"></param>
+            <param name="param1"></param>
+            <param name="param2"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.ILog.Error(System.String,System.String,System.String,System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="str"></param>
+            <param name="ex"></param>
+            <param name="param1"></param>
+            <param name="param2"></param>
+            <param name="param3"></param>
+        </member>
+        <member name="P:DogSE.Library.Log.ILog.Level">
+            <summary>
+            日志记录等级
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.DefultLog.AddAppender(DogSE.Library.Log.ILogAppender)">
+            <summary>
+            添加一个日志输出的适配器
+            </summary>
+            <param name="appender"></param>
+        </member>
+        <member name="P:DogSE.Library.Log.DefultLog.Level">
+            <summary>
+            日志输出等级
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Log.FileAppender">
+            <summary>
+            文件输出的适配器
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.FileAppender.logFileInfoQueue">
+            <summary>
+            当前需要处理的集合
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.FileAppender.Write(DogSE.Library.Log.LogInfo)">
+            <summary>
+            日志输出
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="F:DogSE.Library.Log.FileAppender.level">
+            <summary>
+            日志等级
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.FileAppender.GetAppender(System.String)">
+            <summary>
+            获得一个文件输出的Appender
+            </summary>
+            <remarks>
+            这里不允许直接创建的原因是为了防止多个Appender对同一个文件做访问
+            在初始化的时候，必须先提供一个日志文件，内部会检查这个日志文件的Appender是否已经创建过
+            如果创建过则返回已经创建过的对象重用
+            </remarks>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Log.FileAppender.Level">
+            <summary>
+            日志等级(默认等级为 Notifce)
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Log.LogInfo">
+            <summary>
+            日志信息
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.LogInfo.#ctor(DogSE.Library.Log.LogMessageType,System.String,System.Object[])">
+            <summary>
+            
+            </summary>
+            <param name="messageFlag"></param>
+            <param name="strFormat"></param>
+            <param name="parameter"></param>
+        </member>
+        <member name="F:DogSE.Library.Log.LogInfo.m_messageFlag">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogInfo.format">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogInfo._parameter">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.LogInfo.ToString">
+            <summary>
+            输出定义好的格式化字符串
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Log.LogInfo.MessageFlag">
+            <summary>
+            日志标记
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Log.LogInfo.Format">
+            <summary>
+            日志信息（格式）
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Log.LogInfo.Parameter">
+            <summary>
+            如果 format带格式，这里为参数
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Log.LogMessageType">
+            <summary>
+            日志的输出等级
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_NONE">
+            <summary>
+            空
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_STATUS">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_SQL">
+            <summary>
+            sql 日志
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_DEBUG">
+            <summary>
+            调试
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_INFO">
+            <summary>
+            信息
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_NOTICE">
+            <summary>
+            通知
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_WARNING">
+            <summary>
+            警告
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_ERROR">
+            <summary>
+            错误
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_FATALERROR">
+            <summary>
+            致命错误
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_HACK">
+            <summary>
+            ??
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_LOAD">
+            <summary>
+            初始化
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_INPUT">
+            <summary>
+            输入
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Log.LogMessageType.MSG_DOS_PROMPT">
+            <summary>
+            Dos窗口输出
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Log.Logs">
+            <summary>
+            线程安全的日志
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.ConfigLogFile(System.String,DogSE.Library.Log.LogMessageType)">
+            <summary>
+            初始化日志配置文件
+            </summary>
+            <param name="logFile"></param>
+            <param name="msgType"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Debug(System.String)">
+            <summary>
+            输出Debug信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Debug(System.String,System.Object[])">
+            <summary>
+            输出Debug信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Info(System.String)">
+            <summary>
+            输出Info信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Info(System.String,System.Object[])">
+            <summary>
+            输出Info信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Warn(System.String)">
+            <summary>
+            输出Warn信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Warn(System.String,System.Object[])">
+            <summary>
+            输出Warn信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.String)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.Int32)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="format"></param>
+            <param name="param"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.String,System.String)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+            <param name="param2"></param>
+            <param name="param1"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.String,System.String,System.String)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+            <param name="param2"></param>
+            <param name="param1"></param>
+            <param name="param3"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+            <param name="param1"></param>
+            <param name="ex"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.String,System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+            <param name="param1"></param>
+            <param name="param2"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.Error(System.String,System.String,System.String,System.String,System.Exception)">
+            <summary>
+            输出Error信息
+            </summary>
+            <param name="message"></param>
+            <param name="ex"></param>
+            <param name="param1"></param>
+            <param name="param2"></param>
+            <param name="param3"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.WriteLine(DogSE.Library.Log.LogMessageType,System.String)">
+            <summary>
+            防止多线程的问题
+            </summary>
+            <param name="messageFlag"></param>
+            <param name="strFormat"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.WriteLine(DogSE.Library.Log.LogMessageType,System.String,System.Object[])">
+            <summary>
+            防止多线程的问题
+            </summary>
+            <param name="messageFlag"></param>
+            <param name="strFormat"></param>
+            <param name="arg"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.AddAppender(DogSE.Library.Log.ILogAppender)">
+            <summary>
+            添加日志的输出适配器
+            </summary>
+            <param name="appender"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.RemoveAppender(DogSE.Library.Log.ILogAppender)">
+            <summary>
+            删除某个日志输出适配器
+            </summary>
+            <param name="appender"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.GetMessageType``1">
+            <summary>
+            获得某个适配器类型的日志输出等级
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.SetMessageLevel``1(DogSE.Library.Log.LogMessageType)">
+            <summary>
+            设置某个适配器的日志输出等级
+            </summary>
+            <typeparam name="TLogAppender"></typeparam>
+            <param name="level"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.ParseLogMessageType(System.String)">
+            <summary>
+            将一个字符串抓换为日志的输出类型
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.SetLogLevel(System.String)">
+            <summary>
+            设置log等级
+            该设置会把所有的日志输出按照一个等级来操作
+            </summary>
+            <param name="logLevel"></param>
+        </member>
+        <member name="M:DogSE.Library.Log.Logs.AddConsoleAppender">
+            <summary>
+            添加一个控制台的适配器
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Thread.ThreadQueue">
+            <summary>
+            线程队列，用于按照顺序执行方法
+            只用一个线程来执行队列，多线程时自己使用系统提供的线程池
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueue.Append(System.Action)">
+            <summary>
+            
+            </summary>
+            <param name="method"></param>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueue.AppendIO(System.Action)">
+            <summary>
+            加入一个IO操作队列
+            </summary>
+            <param name="method"></param>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueue.AppendIOCache(System.Int32,System.Action)">
+            <summary>
+            添加一个io缓存方法
+            在没有调用 flushIoCache 方法前会先缓存在内部
+            等合适的时间再flush到队列里
+            </summary>
+            <param name="hasdCode"></param>
+            <param name="method"></param>
+            <returns>
+            true 表示缓存里没有类似的实体数据，缓存添加成功
+            false 表示缓存里有相同的实体，不再进行添加
+            </returns>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueue.FlushIOCache">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueue.GetThreadQueue(System.String)">
+            <summary>
+            获得一个指定名称的线程队列
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Thread.ThreadQueue.HasQueues">
+            <summary>
+            当前队列里是否还有正在执行的任务
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Thread.ThreadQueueEntity">
+            <summary>
+            线程队列实例
+            </summary>
+            <remarks>
+            这里是已实例情况存在
+            目的时，如果有新的扩展时，可以在静态类里，自己创建一个静态对象。
+            方便后面的代码使用
+            </remarks>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueueEntity.#ctor(System.String)">
+            <summary>
+            创建队列需要输入名字
+            </summary>
+            <param name="queueName"></param>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueueEntity.Append(System.Action)">
+            <summary>
+            增加一个异步任务
+            </summary>
+            <param name="method"></param>
+        </member>
+        <member name="M:DogSE.Library.Thread.ThreadQueueEntity.GetWaitCount">
+            <summary>
+            获得当前站在等待的数量
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Thread.ThreadQueueEntity.HasActionInAllQueue">
+            <summary>
+            参看所有线程队列里是否有任务
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Thread.ThreadQueueEntity.QueueName">
+            <summary>
+            线程队列名称
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Thread.ThreadQueueEntity.HasQueues">
+            <summary>
+            当前队列里是否还有正在执行的任务
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Time.OneServer">
+            <summary>
+            暂时用这个来获得全部时间，稍后会对它的获取方法做调整
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Time.OneServer.s_NowTime">
+            服务器当前的时间
+        </member>
+        <member name="M:DogSE.Library.Time.OneServer.SetServerTime(System.DateTime)">
+            <summary>
+            设置服务器时间
+            </summary>
+            <param name="serverTime"></param>
+        </member>
+        <member name="P:DogSE.Library.Time.OneServer.NowTime">
+            <summary>
+            服务器当前的时间
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.ByteChange">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.FloatToUint(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="fValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToUint(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="fValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.FloatToInt(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="fValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToInt(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="fValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.UintToFloat(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="uiValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToFloat(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="uiValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.IntToFloat(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToFloat(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.DoubleToLong(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="dValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToLong(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="dValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.DoubleToUlong(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="dValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToUlong(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="dValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.LongToDouble(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="lValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToDouble(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="lValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.UlongToDouble(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="ulValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteChange.ChangeToDouble(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="ulValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DogSE.Library.Util.ByteOrder">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.NetToHost(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="iNetUShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.OrderToHost(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="iNetUShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.HostToNet(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="iHostUShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.OrderToNet(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="iHostUShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.NetToHost(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="iNetULong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.OrderToHost(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="iNetULong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.HostToNet(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="iHostULong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ByteOrder.OrderToNet(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="iHostULong"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DogSE.Library.Util.ConsoleUtils">
+            <summary>
+            控制台的一些辅助类
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.ConsoleUtils.ConsoleHwnd">
+            <summary>
+            控制台的窗口句柄
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.ConsoleUtils.RemoveSystemCloseMenu">
+            <summary>
+            去除关闭按扭，防止控制台程序被误关闭
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.ConvertByteArray">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iInt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Int32,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iInt"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iInt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Int32,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iInt"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="iUInt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.UInt32,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iUInt"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.UInt32)">
+            <summary>
+            
+            </summary>
+            <param name="iUInt"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.UInt32,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iUInt"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="fFloat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Single,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="fFloat"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="fFloat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Single,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="fFloat"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="iLong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Int64,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iLong"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="iLong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Int64,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iLong"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="iULong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.UInt64,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iULong"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.UInt64)">
+            <summary>
+            
+            </summary>
+            <param name="iULong"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.UInt64,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iULong"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="dDouble"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Double,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="dDouble"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="dDouble"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Double,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="dDouble"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Int16)">
+            <summary>
+            
+            </summary>
+            <param name="iShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Int16,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iShort"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Int16)">
+            <summary>
+            
+            </summary>
+            <param name="iShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Int16,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iShort"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="iUShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.UInt16,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iUShort"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.UInt16)">
+            <summary>
+            
+            </summary>
+            <param name="iUShort"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.UInt16,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iUShort"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="cChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Char,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="cChar"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Char)">
+            <summary>
+            
+            </summary>
+            <param name="cChar"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Char,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="cChar"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="iByte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Byte)">
+            <summary>
+            
+            </summary>
+            <param name="iByte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.SByte)">
+            <summary>
+            
+            </summary>
+            <param name="iSByte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.SByte)">
+            <summary>
+            
+            </summary>
+            <param name="iSByte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="bBool"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.Boolean,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="bBool"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="bBool"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.Boolean,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="bBool"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.String,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns>剩余多少字节没有拷贝过去</returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.String,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.String,System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToByteArray(System.String,System.Text.Encoding,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <param name="encoding"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.String,System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToArrayInByte(System.String,System.Text.Encoding,System.Byte[]@,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="strString"></param>
+            <param name="encoding"></param>
+            <param name="byteBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToInt32(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="intBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToInt32(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="intBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToInt32(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="intBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToInt32(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="intBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToUInt32(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToUInt32(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToUInt32(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToUInt32(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToSingle(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToSingle(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToSingle(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToSingle(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="uintBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToInt64(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="longBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToInt64(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="longBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToInt64(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="longBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToInt64(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="longBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToUInt64(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToUInt64(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToUInt64(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToUInt64(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToDouble(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToDouble(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToDouble(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToDouble(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ulongBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToInt16(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="shortBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToInt16(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="shortBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToInt16(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="shortBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToInt16(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="shortBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToUInt16(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ushortBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToUInt16(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ushortBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToUInt16(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="ushortBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToUInt16(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="ushortBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToChar(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToChar(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToChar(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToChar(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToBoolean(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToBoolean(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToBoolean(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToBoolean(System.Byte[],System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="charBuffer"></param>
+            <param name="iBufferIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToString(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byteString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToString(System.Byte[])">
+            <summary>
+            
+            </summary>
+            <param name="byteString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="byteString"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToString(System.Byte[],System.Text.Encoding)">
+            <summary>
+            
+            </summary>
+            <param name="byteString"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToString(System.Byte[],System.Int64,System.Int64)">
+            <summary>
+            字节数组转换成字符串
+            </summary>
+            <param name="byteString"></param>
+            <param name="iOffset"></param>
+            <param name="iSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToString(System.Byte[],System.Int64,System.Int64)">
+            <summary>
+            字节数组转换成字符串
+            </summary>
+            <param name="byteString"></param>
+            <param name="iOffset"></param>
+            <param name="iSize"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ToString(System.Byte[],System.Int64,System.Int64,System.Text.Encoding)">
+            <summary>
+            字节数组转换成字符串
+            </summary>
+            <param name="byteString"></param>
+            <param name="iOffset"></param>
+            <param name="iSize"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.ConvertToString(System.Byte[],System.Int64,System.Int64,System.Text.Encoding)">
+            <summary>
+            字节数组转换成字符串
+            </summary>
+            <param name="byteString"></param>
+            <param name="iOffset"></param>
+            <param name="iSize"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.Concat(System.Byte[],System.Byte[])">
+            <summary>
+            顺序连接两个数组
+            </summary>
+            <param name="bufferA"></param>
+            <param name="bufferB"></param>
+            <returns>返回连接后的数组</returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.Coalition(System.Byte[],System.Byte[])">
+            <summary>
+            顺序连接两个数组
+            </summary>
+            <param name="thisBuffer"></param>
+            <param name="concatBuffer"></param>
+            <returns>返回连接后的数组</returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.Concat(System.Byte[],System.Int64,System.Int64,System.Byte[],System.Int64,System.Int64)">
+            <summary>
+            顺序连接两个数组
+            </summary>
+            <param name="bufferA"></param>
+            <param name="iOffsetA"></param>
+            <param name="iSizeA"></param>
+            <param name="bufferB"></param>
+            <param name="iOffsetB"></param>
+            <param name="iSizeB"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertByteArray.Coalition(System.Byte[],System.Int64,System.Int64,System.Byte[],System.Int64,System.Int64)">
+            <summary>
+            顺序连接两个数组
+            </summary>
+            <param name="thisBuffer"></param>
+            <param name="iThisOffset"></param>
+            <param name="iThisSize"></param>
+            <param name="bufferB"></param>
+            <param name="iOffsetB"></param>
+            <param name="iSizeB"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DogSE.Library.Util.ConvertString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.ConvertString.s_UTF8">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToBoolean(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToBoolean(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToSingle(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToSingle(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToDouble(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToDouble(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToTimeSpan(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToTimeSpan(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToDateTime(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToDateTime(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToInt16(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToInt16(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToUInt16(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToUInt16(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToInt32(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToInt32(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToUInt32(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToUInt32(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToLong64(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToLong64(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToULong64(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToULong64(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToIPAddress(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToIPAddress(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="strValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToByteArray(System.String)">
+            <summary>
+            字符串转换成字节数组
+            </summary>
+            <param name="byteString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToByteArray(System.String,System.Text.Encoding)">
+            <summary>
+            字符串转换成字节数组
+            </summary>
+            <param name="byteString"></param>
+            <param name="encoding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.Concat(System.Text.StringBuilder@,System.String[])">
+            <summary>
+            合并字符串
+            </summary>
+            <param name="stringBuilder"></param>
+            <param name="strStringList"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.Coalition(System.String,System.Text.StringBuilder@,System.String)">
+            <summary>
+            合并字符串
+            </summary>
+            <param name="strString"></param>
+            <param name="stringBuilder"></param>
+            <param name="strString2"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.Coalition(System.String,System.Text.StringBuilder@,System.String,System.String)">
+            <summary>
+            合并字符串
+            </summary>
+            <param name="strString"></param>
+            <param name="stringBuilder"></param>
+            <param name="strString2"></param>
+            <param name="strString3"> </param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.Coalition(System.String,System.Text.StringBuilder@,System.String,System.String,System.String)">
+            <summary>
+            合并字符串
+            </summary>
+            <param name="strString"></param>
+            <param name="stringBuilder"></param>
+            <param name="strString2"></param>
+            <param name="strString3"></param>
+            <param name="strString4"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToCSVSplit(System.String)">
+            <summary>
+            将 1,2,3 转换为字符串数组
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ToCSVSplitToInt(System.String)">
+            <summary>
+            将 1,2,3 转换为字符串数组
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToCSV(System.Collections.Generic.List{System.String})">
+            <summary>
+            将字符串列表转为csv格式数据
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToCSV(System.Collections.Generic.List{System.Int32})">
+            <summary>
+            将字符串列表转为csv格式数据
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ConvertToCSV(System.Int32[])">
+            <summary>
+            将字符串列表转为csv格式数据
+            </summary>
+            <param name="array"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.HasUtf8FourWord(System.String)">
+            <summary>
+            字符串里是否包含4字节的字符
+            </summary>
+            <remarks>
+            代码来源：http://www.cnblogs.com/yangxudong/p/3737593.html
+            </remarks>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.ConvertString.ReplaceUtf8FourWord(System.String)">
+            <summary>
+            替换utf8不识别的超过4个字符的字母
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Util.ConvertString.UTF8">
+            <summary>
+            Safe UTF8
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.FastInvokeHandler">
+            <summary>
+            Delegate for calling a method that is not known at runtime.
+            </summary>
+            <param name="target">the object to be called or null if the call is to a static method.</param>
+            <param name="parameters">the parameters to the method.</param>
+            <returns>the return value for the method or null if it doesn't return anything.</returns>
+        </member>
+        <member name="T:DogSE.Library.Util.FastCreateInstanceHandler">
+            <summary>
+            Delegate for creating and object at runtime using the default constructor.
+            </summary>
+            <returns>the newly created object.</returns>
+        </member>
+        <member name="T:DogSE.Library.Util.FastPropertyGetHandler">
+            <summary>
+            Delegate to get an arbitraty property at runtime.
+            </summary>
+            <param name="target">the object instance whose property will be obtained.</param>
+            <returns>the property value.</returns>
+        </member>
+        <member name="T:DogSE.Library.Util.FastPropertySetHandler">
+            <summary>
+            Delegate to set an arbitrary property at runtime.
+            </summary>
+            <param name="target">the object instance whose property will be modified.</param>
+            <param name="parameter"></param>
+        </member>
+        <member name="T:DogSE.Library.Util.DynamicCalls">
+            <summary>
+            Class with helper methods for dynamic invocation generating IL on the fly.
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.DynamicCalls.GetMethodInvoker(System.Reflection.MethodInfo)">
+            <summary>
+            
+            </summary>
+            <param name="methodInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.DynamicCalls.GetInstanceCreator(System.Type)">
+            <summary>
+            Gets the instance creator delegate that can be use to create instances of the specified type.
+            </summary>
+            <param name="type">The type of the objects we want to create.</param>
+            <returns>A delegate that can be used to create the objects.</returns>
+        </member>
+        <member name="M:DogSE.Library.Util.DynamicCalls.GetPropertyGetter(System.Reflection.PropertyInfo)">
+            <summary>
+            
+            </summary>
+            <param name="propInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.DynamicCalls.GetPropertySetter(System.Reflection.PropertyInfo)">
+            <summary>
+            
+            </summary>
+            <param name="propInfo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.DynamicCalls.EmitCastToReference(System.Reflection.Emit.ILGenerator,System.Type)">
+            <summary>
+            Emits the cast to a reference, unboxing if needed.
+            </summary>
+            <param name="ilGenerator">The MSIL generator.</param>
+            <param name="type">The type to cast.</param>
+        </member>
+        <member name="M:DogSE.Library.Util.DynamicCalls.EmitBoxIfNeeded(System.Reflection.Emit.ILGenerator,System.Type)">
+            <summary>
+            Boxes a type if needed.
+            </summary>
+            <param name="ilGenerator">The MSIL generator.</param>
+            <param name="type">The type.</param>
+        </member>
+        <member name="M:DogSE.Library.Util.DynamicCalls.EmitFastInt(System.Reflection.Emit.ILGenerator,System.Int32)">
+            <summary>
+            Emits code to save an integer to the evaluation stack.
+            </summary>
+            <param name="ilGenerator">The MSIL generator.</param>
+            <param name="value">The value to push.</param>
+        </member>
+        <member name="T:DogSE.Library.Util.InfoSplit">
+            <summary>
+            信息切割工具类
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.InfoSplit.#ctor(System.String,System.Char,System.Char)">
+            <summary>
+            信息切割类，用来切割
+            xx:u1;yy:u2
+            这样的字符串
+            </summary>
+            <param name="context"></param>
+            <param name="split1"></param>
+            <param name="split2"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.InfoSplit.GetString(System.String,System.String)">
+            <summary>
+            获得某个字符串
+            </summary>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.InfoSplit.GetInteger(System.String,System.Int32)">
+            <summary>
+            获得某个int值
+            </summary>
+            <param name="key"></param>
+            <param name="defaultValue"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DogSE.Library.Util.Insensitive">
+            <summary>
+            不敏感的字符串大小写比较的类
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.Insensitive.s_Comparer">
+            <summary>
+            初始化不敏感的字符串大小写比较的接口
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Insensitive.Compare(System.String,System.String)">
+            <summary>
+            不敏感的字符串大小写比较
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Insensitive.Equals(System.String,System.String)">
+            <summary>
+            不敏感的字符串比较是否相同
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Insensitive.StartsWith(System.String,System.String)">
+            <summary>
+            不敏感的字符串比较第一个字符串前几个字符是否和第二个字符串的完全相同
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Insensitive.EndsWith(System.String,System.String)">
+            <summary>
+            不敏感的字符串比较第一个字符串后几个字符是否和第二个字符串的完全相同
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Insensitive.Contains(System.String,System.String)">
+            <summary>
+            不敏感的字符串比较第一个字符串是否完全包容第二个字符串
+            </summary>
+        </member>
+        <member name="P:DogSE.Library.Util.Insensitive.Comparer">
+            <summary>
+            返回不敏感的字符串大小写比较的接口
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.Lang">
+            <summary>
+            服务器端的翻译语言处理模块
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Lang.InitLangFile(System.String)">
+            <summary>
+            初始化制定的翻译文件
+            </summary>
+            <param name="xmlFile"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.Lang.Init(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            初始化（临时用）
+            </summary>
+            <param name="source"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.Lang.ReloadFile">
+            <summary>
+            重新加载文件
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Lang.Trans(System.String)">
+            <summary>
+            将一个语言翻译为目标语言
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.Lang.TransFormat(System.String,System.Object[])">
+            <summary>
+            将一个语言翻译为目标语言（带格式化输出）
+            </summary>
+            <param name="source"></param>
+            <param name="objParams"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DogSE.Library.Util.Lang.DictCount">
+            <summary>
+            字典里包含翻译的数量
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.OpCodeNameUtil`1">
+            <summary>
+            消息码的名字和描述获取辅助类
+            </summary>
+            <remarks>
+            </remarks>
+        </member>
+        <member name="F:DogSE.Library.Util.OpCodeNameUtil`1.s_opCodeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.OpCodeNameUtil`1.GetOpCodeName(System.Int32)">
+            <summary>
+            获得消息码的名字
+            </summary>
+            <param name="iOpCode"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.OpCodeNameUtil`1.GetOpCodeDescription(System.Int32)">
+            <summary>
+            获得消息码的描述
+            </summary>
+            <param name="iOpCode"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.OpCodeNameUtil`1.InitGameOpCodeName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.RandomEx">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.RandomEx.s_Random">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomDouble">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomBool">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.Random(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iMaxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomArray``1(``0[])">
+            <summary>
+            
+            </summary>
+            <param name="arrayT"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomList``1(System.Collections.Generic.List{``0})">
+            <summary>
+            
+            </summary>
+            <param name="listT"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomInBytes(System.Byte[]@)">
+            <summary>
+            
+            </summary>
+            <param name="bufferRandom"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomMinMax(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iMinValue"></param>
+            <param name="iMaxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.Random(System.Int32,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="iBaseValue"></param>
+            <param name="iAppendMaxValue"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.IsTriggerProbability1000(System.Int32)">
+            <summary>
+            千分比的触发几率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.IsTriggerProbability100(System.Int32)">
+            <summary>
+            百分比的触发几率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.IsTriggerProbability10(System.Int32)">
+            <summary>
+            十分比的触发几率
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomBitInUint(System.Byte,System.Byte)">
+            <summary>
+            随机数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomBitInUshort(System.Byte,System.Byte)">
+            <summary>
+            随机数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.RandomBitInByte(System.Byte,System.Byte)">
+            <summary>
+            随机数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.RandomEx.IsTriggerProbability100(System.Double)">
+            <summary>
+            注意，这个是小数的随机数哦
+            允许传0.001之类的值
+            </summary>
+            <param name="percent"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DogSE.Library.Util.CONVERT_FLOAT_INT_UINT">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.CONVERT_FLOAT_INT_UINT.uiUint">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.CONVERT_FLOAT_INT_UINT.iInt">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.CONVERT_FLOAT_INT_UINT.fFloat">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.CONVERT_DOUBLE_LONG_ULONG">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.CONVERT_DOUBLE_LONG_ULONG.ulUlong">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.CONVERT_DOUBLE_LONG_ULONG.lLong">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DogSE.Library.Util.CONVERT_DOUBLE_LONG_ULONG.dDouble">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:DogSE.Library.Util.Utility">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:DogSE.Library.Util.Utility.FormatBuffer(System.IO.TextWriter,System.IO.Stream,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="Output"></param>
+            <param name="streamInput"></param>
+            <param name="iLength"></param>
+        </member>
+        <member name="M:DogSE.Library.Util.Utility.GetEmunMaxValues``1(System.Type)">
+            <summary>
+            获取枚举的最大值
+            </summary>
+            <typeparam name="EnumTypeT"></typeparam>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DogSE.Library.Util.Utility.GetEmunMinValues``1(System.Type)">
+            <summary>
+            获取枚举的最小值
+            </summary>
+            <typeparam name="EnumTypeT"></typeparam>
+            <param name="enumType"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
