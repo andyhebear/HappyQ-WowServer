@@ -1,0 +1,59 @@
+float4x4 WorldViewProjection;
+float3 LightDirection;
+
+texture Texture;
+
+sampler2D TextureSampler = sampler_state {
+    Texture = (Texture);
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct VS_INPUT
+{
+    float4 position				: POSITION;
+	float2 texCoords			: TEXCOORD0;
+	float3 normal				: NORMAL;
+};
+
+struct VS_OUTPUT
+{
+    float4 position				: POSITION;
+	float2 texCoords			: TEXCOORD0;	
+	float3 normalWorld			: TEXCOORD1;
+};
+
+// Vertex Shader
+VS_OUTPUT mainVS(VS_INPUT In)
+{
+    VS_OUTPUT Out = (VS_OUTPUT)0;
+
+    Out.position = mul(In.position, WorldViewProjection);
+	Out.normalWorld = mul(In.normal,(float3x3) WorldViewProjection);
+	Out.texCoords = In.texCoords;
+
+    return Out;
+}
+
+// Pixel Shader
+float4 mainPS(VS_OUTPUT In) : COLOR
+{
+	// Light equation
+	float ndl = max(0, dot(In.normalWorld, LightDirection));
+	float4 color = tex2D(TextureSampler, In.texCoords);
+
+	// Final color
+	return float4(color.rgb, 1);
+}
+
+// Technique
+technique MainTechnique
+{
+	pass P0
+	{ 
+		VertexShader = compile vs_2_0 mainVS(); // Must be a non-parameter entry point
+		PixelShader = compile ps_2_0 mainPS(); // Must be a non-parameter entry point
+	}
+}

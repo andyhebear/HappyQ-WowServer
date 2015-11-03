@@ -1,0 +1,47 @@
+struct VS_INPUT
+{
+    float4 Position	: POSITION;
+};
+
+struct VS_OUTPUT
+{
+    float4 Position	: POSITION;
+};
+
+struct PS_OUTPUT
+{
+    float4 Color0	: COLOR0;
+    float4 Color1	: COLOR1;
+    float4 Color2	: COLOR2;
+    float4 Color3	: COLOR3;
+};
+
+VS_OUTPUT ClearPass_VertexShader(VS_INPUT IN)
+{
+    VS_OUTPUT OUT = (VS_OUTPUT)0;
+
+    OUT.Position = IN.Position;
+
+    return OUT;
+}
+
+PS_OUTPUT ClearPass_PixelShader(VS_OUTPUT IN) 
+{
+    PS_OUTPUT OUT = (PS_OUTPUT)0;
+
+	OUT.Color0 = 0;
+	OUT.Color1 = 0;
+	OUT.Color2 = 0;
+	OUT.Color3 = float4(0.39, 0.58, 0.92, 1); //Cornflower Blue
+
+	return OUT;
+}
+
+technique MainTechnique
+{
+	pass P0
+	{ 
+		VertexShader = compile vs_2_0 ClearPass_VertexShader(); 
+		PixelShader = compile ps_2_0 ClearPass_PixelShader(); 
+	}
+}

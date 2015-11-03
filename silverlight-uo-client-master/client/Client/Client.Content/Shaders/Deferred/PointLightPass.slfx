@@ -1,0 +1,76 @@
+float4x4 WorldViewProjection : WORLDVIEWPROJECTION;
+
+float2 ScreenSize;
+
+float  lightStrength;
+float  lightDecay;
+float3 lightPosition;
+float4 lightColor;
+float  lightRadius;
+float  specularStrength;
+
+texture NormalTexture;
+
+sampler2D NormalSampler = sampler_state {
+    Texture = (NormalTexture);
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct VS_INPUT
+{
+    float4 Position	: POSITION;
+	float2 TexCoord	: TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Position	: POSITION;
+	float2 TexCoord	: TEXCOORD0;
+};
+
+VS_OUTPUT PointLightPass_VertexShader(VS_INPUT IN)
+{
+    VS_OUTPUT OUT = (VS_OUTPUT)0;
+
+    OUT.Position = mul(IN.Position, WorldViewProjection);
+	OUT.TexCoord = IN.TexCoord;
+
+    return OUT;
+}
+
+float4 PointLightPass_PixelShader(VS_OUTPUT IN) : COLOR0
+{
+	float4 normal = (2.0f * (tex2D(NormalSampler, IN.TexCoord))) - 1.0f; 
+	
+	float3 pixelPosition;
+
+	pixelPosition.x = ScreenSize.x * IN.TexCoord.x;
+	pixelPosition.y = ScreenSize.y * IN.TexCoord.y;
+	pixelPosition.z = 0;
+	
+	float3 lightDirection = lightPosition - pixelPosition;
+	float3 lightDirNorm = normalize(lightDirection);
+	float3 halfVec = float3(0, 0, 1);
+		
+	float amount = max(dot(normal, lightDirNorm), 0);
+	float coneAttenuation = saturate(1.0f - length(lightDirection) / lightDecay); 
+				
+	float3 reflect = normalize(2 * amount * normal - lightDirNorm);
+	float  specular = min(pow(saturate(dot(reflect, halfVec)), 10), amount);
+
+	float4 color = coneAttenuation * lightColor * lightStrength + (specular * coneAttenuation * specularStrength);
+
+	return color;
+}
+
+technique MainTechnique
+{
+	pass P0
+	{ 
+		VertexShader = compile vs_2_0 PointLightPass_VertexShader(); 
+		PixelShader = compile ps_2_0 PointLightPass_PixelShader(); 
+	}
+}

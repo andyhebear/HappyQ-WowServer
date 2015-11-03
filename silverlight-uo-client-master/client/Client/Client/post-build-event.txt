@@ -1,0 +1,1 @@
+﻿"C:\Program Files\Microsoft SDKs\Windows\v6.0A\Bin\signtool.exe" sign /v /f "$(ProjectDir)Signing\SilverlightCodeSigningCA.pfx" /p client "$(SolutionDir)Client\Client.Web\ClientBin\Client.xap"

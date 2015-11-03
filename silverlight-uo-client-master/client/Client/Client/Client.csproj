@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4B97234F-9DE2-4165-9DF0-DB8DF049422B}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Client</RootNamespace>
+    <AssemblyName>Client</AssemblyName>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v5.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>Client.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>Client.App</SilverlightAppEntry>
+    <TestPageFileName>ClientTestPage.html</TestPageFileName>
+    <CreateTestPage>true</CreateTestPage>
+    <ValidateXaml>true</ValidateXaml>
+    <EnableOutOfBrowser>true</EnableOutOfBrowser>
+    <OutOfBrowserSettingsFile>Properties\OutOfBrowserSettings.xml</OutOfBrowserSettingsFile>
+    <UsePlatformExtensions>false</UsePlatformExtensions>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <LinkedServerProject>
+    </LinkedServerProject>
+    <InBrowserSettingsFile>Properties\InBrowserSettings.xml</InBrowserSettingsFile>
+    <RequireInBrowserElevation>true</RequireInBrowserElevation>
+  </PropertyGroup>
+  <!-- This property group is only here to support building this project using the
+       MSBuild 3.5 toolset. In order to work correctly with this older toolset, it needs
+       to set the TargetFrameworkVersion to v3.5 -->
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Client.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C82FF73C8EFBF0149AB00BF9AEBCD672140E031E</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Signing\SilverlightCodeSigningCA.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.Content" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics.Extensions" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics.Shaders" />
+    <Reference Include="Microsoft.Xna.Framework.Math" />
+    <Reference Include="Microsoft.Xna.Framework.Toolkit" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Controls.Navigation, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Xna" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=5.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Asserter.cs" />
+    <Compile Include="ComponentModel\Design\ModelBase.cs" />
+    <Compile Include="ComponentModel\Design\NotifierBase.cs" />
+    <Compile Include="ComponentModel\Design\PropertySupport.cs" />
+    <Compile Include="ComponentModel\Design\RaisePropertyChangedAttribute.cs" />
+    <Compile Include="ComponentModel\Design\ViewModelBase.cs" />
+    <Compile Include="Configuration\ConfigFile.cs" />
+    <Compile Include="Configuration\ConfigSections.cs" />
+    <Compile Include="Configuration\ConfigurationService.cs" />
+    <Compile Include="Configuration\ConfigKeys.cs" />
+    <Compile Include="Configuration\IConfigurationService.cs" />
+    <Compile Include="Controls\ConfigurationControl.xaml.cs">
+      <DependentUpon>ConfigurationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\NotBoolToVisibilityConverter.cs" />
+    <Compile Include="DrawState.cs" />
+    <Compile Include="EngineException.cs" />
+    <Compile Include="ExceptionControl.xaml.cs">
+      <DependentUpon>ExceptionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExceptionViewModel.cs" />
+    <Compile Include="ContentHost.xaml.cs">
+      <DependentUpon>ContentHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameState.cs" />
+    <Compile Include="Graphics\Camera2D.cs" />
+    <Compile Include="Graphics\GBuffer.cs" />
+    <Compile Include="Graphics\GooEee\GooEeeElement.cs" />
+    <Compile Include="Graphics\GooEee\GooEeeManager.cs" />
+    <Compile Include="Graphics\GraphicsDeviceExtensions.cs" />
+    <Compile Include="Graphics\ICamera.cs" />
+    <Compile Include="Graphics\IDraw.cs" />
+    <Compile Include="Graphics\IRenderer.cs" />
+    <Compile Include="Graphics\Particles\Particle.cs" />
+    <Compile Include="Graphics\Renderer.cs" />
+    <Compile Include="Graphics\Shaders\CombineShader.cs" />
+    <Compile Include="Graphics\Shaders\ClearShader.cs" />
+    <Compile Include="Graphics\Shaders\DiffuseShader.cs" />
+    <Compile Include="Graphics\Shaders\PointLightShader.cs" />
+    <Compile Include="Graphics\Shaders\DeferredRenderShader.cs" />
+    <Compile Include="Graphics\Shaders\ShaderBase.cs" />
+    <Compile Include="Graphics\Textures\TextureFactory.cs" />
+    <Compile Include="Input\IInputService.cs" />
+    <Compile Include="Input\KeyStateEventArgs.cs" />
+    <Compile Include="Input\MouseButton.cs" />
+    <Compile Include="Input\MouseStateEventArgs.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="Input\InputService.cs" />
+    <Compile Include="IUpdate.cs" />
+    <Compile Include="Mobile.cs" />
+    <Compile Include="Serial.cs" />
+    <Compile Include="Ultima\HuedTile.cs" />
+    <Compile Include="Ultima\HuedTileList.cs" />
+    <Compile Include="Ultima\ItemData.cs" />
+    <Compile Include="Ultima\LandData.cs" />
+    <Compile Include="Ultima\Maps.cs" />
+    <Compile Include="Ultima\StaticTile.cs" />
+    <Compile Include="Ultima\Tile.cs" />
+    <Compile Include="Ultima\TileData.cs" />
+    <Compile Include="Ultima\TileFlag.cs" />
+    <Compile Include="Ultima\TileMatrix.cs" />
+    <Compile Include="UpdateState.cs" />
+    <Compile Include="UpdatingPrompt.xaml.cs">
+      <DependentUpon>UpdatingPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions\ByteArrayExtensions.cs" />
+    <Compile Include="Collections\Cache.cs" />
+    <Compile Include="Diagnostics\ITraceListener.cs" />
+    <Compile Include="Diagnostics\Listeners\DebugTraceListener.cs" />
+    <Compile Include="Diagnostics\Listeners\DebugLogTraceListener.cs" />
+    <Compile Include="Diagnostics\TraceListener.cs" />
+    <Compile Include="Diagnostics\TraceMessage.cs" />
+    <Compile Include="Diagnostics\TraceMessageEventArgs.cs" />
+    <Compile Include="Diagnostics\Tracer.cs" />
+    <Compile Include="Diagnostics\TraceType.cs" />
+    <Compile Include="Engine.cs" />
+    <Compile Include="Extensions\TypeExtensions.cs" />
+    <Compile Include="GameServiceContainer.cs" />
+    <Compile Include="Graphics\Textures\ITextureFactory.cs" />
+    <Compile Include="ICloneable.cs" />
+    <Compile Include="Graphics\VertexPositionNormalTexture.cs" />
+    <Compile Include="Graphics\Shapes\Cube.cs" />
+    <Compile Include="GameHost.xaml.cs">
+      <DependentUpon>GameHost.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Input\CommandBase.cs" />
+    <Compile Include="Input\IRaiseCanExecuteChanged.cs" />
+    <Compile Include="Input\RelayCommand.cs" />
+    <Compile Include="InstallPrompt.xaml.cs">
+      <DependentUpon>InstallPrompt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="IO\FileSystemHelper.cs" />
+    <Compile Include="IO\Paths.cs" />
+    <Compile Include="Network\BufferPool.cs" />
+    <Compile Include="Network\ByteQueue.cs" />
+    <Compile Include="Network\MessagePump.cs" />
+    <Compile Include="Network\NetState.cs" />
+    <Compile Include="Network\Packet.cs" />
+    <Compile Include="Network\PacketHandler.cs" />
+    <Compile Include="Network\PacketHandlers.cs" />
+    <Compile Include="Network\PacketReader.cs" />
+    <Compile Include="Network\Packets\LoginPacket.cs" />
+    <Compile Include="Network\Packets\SeedPacket.cs" />
+    <Compile Include="Network\PacketWriter.cs" />
+    <Compile Include="Network\SendQueue.cs" />
+    <Compile Include="ObjectConverterter.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Graphics\VertexPositionColorNormal.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Ultima\Text\ASCIIEncoding.cs" />
+    <Compile Include="Threading\DispatcherProxy.cs" />
+    <Compile Include="TypeDescriptor.cs" />
+    <Compile Include="Ultima\FileIndex.cs" />
+    <Compile Include="Ultima\PixelConverter.cs" />
+    <Compile Include="Ultima\Textures.cs" />
+    <Compile Include="WeakAction.cs" />
+    <Compile Include="WeakReferenceManager.cs" />
+    <Compile Include="World.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="GameHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ConfigurationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExceptionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContentHost.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdatingPrompt.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InstallPrompt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Jetpack\Brushes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Jetpack\CoreStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Jetpack\Fonts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Jetpack\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Client.snk" />
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Signing\SilverlightCA.cer" />
+    <None Include="Signing\SilverlightCA.pvk" />
+    <None Include="Signing\SilverlightCodeSigningCA.cer" />
+    <None Include="Signing\SilverlightCodeSigningCA.pfx" />
+    <None Include="Signing\SilverlightCodeSigningCA.pvk" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\OutOfBrowserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\InBrowserSettings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="post-build-event.txt" />
+    <Resource Include="Resources\Error.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <PropertyGroup>
+    <XnaContentProject>..\Client.Content\Client.Content.contentproj</XnaContentProject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="BeforeBuild">
+    <MSBuild Projects="$(XnaContentProject)" Properties="XnaContentPipelineTargetPlatform=Windows;XnaContentPipelineTargetProfile=Reach" />
+    <CreateItem Include="$(XnaContentProject)">
+      <Output TaskParameter="Include" ItemName="XnaContentProjectItem" />
+    </CreateItem>
+    <CreateProperty Value="%(XnaContentProjectItem.RelativeDir)">
+      <Output TaskParameter="Value" PropertyName="XnaContentProjectPath" />
+    </CreateProperty>
+    <CreateItem Include="$(XnaContentProjectPath)cachefile*targetpath.txt">
+      <Output TaskParameter="Include" ItemName="XnaContentCacheFile" />
+    </CreateItem>
+    <ReadLinesFromFile File="@(XnaContentCacheFile)" Condition="Exists(@(XnaContentCacheFile))">
+      <Output TaskParameter="Lines" ItemName="XnaContentOutputs" />
+    </ReadLinesFromFile>
+    <CreateItem Include="@(XnaContentOutputs->'$(XnaContentProjectPath)bin\AnyCPU\$(Configuration)\%(Identity)')" AdditionalMetadata="Link=Content\%(RelativeDir)%(Filename)%(Extension)">
+      <Output TaskParameter="Include" ItemName="Content" />
+    </CreateItem>
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

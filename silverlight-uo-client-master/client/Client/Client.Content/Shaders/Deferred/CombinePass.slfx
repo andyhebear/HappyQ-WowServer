@@ -1,0 +1,63 @@
+float4x4 WorldViewProjection : WORLDVIEWPROJECTION;
+
+float3 ambientLightColor;
+float  ambientLightPower;
+
+texture DiffuseTexture;
+texture LightTexture;
+
+sampler2D DiffuseSampler = sampler_state {
+    Texture = (DiffuseTexture);
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+sampler2D LightSampler = sampler_state {
+    Texture = (LightTexture);
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct VS_INPUT
+{
+    float4 Position	: POSITION;
+	float2 TexCoord	: TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Position	: POSITION;
+	float2 TexCoord	: TEXCOORD0;
+};
+
+VS_OUTPUT CombinePass_VertexShader(VS_INPUT IN)
+{
+    VS_OUTPUT OUT = (VS_OUTPUT)0;
+
+    OUT.Position = mul(IN.Position, WorldViewProjection);
+	OUT.TexCoord = IN.TexCoord;
+
+    return OUT;
+}
+
+float4 CombinePass_PixelShader(VS_OUTPUT IN) : COLOR0
+{
+	float4 diffuse = tex2D(DiffuseSampler, IN.TexCoord);
+	float3 light = tex2D(LightSampler, IN.TexCoord).rgb;
+
+	float3 color = diffuse.rgb * (ambientLightPower * ambientLightColor) * light;
+	return float4(color.rgb, diffuse.a);
+}
+
+technique MainTechnique
+{
+	pass P0
+	{ 
+		VertexShader = compile vs_2_0 CombinePass_VertexShader(); 
+		PixelShader = compile ps_2_0 CombinePass_PixelShader(); 
+	}
+}

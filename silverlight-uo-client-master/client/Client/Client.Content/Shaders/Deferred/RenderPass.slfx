@@ -1,0 +1,67 @@
+float4x4 WorldViewProjection;
+
+texture DiffuseTexture;
+texture NormalTexture;
+
+sampler2D DiffuseSampler = sampler_state {
+    Texture = (DiffuseTexture);
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+sampler2D NormalSampler = sampler_state {
+    Texture = (NormalTexture);
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct VS_INPUT
+{
+    float4 Position	: POSITION;
+	float2 TexCoord	: TEXCOORD0;
+};
+
+struct VS_OUTPUT
+{
+    float4 Position	: POSITION;
+	float2 TexCoord	: TEXCOORD0;
+};
+
+struct PS_OUTPUT
+{
+    float4 Diffuse	: COLOR0;
+	float4 Normal   : COLOR1;
+};
+
+VS_OUTPUT RenderPass_VertexShader(VS_INPUT IN)
+{
+    VS_OUTPUT OUT = (VS_OUTPUT)0;
+
+    OUT.Position = mul(IN.Position, WorldViewProjection);
+	OUT.TexCoord = IN.TexCoord;
+
+    return OUT;
+}
+
+PS_OUTPUT RenderPass_PixelShader(VS_OUTPUT IN) 
+{
+	PS_OUTPUT OUT = (PS_OUTPUT)0;
+
+	OUT.Diffuse = tex2D(DiffuseSampler, IN.TexCoord);
+	OUT.Normal = float4(tex2D(NormalSampler, IN.TexCoord).rgb, OUT.Diffuse.a);
+
+	return OUT;
+}
+
+technique MainTechnique
+{
+	pass P0
+	{ 
+		VertexShader = compile vs_2_0 RenderPass_VertexShader(); 
+		PixelShader = compile ps_2_0 RenderPass_PixelShader(); 
+	}
+}
